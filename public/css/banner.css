@@ -1,0 +1,14 @@
+#carouselExampleIndicators{
+    height: 700px !important;
+}
+
+#carouselExampleDark button{
+    width: 10% !important;
+}
+
+#carouselExampleDark .carousel-inner img{
+    height: 700px !important;
+}
+
+#carouselExampleDark .carousel-inner{
+}

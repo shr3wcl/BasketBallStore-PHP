@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 <link rel="stylesheet" href="public/css/banners.css">
 <div id="carouselExampleIndicators" class="carousel slide carousel-fade carousel-dark mb-5 position-relative" data-bs-ride="true" data-ride="carousel">
     <div class="carousel-indicators position-absolute">
@@ -91,4 +89,3 @@
     </div>
 
 </div>
->>>>>>> Stashed changes
