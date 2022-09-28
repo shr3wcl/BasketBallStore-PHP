@@ -8,6 +8,13 @@ class model{
         $this->conn = $conn_obj->conn;
     }
 
+    function getLatestProducts($s, $e){
+        $query = "SELECT * FROM product WHERE status = 1 ORDER BY timestamp DESC LIMIT $s, $e";
+
+        require ("resultReturned.php");
+        return $data;
+    }
+
     function getBanner($start, $end){
         $query = "SELECT * FROM banner LIMIT $start, $end";
         require ("resultReturned.php");

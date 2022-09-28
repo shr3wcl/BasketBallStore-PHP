@@ -1,5 +1,5 @@
 <header class="fixed-top">
-    <nav class="navbar navbar-expand-sm fs-7 bg-light mx-5">
+    <nav class="navbar navbar-expand-sm fs-7 bg-light">
         <div class="container-fluid w-100 d-flex justify-content-start mx-1">
             <div class="fw-light">
                 <a href="#" class="text-decoration-none text-muted me-2"><i class="fa-solid fa-location-dot me-1"></i>Address:
@@ -21,7 +21,7 @@
     </nav>
 
     <nav class="navbar navbar-expand-lg bg-light border p-0 mx-1">
-        <div class="container-fluid mx-5">
+        <div class="container-fluid mx-3">
             <a class="navbar-brand" href="?arg=home">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

@@ -45,3 +45,13 @@
 .owl-gbr-hot .owl-dots .owl-dot.active span, .owl-gbr-hot .owl-dots .owl-dot:hover span {
     background: #d62025 !important;
 }
+
+#latest-product-container .pro_img_home {
+    display: block;
+    padding: 0px 15px;
+}
+#latest-product-container .image-new-product{
+    vertical-align: middle;
+    min-height: 10rem;
+    max-width: 100%;
+}

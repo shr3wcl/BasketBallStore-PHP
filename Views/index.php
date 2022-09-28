@@ -11,6 +11,7 @@
           integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="public/css/home.css">
     <link rel="stylesheet" href="public/css/owl-carousel.css">
+    <link rel="stylesheet" href="public/css/main.css">
     <script src="public/js/build-jquery.js"></script>
     <title>Document</title>
 </head>
