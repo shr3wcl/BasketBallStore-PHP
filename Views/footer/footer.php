@@ -12,7 +12,7 @@
                 <i class="fab fa-google"></i>
             </a>
             <a href="#" class="me-4 text-reset">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
             </a>
             <a href="#" class="me-4 text-reset">
                 <i class="fab fa-github"></i>

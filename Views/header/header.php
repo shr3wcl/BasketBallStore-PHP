@@ -9,17 +9,20 @@
             </div>
         </div>
         <div class="container-fluid w-100 d-flex justify-content-end mx-2">
-            <a href="#" class="text-decoration-none">
+            <a href="?arg=login" class="text-decoration-none me-3">
                 <span>Login</span>
                 <i class="fa-solid fa-user"></i>
             </a>
-
+            <a href="?arg=register" class="text-decoration-none">
+                <span>Register</span>
+                <i class="fa-solid fa-pen"></i>
+            </a>
         </div>
     </nav>
 
     <nav class="navbar navbar-expand-lg bg-light border p-0 mx-1">
         <div class="container-fluid mx-5">
-            <a class="navbar-brand" href="#">Home</a>
+            <a class="navbar-brand" href="?arg=home">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
