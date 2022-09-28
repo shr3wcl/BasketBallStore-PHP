@@ -9,7 +9,7 @@ class connection
         $servername = 'localhost';
         $username = 'root';
         $password = '';
-        $db_name = 'saleWebsite';
+        $db_name = 'basketball_store';
 
         $this->conn = new mysqli($servername, $username, $password, $db_name);
         $this->conn->set_charset('utf8');

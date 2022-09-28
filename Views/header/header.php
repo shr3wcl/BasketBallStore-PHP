@@ -1,18 +1,25 @@
-<header class="">
-    <nav class="navbar navbar-expand-sm fs-7">
-        <div class="container-fluid mx-5 w-100 d-flex justify-content-end">
+<header class="fixed-top">
+    <nav class="navbar navbar-expand-sm fs-7 bg-light mx-5">
+        <div class="container-fluid w-100 d-flex justify-content-start mx-1">
             <div class="fw-light">
-                <a href="#" class="text-decoration-none mx-3 text-muted"><i class="fa-solid fa-location-dot me-1"></i>Address:
+                <a href="#" class="text-decoration-none text-muted me-2"><i class="fa-solid fa-location-dot me-1"></i>Address:
                     470 Tran Dai Nghia</a>
                 <a href="#" class="text-decoration-none text-muted"><i class="fa-solid fa-phone me-1"></i>Phone:
                     0123456789</a>
             </div>
         </div>
+        <div class="container-fluid w-100 d-flex justify-content-end mx-2">
+            <a href="#" class="text-decoration-none">
+                <span>Login</span>
+                <i class="fa-solid fa-user"></i>
+            </a>
+
+        </div>
     </nav>
 
-    <nav class="navbar navbar-expand-lg bg-light border p-0">
+    <nav class="navbar navbar-expand-lg bg-light border p-0 mx-1">
         <div class="container-fluid mx-5">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -74,6 +81,7 @@
                                 class="fa-sharp fa-solid fa-cart-shopping"></i>
                         <p class="m-0">Cart</p></button>
                 </form>
+
             </div>
         </div>
     </nav>
