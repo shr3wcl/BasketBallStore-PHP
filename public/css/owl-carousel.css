@@ -1,0 +1,47 @@
+.owl-gbr .owl-nav{
+    position: absolute;
+    top: 24%;
+    height: 0;
+    width: 100%;
+    display: block;
+}
+.owl-gbr .owl-nav .owl-prev{
+    font-size: 20px !important;
+    position: absolute;
+    left: -3px;
+    padding: 20px 0 0;
+    margin: 0;
+    border-radius: 0 5px 5px 0 !important;
+    background: #fff !important;
+    width: 34px;
+    height: 50px;
+    text-align: center;
+    font-size: 46px;
+    color: #999;
+    font-family: -webkit-body;
+    box-shadow:4px 1px 8px 0px rgba(0,0,0,0.25);
+}
+.owl-gbr .owl-nav .owl-next{
+    font-size: 20px !important;
+    position: absolute;
+    right: -3px;
+    padding: 20px 0 0;
+    margin: 0;
+    border-radius: 5px 0 0 5px !important;
+    background: #fff !important;
+    width: 34px;
+    height: 50px;
+    text-align: center;
+    font-size: 46px;
+    color: #999;
+    font-family: -webkit-body;
+    box-shadow:-4px 1px 8px 0px rgba(0,0,0,0.25);
+}
+.owl-gbr .owl-nav .owl-prev:hover,.owl-gbr .owl-nav .owl-next:hover{
+    background: #ffffff !important;
+    color: #999 !important;
+
+}
+.owl-gbr-hot .owl-dots .owl-dot.active span, .owl-gbr-hot .owl-dots .owl-dot:hover span {
+    background: #d62025 !important;
+}
