@@ -55,37 +55,37 @@
     <?php } ?>
 </div>
 
-
 <div id="latest-product-container" class="bg-white row nomarg mt-5 ">
     <div class="owl-carousel owl-theme owl-gbr owl-gbr-hot mrg-normal">
         <?php foreach ($data_list_latest_products as $each) { ?>
-            <div class="item mt-3">
+            <div class="item mt-3 position-relative">
                 <div style="position: relative;">
                     <a class="product_img_link pro_img_home" title="<?php echo $each['name_product'] ?>"
-                       href="https://giaybongro.vn/giay-nike-chinh-hang/lebron-18-low-acg-1293.html">
+                       href="#">
                         <img src="public/<?php echo $each['main_image'] ?>" alt="<?php echo $each['name_product'] ?>"
                              class="img-responsive image-new-product">
                         <span class="gitf hide"><img src=''></span>
-                        <div style="position: absolute;bottom: 12px;" class="new_arrival"><span
-                                    class="glyphicon glyphicon-flash" aria-hidden="true"></span> <strong>Hàng mới
-                                về</strong></div>
-                        <div class="b_dis_home">
-                            <span class="discounts"><strong><span class="glyphicon glyphicon-heart"
-                                                                  aria-hidden="true"></span> Giảm tới 22% </strong></span>
+                        <div style="position: absolute;bottom: 12px;" class="new_arrival">
+                            <i class="fa-solid fa-bolt me-1"></i>
+                            <strong>New</strong>
                         </div>
-                        <span class="group hide">Hàng mới về</span>
+                        <div class="b_dis_home">
+                            <span class="discounts">
+                                <strong>
+                                    <i class="fa-solid fa-heart"></i> Sale 22% </strong>
+                            </span>
+                        </div>
                     </a>
                 </div>
-
-                <div class="caption padpro">
-                    <h4 class="f13 nomargin"><a class="gray-darker nodeco" title="<?php echo $each['name_product'] ?>"
+                <div class="caption description-container">
+                    <h4 class="f13 fs-6 mb-0"><a class="gray-darker nodeco" title="<?php echo $each['name_product'] ?>"
                                                 href="https://giaybongro.vn/giay-nike-chinh-hang/lebron-18-low-acg-1293.html"><strong>
                                 <?php echo $each['title_product'] ?>
                             </strong></a></h4>
-                    <div class="gray-light f11 line-height-normal">Nike chính hãng</div>
+                    <div class="gray-light f11 line-height-normal mb-2" style="color: #999999; font-size: 12px">Nike chính hãng</div>
                     <div class="content_price">
-                        <span class="price"><?php echo $each['price'] ?> <span class="f13">₫</span></span>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="gray-light line-through">4.450.000 <span
+                        <span class="price text-danger"><?php echo $each['price'] ?> <span class="">₫</span></span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-decoration-line-through fs-7" style="color: #999999">4.450.000 <span
                                     class="f13">₫</span></span>
                     </div>
                 </div>
@@ -95,5 +95,26 @@
 </div>
 
 <style>
-
+    .discounts{
+        font-size: 10px;
+        position: absolute;
+        top: 30px;
+        background-color: #E91E63;
+        padding: 1px 6px;
+        border-radius: 2rem;
+    }
+    .discounts strong, i{
+        color: #f0f0f0;
+    }
+    .new_arrival{
+        font-size: 12px;
+        position: absolute;
+        bottom: 12px;
+        background-color: #D62025;
+        padding: 2px 8px;
+        border-radius: 4rem;
+    }
+    .new_arrival strong, i{
+        color: #f0f0f0;
+    }
 </style>

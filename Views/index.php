@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="public/css/home.css">
     <link rel="stylesheet" href="public/css/owl-carousel.css">
     <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/login.css">
     <script src="public/js/build-jquery.js"></script>
     <title>Document</title>
 </head>
@@ -144,7 +145,7 @@
 <style>
     .body-container {
         margin-top: 94px !important;
-        padding: 28px 4rem;
+        padding: 28px 3rem;
         background-color: #F5F5F5;
     }
 </style>
