@@ -3,7 +3,7 @@ require_once("model.php");
 
 class login extends model
 {
-    var $conn;
+    public mysqli $conn;
 
     function __construct()
     {

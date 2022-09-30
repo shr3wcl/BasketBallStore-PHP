@@ -1,5 +1,5 @@
 <?php
-require_once ("Models/home.php");
+require_once __DIR__ . "/../Models/home.php";
 class HomeController{
     var $home_model;
     public function __construct(){

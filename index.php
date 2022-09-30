@@ -1,6 +1,6 @@
 <?php
 session_start();
-$route = $_GET['arg'] ?? "home";
+$route = $_GET['page'] ?? "home";
 
 switch ($route){
     case "home":

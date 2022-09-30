@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center align-items-center" id="login-container">
-    <form class="bg-light p-5 border">
+    <form action="?page=login&act=log" method="post" class="bg-light p-5 border">
         <!-- Email input -->
         <h3 class="text-uppercase mb-4 mt-4">Login</h3>
         <div class="form-outline mb-3">
@@ -30,7 +30,7 @@
         </div>
 
         <!-- Submit button -->
-        <button type="button" class="btn btn-primary btn-block mb-4 w-100">Sign in</button>
+        <button type="submit" class="btn btn-primary btn-block mb-4 w-100">Sign in</button>
 
         <!-- Register buttons -->
         <div class="text-center">
