@@ -18,14 +18,17 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-0">
                                         <div class="form-outline">
-                                            <label class="form-label mb-0" for="reg-firstname">First name</label>
+                                            <h6 class="form-label mb-0" for="reg-firstname">First name <span
+                                                        class="msg-check-fn text-danger fs-7"></span></h6>
+
                                             <input type="text" name="first-name" id="reg-firstname"
                                                    class="form-control form-control-sm mb-1" required/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-0">
                                         <div class="form-outline">
-                                            <label class="form-label mb-0" for="reg-lastname">Last name</label>
+                                            <h6 class="form-label mb-0" for="reg-lastname">Last name <span
+                                                        class="msg-check-ln text-danger fs-7"></span></h6>
 
                                             <input type="text" name="last-name" id="reg-lastname"
                                                    class="form-control form-control-sm mb-1" required/>
@@ -33,10 +36,10 @@
                                     </div>
                                 </div>
 
-                                <div class="d-md-flex justify-content-start align-items-center mb-1 py-2">
-
-                                    <h6 class="mb-0 me-4">Gender: </h6>
-
+                                <div class="mb-1 py-2">
+                                    <h6 class="mb-0 me-2">Gender: <span
+                                                class="msg-check-gender text-danger fs-7"></span>
+                                    </h6>
                                     <div class="form-check form-check-inline mb-0 me-4">
                                         <input class="form-check-input" type="radio" name="gender" id="femaleGender"
                                                value="0" required/>
@@ -51,43 +54,54 @@
                                 </div>
 
                                 <div class="form-outline mb-1">
-                                    <label class="form-label mb-0 " for="reg-username">Username</label>
-                                    <span class="msg-check-username"></span>
+                                    <h6 class="form-label mb-0 " for="reg-username">Username <span
+                                                class="msg-check-username text-danger fs-7"></span>
+                                    </h6>
                                     <input type="text" name="username" id="reg-username"
                                            class="form-control form-control-sm mb-1" required minlength="6"/>
                                 </div>
 
 
                                 <div class="form-outline mb-1">
-                                    <label class="form-label mb-0" for="reg-password">Password</label>
+                                    <h6 class="form-label mb-0" for="reg-password">Password <span
+                                                class="msg-check-pass text-danger fs-7"></span>
+                                    </h6>
                                     <input type="password" name="password" id="reg-password"
-                                           class="form-control form-control-sm mb-1"/>
+                                           class="form-control form-control-sm mb-2"/>
                                 </div>
 
                                 <div class="form-outline mb-1">
-                                    <label class="form-label mb-0" for="reg-re-password">Retype Password</label>
+                                    <h6 class="form-label mb-0" for="reg-re-password">Retype Password</h6>
+                                    <span class="msg-check-retype-pass text-danger fs-7"></span>
+
                                     <input type="password" name="retype-password" id="reg-re-password"
-                                           class="form-control form-control-sm mb-1"/>
+                                           class="form-control form-control-sm mb-2"/>
                                 </div>
 
                                 <div class="form-outline mb-1">
-                                    <label class="form-label mb-0" for="reg-email">Email</label>
+                                    <h6 class="form-label mb-0" for="reg-email">Email <span
+                                                class="msg-check-email text-danger fs-7"></span></h6>
                                     <input type="email" name="email" id="reg-email"
-                                           class="form-control form-control-sm mb-1" required/>
+                                           class="form-control form-control-sm mb-2" required/>
                                 </div>
 
                                 <div class="form-outline mb-1">
-                                    <label class="form-label mb-0" for="reg-phone">Phone</label>
+                                    <h6 class="form-label mb-0" for="reg-phone">Phone <span
+                                                class="msg-check-phone text-danger fs-7"></span></h6>
                                     <input type="tel" name="phone" id="reg-phone"
-                                           class="form-control form-control-sm mb-1" required pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"/>
+                                           class="form-control form-control-sm mb-2" required
+                                           pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"/>
                                 </div>
                                 <div class="d-flex justify-content-end pt-3">
                                     <button type="reset" class="btn btn-light btn-sm">Reset all</button>
-                                    <button type="submit" id="button-register" class="btn btn-primary btn-sm ms-2">Submit form</button>
+                                    <button type="submit" id="button-register" class="btn btn-primary btn-sm ms-2">
+                                        Submit form
+                                    </button>
                                 </div>
                                 <div class="d-flex justify-content-end pt-3 text-end fs-7">
                                     <p>Do you already have an account ? <a href="?arg=login">Login here</a></p>
                                 </div>
+
                             </div>
                         </form>
                     </div>
@@ -96,3 +110,6 @@
         </div>
     </div>
 </section>
+<script>
+
+</script>

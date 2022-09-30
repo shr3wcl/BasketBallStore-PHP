@@ -23,7 +23,7 @@ class LoginController
         require_once("Views/index.php");
     }
 
-    function handleRegister($fn, $ln, $g, $us, $pw, $tpw, $e, $p)
+    function handleRegexRegister($fn, $ln, $g, $us, $pw, $tpw, $e, $p)
     {
         $result = array();
 //        $msgFn =
@@ -40,7 +40,13 @@ class LoginController
         $result["msgEmail"] = $this->check_model->checkEmailReg($e);
         $result["msgPhone"] = $this->check_model->checkPhoneReg($p);
         $result["msgPassword"] = $this->check_model->checkPassword($pw, $tpw);
-        if (empty($result)) {
+        $checkRegex = "";
+
+        foreach ($result as $key => $value){
+            $checkRegex.=$value;
+        }
+        if (!$checkRegex) {
+            $this->login_model->handleRegister($fn, $ln, $g, $us, $pw, $e, $p);
 
         } else {
             return $result;

@@ -9,8 +9,7 @@ $pw = $_POST['pass'];
 $tpw = $_POST['repass'];
 $e = $_POST['email'];
 $p = $_POST['phone'];
-
 try {
-    echo json_encode($LoginController->handleRegister($fn, $ln, $g, $us, $pw, $tpw, $e, $p), JSON_THROW_ON_ERROR);
+    echo json_encode($LoginController->handleRegexRegister($fn, $ln, $g, $us, $pw, $tpw, $e, $p), JSON_THROW_ON_ERROR);
 } catch (JsonException $e) {
 }

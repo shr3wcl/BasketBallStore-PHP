@@ -30,12 +30,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown position-relative">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
+                    <li class="nav-item position-relative">
+                        <span class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
                             Basketball Shoes
                         </a>
-                        <ul class="dropdown-menu dropdown-content p-0 position-absolute">
+                            <ul class="dropdown-menu dropdown-content p-0 position-absolute">
                             <li class="border"><a class="dropdown-item" href="#">Nikes</a></li>
                             <li class="border"><a class="dropdown-item" href="#">Adidas</a></li>
                             <li class="border"><a class="dropdown-item" href="#">ANTA</a></li>
@@ -44,10 +45,14 @@
                             <li class="border"><a class="dropdown-item" href="#">Other</a></li>
 
                         </ul>
+                        </span>
+
+
                     </li>
-                    <li class="nav-item dropdown position-relative">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
+                    <li class="nav-item position-relative">
+                        <span class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
                             Clothes
                         </a>
                         <ul class="dropdown-menu dropdown-content p-0 position-absolute">
@@ -59,10 +64,12 @@
                             <li class="border"><a class="dropdown-item" href="#">Hoodies</a></li>
                             <li class="border"><a class="dropdown-item" href="#">Uniform</a></li>
                         </ul>
+                        </span>
                     </li>
-                    <li class="nav-item dropdown position-relative">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
+                    <li class="nav-item position-relative">
+                        <span class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
                             Accessories
                         </a>
                         <ul class="dropdown-menu dropdown-content p-0 position-absolute">
@@ -72,13 +79,15 @@
                             <li class="border"><a class="dropdown-item" href="#">Bandages</a></li>
 
                         </ul>
+                        </span>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <div class="position-relative me-3 d-flex align-items-center">
+                    <div class="position-relative me-3 d-flex align-items-center w-100">
                         <input class="form-control position-relative pe-5 w-100" type="text" placeholder="Search..."
                                aria-label="Search">
-                        <i class="fa-solid fa-magnifying-glass position-absolute top-50 end-0 translate-middle-y mx-lg-3"></i>
+                        <i class="fa-solid fa-magnifying-glass position-absolute mx-lg-3"
+                           style="right: 8px !important;  "></i>
                     </div>
                     <button class="btn btn-outline-success px-3 pb-1 border-0" type="submit"><i
                                 class="fa-sharp fa-solid fa-cart-shopping"></i>

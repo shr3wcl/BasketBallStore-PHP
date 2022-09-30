@@ -11,32 +11,10 @@ class login extends model
         $this->conn = $conn_obj->conn;
     }
 
-    function handleRegister($raw, $validateUsername, $validatePassword)
+    public function handleRegister($fn, $ln, $g, $us, $pw, $e, $p): void
     {
-        if ($validateUsername) {
-            if ($validatePassword) {
-                $valueTable = "";
-                $valueInsert = "";
-                foreach ($raw as $each => $value) {
-                    $valueTable .= $each . ",";
-                    $valueInsert .= "'" . $value . "',";
-                }
-
-                $valueTable = trim($valueTable, ",");
-                $valueInsert = trim($valueInsert, ",");
-
-                $query = "INSERT INTO user($valueTable) VALUES ($valueInsert);";
-
-                if ($this->conn->query($query)) {
-                    setcookie("msg", "Register successfully", time() + 2);
-                } else {
-                    setcookie("msg", "Register failed", time() + 2);
-                }
-            } else {
-                setcookie("msg", "Password does not match", time() + 2);
-            }
-        } else {
-            setcookie("msg", "Username or email already exists");
-        }
+        $sql = "INSERT INTO user(last_name, first_name, phone, gender, email, address, username, password) 
+                values ('{$ln}', '{$fn}', '{$p}', $g, '{$e}', '', '{$us}', '{$pw}')";
+        $this->conn->query($sql);
     }
 }
