@@ -1,4 +1,3 @@
-@@ -0,0 +1,80 @@
 <?php
 require_once __DIR__ . "/../Models/login.php";
 require_once __DIR__ . "/../Models/check.php";
