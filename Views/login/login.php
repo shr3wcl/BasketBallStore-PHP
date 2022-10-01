@@ -3,14 +3,16 @@
         <!-- Email input -->
         <h3 class="text-uppercase mb-4 mt-4">Login</h3>
         <div class="form-outline mb-3">
-            <input type="email" id="form2Example1" class="form-control" />
-            <label class="form-label" for="form2Example1">Email address</label>
+            <label class="form-label" for="input-username-login">Username <span class="msg-check-username text-danger"
+                    style="font-size: 12px"></span></label>
+            <input type="text" id="input-username-login" class="form-control" />
         </div>
 
         <!-- Password input -->
         <div class="form-outline mb-3">
-            <input type="password" id="form2Example2" class="form-control" />
-            <label class="form-label" for="form2Example2">Password</label>
+            <label class="form-label" for="input-password-login">Password <span class="msg-check-password text-danger"
+                    style="font-size: 12px"></span></label>
+            <input type="password" id="input-password-login" class="form-control" />
         </div>
 
         <!-- 2 column grid layout for inline styling -->
@@ -28,9 +30,9 @@
                 <a href="#!">Forgot password?</a>
             </div>
         </div>
-
+        <h6 class="text-danger msg-check-login" style="font-size: 12px"></h6>
         <!-- Submit button -->
-        <button type="submit" class="btn btn-primary btn-block mb-4 w-100">Sign in</button>
+        <button type="submit" class="btn btn-primary btn-block mb-4 w-100" id="button-login">Sign in</button>
 
         <!-- Register buttons -->
         <div class="text-center">
