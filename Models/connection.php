@@ -2,9 +2,9 @@
 
 class connection
 {
-    var $conn;
+    public mysqli $conn;
 
-    function __construct()
+    public function __construct()
     {
         $servername = 'localhost';
         $username = 'root';

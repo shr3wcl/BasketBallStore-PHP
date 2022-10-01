@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . "/../Models/home.php";
 class HomeController{
-    var $home_model;
+    public home $home_model;
     public function __construct(){
         $this->home_model = new home();
     }
