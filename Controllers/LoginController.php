@@ -1,3 +1,4 @@
+@@ -0,0 +1,80 @@
 <?php
 require_once __DIR__ . "/../Models/login.php";
 require_once __DIR__ . "/../Models/check.php";
@@ -23,7 +24,7 @@ class LoginController
         require_once("Views/index.php");
     }
 
-    function handleRegexRegister($fn, $ln, $g, $us, $pw, $tpw, $e, $p)
+    function handleRegister($fn, $ln, $g, $us, $pw, $tpw, $e, $p)
     {
         $result = array();
 //        $msgFn =
@@ -42,12 +43,37 @@ class LoginController
         $result["msgPassword"] = $this->check_model->checkPassword($pw, $tpw);
         $checkRegex = "";
 
-        foreach ($result as $key => $value){
-            $checkRegex.=$value;
+        foreach ($result as $key => $value) {
+            $checkRegex .= $value;
         }
         if (!$checkRegex) {
             $this->login_model->handleRegister($fn, $ln, $g, $us, $pw, $e, $p);
 
+        } else {
+            return $result;
+        }
+    }
+
+    function handleLogin($username, $password)
+    {
+        $result = array();
+        $result["msgUsername"] = $this->check_model->checkEmpty($username);
+        $result["msgPassword"] = $this->check_model->checkEmpty($password);
+        $result["msgLogin"] = "";
+        $checkRegex = "";
+
+        foreach ($result as $key => $value) {
+            $checkRegex .= $value;
+        }
+        if (!$checkRegex) {
+            $rs = $this->login_model->handleLogin($username, $password);
+            if ($rs) {
+//                return "asdasd";
+            }
+            else{
+                $result["msgLogin"] = "Sai tên đăng nhập hoặc mật khẩu";
+                return $result;
+            }
         } else {
             return $result;
         }
