@@ -1,14 +1,22 @@
 <?php
 $route = $_GET["page"] ?? "home";
 
-switch ($route){
+switch ($route) {
     case "home":
         require_once("home/home.php");
         break;
     case "register":
-        require_once("login/register.php");
+        if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+
+        } else {
+            require_once("login/register.php");
+        }
         break;
     case "login":
-        require_once ("login/login.php");
+        if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+
+        } else {
+            require_once("login/login.php");
+        }
         break;
 }

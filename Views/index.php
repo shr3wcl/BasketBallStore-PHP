@@ -13,10 +13,19 @@
     <link rel="stylesheet" href="public/css/owl-carousel.css">
     <link rel="stylesheet" href="public/css/main.css">
     <link rel="stylesheet" href="public/css/login.css">
-    <script src="public/js/build-jquery.js"></script>
+    <link rel="stylesheet" href="public/css/banners.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+          integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+          integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>Document</title>
 </head>
 <body>
+
+
+
 <?php require_once("header/header.php") ?>
 
 <div class="body-container">
@@ -25,18 +34,23 @@
 
 <?php require_once("footer/footer.php") ?>
 
+
+
+<script src="public/js/build-jquery.js"></script>
 <script src="https://kit.fontawesome.com/4ea6e3ab0b.js" crossorigin="anonymous"></script>
 <script src="public/js/bootstrap.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="public/js/register.js"></script>
+<script src="public/js/main.js" type="text/javascript"></script>
+<script src="public/js/va-su.js"></script>
+<style>
+    .body-container {
+        margin-top: 94px !important;
+        padding: 28px 3rem;
+        background-color: #F5F5F5;
+    }
+</style>
 <script>
     $('.owl-gbr-home').owlCarousel({
         loop: true,
@@ -86,18 +100,8 @@
             }
         }
     });
-    owl.on('mousewheel', '.owl-stage', function (e) {
-        if (e.deltaY > 0) {
-            owl.trigger('next.owl');
-        } else {
-            owl.trigger('prev.owl');
-        }
-        e.preventDefault();
-    });
-</script>
 
 
-<script type="text/javascript">
     $('.dropdown.keep-open').on({
         "shown.bs.dropdown": function () {
             $(this).data('closable', false);
@@ -109,18 +113,16 @@
             return $(this).data('closable');
         }
     });
-</script>
 
-
-<script>(function (d, s, id) {
+    (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s);
         js.id = id;
         js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1";
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-<script type="text/javascript">
+    }(document, 'script', 'facebook-jssdk'));
+
     window.___gcfg = {lang: 'vi'};
     (function () {
         var po = document.createElement('script');
@@ -131,12 +133,5 @@
         s.parentNode.insertBefore(po, s);
     })();
 </script>
-<style>
-    .body-container {
-        margin-top: 94px !important;
-        padding: 28px 3rem;
-        background-color: #F5F5F5;
-    }
-</style>
 </body>
 </html>

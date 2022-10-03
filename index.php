@@ -18,4 +18,9 @@ switch ($route){
         $controller_obj = new LoginController();
         $controller_obj->login();
         break;
+    case "logout":
+        require_once ("./Controllers/LoginController.php");
+        $controller_obj = new LoginController();
+        $controller_obj->handleLogout();
+        break;
 }

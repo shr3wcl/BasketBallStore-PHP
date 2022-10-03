@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="public/css/banners.css">
-
 <div id="carouselExampleIndicators" class="carousel slide carousel-fade carousel-dark mb-5 position-relative"
      data-bs-ride="true" data-ride="carousel">
     <div class="carousel-indicators position-absolute">
@@ -55,7 +53,7 @@
     <?php } ?>
 </div>
 
-<div id="latest-product-container" class="bg-white row nomarg mt-5 ">
+<div id="latest-product-container" class="bg-white row compare mt-5 ">
     <div class="owl-carousel owl-theme owl-gbr owl-gbr-hot mrg-normal">
         <?php foreach ($data_list_latest_products as $each) { ?>
             <div class="item mt-3 position-relative">
@@ -79,7 +77,7 @@
                 </div>
                 <div class="caption description-container">
                     <h4 class="f13 fs-6 mb-0"><a class="gray-darker nodeco" title="<?php echo $each['name_product'] ?>"
-                                                href="https://giaybongro.vn/giay-nike-chinh-hang/lebron-18-low-acg-1293.html"><strong>
+                                                href="#"><strong>
                                 <?php echo $each['title_product'] ?>
                             </strong></a></h4>
                     <div class="gray-light f11 line-height-normal mb-2" style="color: #999999; font-size: 12px">Nike chính hãng</div>
@@ -103,9 +101,6 @@
         padding: 1px 6px;
         border-radius: 2rem;
     }
-    .discounts strong, i{
-        color: #f0f0f0;
-    }
     .new_arrival{
         font-size: 12px;
         position: absolute;
@@ -113,8 +108,5 @@
         background-color: #D62025;
         padding: 2px 8px;
         border-radius: 4rem;
-    }
-    .new_arrival strong, i{
-        color: #f0f0f0;
     }
 </style>

@@ -56,16 +56,17 @@ class LoginController
         }
         if (!$checkRegex) {
             $rs = $this->login_model->handleLogin($username, $password);
-            if ($rs) {
-
-                
-            }
-            else{
+            if (!$rs) {
                 $result["msgLogin"] = "Sai tên đăng nhập hoặc mật khẩu";
                 return $result;
             }
         } else {
             return $result;
         }
+    }
+
+    public function handleLogout(): void
+    {
+        $this->login_model->handleLogout();
     }
 }

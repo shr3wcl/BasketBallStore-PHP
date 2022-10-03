@@ -9,14 +9,48 @@
             </div>
         </div>
         <div class="container-fluid w-100 d-flex justify-content-end mx-2">
-            <a href="?page=login" class="text-decoration-none me-3">
-                <span>Login</span>
-                <i class="fa-solid fa-user"></i>
-            </a>
-            <a href="?page=register" class="text-decoration-none">
-                <span>Register</span>
-                <i class="fa-solid fa-pen"></i>
-            </a>
+            <?php
+            $login = isset($_SESSION['login']);
+            if (!$login) {
+                echo '
+                    <a href="?page=login" class="text-decoration-none me-3">
+                        <span>Login</span>
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    <a href="?page=register" class="text-decoration-none">
+                        <span>Register</span>
+                        <i class="fa-solid fa-pen"></i>
+                    </a>';
+            } else {
+                $user = $_SESSION["user"] ?? "";
+                $d_name = "";
+                if ($user) {
+                    $d_name =  $user["first_name"] . " " . $user["last_name"];
+                }
+                $auth = "";
+                switch ($user['id_auth']){
+                    case 1:
+                        $auth = '<li class="border"><a class="dropdown-item text-success" href="#">Trang quản lý</a></li>';
+                        break;
+                    case 2:
+                        $auth = '<li class="border"><a class="dropdown-item text-danger" href="#">Trang nhân viên</a></li>';
+                        break;
+                }
+                echo '
+                        <span class="dropdown p-8 me-5 d-flex align-items-center">
+                            <i class="fa-solid fa-user me-2"></i>
+                            <a class="nav-link dropdown-toggle position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              '.  $d_name .'
+                            </a>
+                            <ul class="dropdown-menu dropdown-content p-0 position-absolute" style="right: 0;top: 15px">
+                                <li class="border"><a class="dropdown-item" href="#">Account</a></li>
+                                '. $auth . '
+                                <li class="border"><a class="dropdown-item text-danger" href="?page=logout">Logout</a></li>
+                            </ul>
+                        </span>
+                ';
+            }
+            ?>
         </div>
     </nav>
 
@@ -30,9 +64,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item position-relative">
-                        <span class="dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    <li class="nav-item position-relative d-flex align-items-center">
+                        <span class="dropdown p-8">
+                            <a class="nav-link dropdown-toggle p-0" href="#" role="button" data-bs-toggle="dropdown"
                                aria-expanded="false">
                             Basketball Shoes
                         </a>

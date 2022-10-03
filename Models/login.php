@@ -18,20 +18,21 @@ class login extends model
         $this->conn->query($sql);
     }
 
-    public function handleLogin($username, $password): bool
+    public function handleLogin($username, $password): bool|array|null
     {
         $sql = "SELECT * FROM user where username = '{$username}' AND password = '{$password}'";
         $rs = $this->conn->query($sql)->fetch_assoc();
-        if ($rs) {
-            if ($rs["id_auth"] === 1) {
-                $_SESSION["isAdmin"] = true;
-                $_SESSION["isLogin"] = true;
-            } else if ($rs["id_auth"] === 3) {
-                $_SESSION["isLogin"] = true;
-                $_SESSION["login"] = $rs;
-            }
-            return true;
+        session_start();
+        if($rs){
+            $_SESSION['login'] = true;
+            $_SESSION['user'] = $rs;
         }
-        return false;
+        return $rs;
+    }
+
+    public function handleLogout(): void
+    {
+        unset($_SESSION['login'], $_SESSION['user']);
+        header("location: ?page=home");
     }
 }
