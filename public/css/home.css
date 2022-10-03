@@ -15,9 +15,9 @@ a *{
     text-decoration: none;
 }
 
-a:hover *{
-    color: #999;
-}
+/*a:hover *{*/
+/*    color: #999;*/
+/*}*/
 
 .dropdown {
     position: relative;
@@ -40,9 +40,9 @@ a:hover *{
     display: inline-block;
 }
 
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
+/*.dropdown-content a:hover {*/
+/*    background-color: #ddd;*/
+/*}*/
 
 header a{
     display: inline-block;
