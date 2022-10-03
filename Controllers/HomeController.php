@@ -6,10 +6,12 @@ class HomeController{
         $this->home_model = new home();
     }
 
-    function list(){
+    public function list(): void
+    {
         $data_banner = $this->home_model->getBanner(1,3);
         $data_typical_products = $this->home_model->getTypicalProducts(0, 3);
         $data_list_latest_products = $this->home_model->getLatestProducts(0, 8);
         require_once ("Views/index.php");
     }
+
 }

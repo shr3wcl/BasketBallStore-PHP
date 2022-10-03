@@ -3,3 +3,8 @@
     margin: 0;
     box-sizing: border-box;
 }
+.body-container {
+    margin-top: 94px !important;
+    padding: 28px 3rem;
+    background-color: #F5F5F5;
+}

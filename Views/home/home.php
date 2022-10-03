@@ -1,3 +1,4 @@
+
 <div id="carouselExampleIndicators" class="carousel slide carousel-fade carousel-dark mb-5 position-relative"
      data-bs-ride="true" data-ride="carousel">
     <div class="carousel-indicators position-absolute">
@@ -70,7 +71,7 @@
                         <div class="b_dis_home">
                             <span class="discounts">
                                 <strong>
-                                    <i class="fa-solid fa-heart"></i> Sale 22% </strong>
+                                    <i class="fa-solid fa-heart"></i> <?php echo $each['name_sale'];?> </strong>
                             </span>
                         </div>
                     </a>
@@ -80,10 +81,10 @@
                                                 href="#"><strong>
                                 <?php echo $each['title_product'] ?>
                             </strong></a></h4>
-                    <div class="gray-light f11 line-height-normal mb-2" style="color: #999999; font-size: 12px">Nike chính hãng</div>
+                    <div class="gray-light f11 line-height-normal mb-2" style="color: #999999; font-size: 12px"><?php echo $each['p_type_name'];?></div>
                     <div class="content_price">
-                        <span class="price text-danger"><?php echo $each['price'] ?> <span class="">₫</span></span>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-decoration-line-through fs-7" style="color: #999999">4.450.000 <span
+                        <span class="price text-danger"> <span class=""><?php echo number_format($each['d_price']);?> ₫</span></span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-decoration-line-through fs-7" style="color: #999999"><?php echo number_format($each['price']) ?><span
                                     class="f13">₫</span></span>
                     </div>
                 </div>

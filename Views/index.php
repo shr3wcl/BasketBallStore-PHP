@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
           integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css" integrity="sha512-wJgJNTBBkLit7ymC6vvzM1EcSWeM9mmOu+1USHaRBbHkm6W9EgM0HY27+UtUaprntaYQJF75rc8gjxllKs5OIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 <body>
@@ -44,39 +45,36 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="public/js/main.js" type="text/javascript"></script>
 <script src="public/js/va-su.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js" integrity="sha512-zlWWyZq71UMApAjih4WkaRpikgY9Bz1oXIW5G0fED4vk14JjGlQ1UmkGM392jEULP8jbNMiwLWdM8Z87Hu88Fw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <style>
-    .body-container {
-        margin-top: 94px !important;
-        padding: 28px 3rem;
-        background-color: #F5F5F5;
-    }
+
 </style>
 <script>
-    $('.owl-gbr-home').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            375: {
-                items: 2
-            },
-            767: {
-                items: 3
-            },
-            890: {
-                items: 4
-            },
-            1080: {
-                items: 5
-            },
-            1280: {
-                items: 6
-            }
-        }
-    });
+    // $('.owl-gbr-home').owlCarousel({
+    //     loop: true,
+    //     margin: 10,
+    //     nav: true,
+    //     responsive: {
+    //         0: {
+    //             items: 1
+    //         },
+    //         375: {
+    //             items: 2
+    //         },
+    //         767: {
+    //             items: 3
+    //         },
+    //         890: {
+    //             items: 4
+    //         },
+    //         1080: {
+    //             items: 5
+    //         },
+    //         1280: {
+    //             items: 6
+    //         }
+    //     }
+    // });
 
     $('.owl-gbr-hot').owlCarousel({
         loop: true,
@@ -102,36 +100,36 @@
     });
 
 
-    $('.dropdown.keep-open').on({
-        "shown.bs.dropdown": function () {
-            $(this).data('closable', false);
-        },
-        "click": function () {
-            $(this).data('closable', false);
-        },
-        "hide.bs.dropdown": function () {
-            return $(this).data('closable');
-        }
-    });
+    // $('.dropdown.keep-open').on({
+    //     "shown.bs.dropdown": function () {
+    //         $(this).data('closable', false);
+    //     },
+    //     "click": function () {
+    //         $(this).data('closable', false);
+    //     },
+    //     "hide.bs.dropdown": function () {
+    //         return $(this).data('closable');
+    //     }
+    // });
 
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+    // (function (d, s, id) {
+    //     var js, fjs = d.getElementsByTagName(s)[0];
+    //     if (d.getElementById(id)) return;
+    //     js = d.createElement(s);
+    //     js.id = id;
+    //     js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1";
+    //     fjs.parentNode.insertBefore(js, fjs);
+    // }(document, 'script', 'facebook-jssdk'));
 
-    window.___gcfg = {lang: 'vi'};
-    (function () {
-        var po = document.createElement('script');
-        po.type = 'text/javascript';
-        po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(po, s);
-    })();
+    // window.___gcfg = {lang: 'vi'};
+    // (function () {
+    //     var po = document.createElement('script');
+    //     po.type = 'text/javascript';
+    //     po.async = true;
+    //     po.src = 'https://apis.google.com/js/plusone.js';
+    //     var s = document.getElementsByTagName('script')[0];
+    //     s.parentNode.insertBefore(po, s);
+    // })();
 </script>
 </body>
 </html>

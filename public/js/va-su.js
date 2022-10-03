@@ -39,6 +39,7 @@ $(document).ready(() => {
                     $("#login-container .msg-check-login").html(msg?.msgLogin);
                 }
                 else{
+                    console.log(1);
                     window.location = "?page=home";
                 }
             })

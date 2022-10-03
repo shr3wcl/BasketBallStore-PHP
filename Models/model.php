@@ -8,22 +8,14 @@ class model{
         $this->conn = $conn_obj->conn;
     }
 
-    public function getLatestProducts($s, $e){
-        $query = "SELECT * FROM product WHERE status = 1 ORDER BY timestamp DESC LIMIT $s, $e";
+    function resultReturnArray($query){
+        $result = $this->conn->query($query);
 
-        require ("resultReturned.php");
-        return $data;
-    }
+        $data = array();
 
-    public function getBanner($start, $end){
-        $query = "SELECT * FROM banner LIMIT $start, $end";
-        require ("resultReturned.php");
-        return $data;
-    }
-
-    public function getTypicalProducts($start, $end){
-        $query = "SELECT * FROM typical_products LIMIT $start, $end";
-        require ("resultReturned.php");
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
         return $data;
     }
 }

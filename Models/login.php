@@ -3,13 +3,6 @@ require_once("model.php");
 
 class login extends model
 {
-    public mysqli $conn;
-
-    function __construct()
-    {
-        $conn_obj = new Connection();
-        $this->conn = $conn_obj->conn;
-    }
 
     public function handleRegister($fn, $ln, $g, $us, $pw, $e, $p): void
     {

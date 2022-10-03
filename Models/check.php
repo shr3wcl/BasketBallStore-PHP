@@ -2,13 +2,6 @@
 require_once ('model.php');
 
 class check extends model{
-    public mysqli $conn;
-
-    function __construct()
-    {
-        $conn_object = new connection();
-        $this->conn = $conn_object->conn;
-    }
 
     public function checkEmpty($value): string
     {
