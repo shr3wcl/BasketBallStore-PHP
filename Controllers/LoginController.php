@@ -36,30 +36,27 @@ class LoginController
 
         $checkRegex = implode('', $result);
         if (!$checkRegex) {
-            $this->login_model->handleRegister($fn, $ln, $g, $us, $pw, $e, $p);
+            $this->login_model->handleRegister($fn, $ln, $g, $us, md5($pw), $e, $p);
 
         } else {
             return $result;
         }
     }
 
-    public function handleLogin($username, $password)
+    public function handleLogin($username, $password): array
     {
         $result = array();
         $result["msgUsername"] = $this->check_model->checkEmpty($username);
         $result["msgPassword"] = $this->check_model->checkEmpty($password);
         $result["msgLogin"] = "";
-        $checkRegex = "";
 
-        foreach ($result as $key => $value) {
-            $checkRegex .= $value;
-        }
+        $checkRegex = implode('', $result);
         if (!$checkRegex) {
-            $rs = $this->login_model->handleLogin($username, $password);
+            $rs = $this->login_model->handleLogin($username, md5($password));
             if (!$rs) {
                 $result["msgLogin"] = "Sai tên đăng nhập hoặc mật khẩu";
-                return $result;
             }
+            return $result;
         } else {
             return $result;
         }

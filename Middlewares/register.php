@@ -6,8 +6,8 @@ $fn = $_POST['firstname'];
 $ln = $_POST['lastname'];
 $g = $_POST['gender'] ?? "";
 $us = $_POST['user'];
-$pw = md5($_POST['pass']);
-$tpw = md5($_POST['repass']);
+$pw = $_POST['pass'];
+$tpw = $_POST['repass'];
 $e = $_POST['email'];
 $p = $_POST['phone'];
 try {

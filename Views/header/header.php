@@ -33,15 +33,15 @@
                         $auth = '<li class="border"><a class="dropdown-item text-success" href="#">Trang quản lý</a></li>';
                         break;
                     case 2:
-                        $auth = '<li class="border"><a class="dropdown-item text-danger" href="#">Trang nhân viên</a></li>';
+                        $auth = '<li class="border"><a class="dropdown-item text-info" href="#">Trang nhân viên</a></li>';
                         break;
                 }
                 echo '
                         <span class="dropdown p-8 me-5 d-flex align-items-center">
                             <i class="fa-solid fa-user me-2"></i>
-                            <a class="nav-link dropdown-toggle position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="nav-link dropdown-toggle position-relative" role="button" aria-expanded="false">
                               '.  $d_name .'
-                            </a>
+                            </span>
                             <ul class="dropdown-menu dropdown-content p-0 position-absolute" style="right: 0;top: 15px">
                                 <li class="border"><a class="dropdown-item" href="#">Account</a></li>
                                 '. $auth . '

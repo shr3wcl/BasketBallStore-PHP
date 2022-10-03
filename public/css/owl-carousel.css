@@ -8,10 +8,10 @@
 .owl-gbr .owl-nav .owl-prev{
     font-size: 20px !important;
     position: absolute;
-    left: -3px;
+    left: -24px;
     padding: 20px 0 0;
     margin: 0;
-    border-radius: 0 5px 5px 0 !important;
+    border-radius: 5px 5px 5px 5px !important;
     background: #fff !important;
     width: 34px;
     height: 50px;
@@ -27,7 +27,7 @@
     right: -3px;
     padding: 20px 0 0;
     margin: 0;
-    border-radius: 5px 0 0 5px !important;
+    border-radius: 5px 5px 5px 5px !important;
     background: #fff !important;
     width: 34px;
     height: 50px;
