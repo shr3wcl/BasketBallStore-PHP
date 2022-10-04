@@ -54,7 +54,7 @@
         </div>
     </nav>
 
-    <nav class="navbar navbar-expand-lg bg-light border p-0 mx-1">
+    <nav class="navbar navbar-expand-lg bg-light border p-0 mx-0">
         <div class="container-fluid mx-3">
             <a class="navbar-brand" href="?page=home">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
