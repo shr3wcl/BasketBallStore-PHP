@@ -56,7 +56,7 @@
 
 <div id="latest-product-container" class="bg-white row compare mt-5 ">
     <div class="owl-carousel owl-theme owl-gbr owl-gbr-hot mrg-normal">
-        <?php foreach ($data_list_latest_products as $each) { ?>
+        <?php foreach ($data_newest_product as $each) { ?>
             <div class="item mt-3 position-relative">
                 <div style="position: relative;">
                     <a class="product_img_link pro_img_home" title="<?php echo $each['name_product'] ?>"
@@ -93,6 +93,83 @@
     </div>
 </div>
 
+<div class="mt-4">
+    <div class="d-flex justify-content-between flex-wrap">
+        <a href="#!" class=""><h4>SẢN PHẨM NỔI BẬT</h4></a>
+        <ul class="d-flex" style="list-style: none">
+            <li class="me-3"><a href="#">Giày Anta</a></li>
+            <li class="me-3"><a href="#">Giày Adidas</a></li>
+            <li class="me-3"><a href="#">Giày Nike</a></li>
+            <li class="me-3"><a href="#">Giày Peak</a></li>
+            <li class="me-3"><a href="#">Giày Lining</a></li>
+            <li class="me-3"><a href="#">Giày trẻ em</a></li>
+            <li class="me-3"><a href="#">Xem thêm</a></li>
+        </ul>
+    </div>
+    <div class="bg-white">
+        <ul class="gridpro d-flex flex-wrap w-100">
+            <?php foreach ($data_outstanding_product as $each) {?>
+                <li class="col-xs-6 col-sm-3 col-md-3 col-lg-3 col-gr grid li-normal">
+                    <a class="product_img_link pro_img_home gray-darker nodeco " title=" Zoom Freak 3 Low Battery " href="#" >
+                        <img src="public/<?php echo $each['main_image']?>" alt=" Zoom Freak 3 Low Battery " class="img-responsive front" >
+                        <span class="gitf hide"><img src=''></span>
+                        <div class="b_dis_home">
+                            <span class="discounts"><strong><span class="fa-solid fa-heart" aria-hidden="true"></span> Giảm 17% </strong></span>
+                        </div>
+                        <span class="group hide">Sản phẩm nổi bật</span>
+                        <div class="caption padpro">
+                            <h4 class="f13 nomargin"><strong>Zoom Freak 3 Low Battery</strong></h4>
+                            <div class="gray-light f11 line-height-normal">Nike Chính Hãng</div>
+                            <div class="content_price">
+                                <span class="price" >2.950.000 <span class="f13">₫</span></span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="gray-light line-through">3.550.000 <span class="f13">₫</span></span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="col-xs-6 col-sm-3 col-md-3 col-lg-3 col-gr grid li-normal">
+                    <a class="product_img_link pro_img_home gray-darker nodeco " title=" Zoom Freak 3 Low Battery " href="#" >
+                        <img src="public/<?php echo $each['main_image']?>" alt=" Zoom Freak 3 Low Battery " class="img-responsive front" >
+                        <span class="gitf hide"><img src=''></span>
+                        <div class="b_dis_home">
+                            <span class="discounts"><strong><span class="fa-solid fa-heart" aria-hidden="true"></span> Giảm 17% </strong></span>
+                        </div>
+                        <span class="group hide">Sản phẩm nổi bật</span>
+                        <div class="caption padpro">
+                            <h4 class="f13 nomargin"><strong>Zoom Freak 3 Low Battery</strong></h4>
+                            <div class="gray-light f11 line-height-normal">Nike Chính Hãng</div>
+                            <div class="content_price">
+                                <span class="price" >2.950.000 <span class="f13">₫</span></span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="gray-light line-through">3.550.000 <span class="f13">₫</span></span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="col-xs-6 col-sm-3 col-md-3 col-lg-3 col-gr grid li-normal">
+                    <a class="product_img_link pro_img_home gray-darker nodeco " title=" Zoom Freak 3 Low Battery " href="#" >
+                        <img src="public/<?php echo $each['main_image']?>" alt=" Zoom Freak 3 Low Battery " class="img-responsive front" >
+                        <span class="gitf hide"><img src=''></span>
+                        <div class="b_dis_home">
+                            <span class="discounts"><strong><span class="fa-solid fa-heart" aria-hidden="true"></span> Giảm 17% </strong></span>
+                        </div>
+                        <span class="group hide">Sản phẩm nổi bật</span>
+                        <div class="caption padpro">
+                            <h4 class="f13 nomargin"><strong>Zoom Freak 3 Low Battery</strong></h4>
+                            <div class="gray-light f11 line-height-normal">Nike Chính Hãng</div>
+                            <div class="content_price">
+                                <span class="price" >2.950.000 <span class="f13">₫</span></span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="gray-light line-through">3.550.000 <span class="f13">₫</span></span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            <?php } ?>
+        </ul>
+    </div>
+</div>
+
+
+
 <style>
     .discounts{
         font-size: 10px;
@@ -109,5 +186,8 @@
         background-color: #D62025;
         padding: 2px 8px;
         border-radius: 4rem;
+    }
+    ul{
+        list-style: none;
     }
 </style>
