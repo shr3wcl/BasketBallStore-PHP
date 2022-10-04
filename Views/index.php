@@ -50,32 +50,6 @@
 
 </style>
 <script>
-    // $('.owl-gbr-home').owlCarousel({
-    //     loop: true,
-    //     margin: 10,
-    //     nav: true,
-    //     responsive: {
-    //         0: {
-    //             items: 1
-    //         },
-    //         375: {
-    //             items: 2
-    //         },
-    //         767: {
-    //             items: 3
-    //         },
-    //         890: {
-    //             items: 4
-    //         },
-    //         1080: {
-    //             items: 5
-    //         },
-    //         1280: {
-    //             items: 6
-    //         }
-    //     }
-    // });
-
     $('.owl-gbr-hot').owlCarousel({
         loop: true,
         margin: 10,
@@ -98,38 +72,6 @@
             }
         }
     });
-
-
-    // $('.dropdown.keep-open').on({
-    //     "shown.bs.dropdown": function () {
-    //         $(this).data('closable', false);
-    //     },
-    //     "click": function () {
-    //         $(this).data('closable', false);
-    //     },
-    //     "hide.bs.dropdown": function () {
-    //         return $(this).data('closable');
-    //     }
-    // });
-
-    // (function (d, s, id) {
-    //     var js, fjs = d.getElementsByTagName(s)[0];
-    //     if (d.getElementById(id)) return;
-    //     js = d.createElement(s);
-    //     js.id = id;
-    //     js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1";
-    //     fjs.parentNode.insertBefore(js, fjs);
-    // }(document, 'script', 'facebook-jssdk'));
-
-    // window.___gcfg = {lang: 'vi'};
-    // (function () {
-    //     var po = document.createElement('script');
-    //     po.type = 'text/javascript';
-    //     po.async = true;
-    //     po.src = 'https://apis.google.com/js/plusone.js';
-    //     var s = document.getElementsByTagName('script')[0];
-    //     s.parentNode.insertBefore(po, s);
-    // })();
 </script>
 </body>
 </html>
