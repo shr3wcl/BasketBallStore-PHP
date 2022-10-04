@@ -54,7 +54,7 @@
     <?php } ?>
 </div>
 
-<div id="latest-product-container" class="bg-white row compare mt-5 ">
+<div id="latest-product-container" class="bg-white row compare mt-5" style="margin: 0 2px">
     <div class="owl-carousel owl-theme owl-gbr owl-gbr-hot mrg-normal">
         <?php foreach ($data_newest_product as $each) { ?>
             <div class="item mt-3 position-relative">
@@ -96,7 +96,7 @@
 <div class="mt-4">
     <div class="d-flex justify-content-between flex-wrap">
         <a href="#!" class=""><h4>SẢN PHẨM NỔI BẬT</h4></a>
-        <ul class="d-flex" style="list-style: none">
+        <ul class="d-flex" style="flex-wrap: nowrap">
             <li class="me-3"><a href="#">Giày Anta</a></li>
             <li class="me-3"><a href="#">Giày Adidas</a></li>
             <li class="me-3"><a href="#">Giày Nike</a></li>
@@ -106,69 +106,74 @@
             <li class="me-3"><a href="#">Xem thêm</a></li>
         </ul>
     </div>
-    <div class="bg-white">
-        <ul class="gridpro d-flex flex-wrap w-100">
+    <div class="bg-white mt-2">
+        <ul class="gridpro d-flex flex-wrap">
             <?php foreach ($data_outstanding_product as $each) {?>
                 <li class="col-xs-6 col-sm-3 col-md-3 col-lg-3 col-gr grid li-normal">
                     <a class="product_img_link pro_img_home gray-darker nodeco " title=" Zoom Freak 3 Low Battery " href="#" >
                         <img src="public/<?php echo $each['main_image']?>" alt=" Zoom Freak 3 Low Battery " class="img-responsive front" >
                         <span class="gitf hide"><img src=''></span>
                         <div class="b_dis_home">
-                            <span class="discounts"><strong><span class="fa-solid fa-heart" aria-hidden="true"></span> Giảm 17% </strong></span>
+                            <span class="discounts"><strong><span class="fa-solid fa-heart" aria-hidden="true"></span> <?php echo $each['name_sale'];?> </strong></span>
                         </div>
                         <span class="group hide">Sản phẩm nổi bật</span>
                         <div class="caption padpro">
-                            <h4 class="f13 nomargin"><strong>Zoom Freak 3 Low Battery</strong></h4>
-                            <div class="gray-light f11 line-height-normal">Nike Chính Hãng</div>
+                            <h4 class="f13 nomargin"><strong><?php echo $each['title_product'] ?></strong></h4>
+                            <div class="gray-light f11 line-height-normal mb-0"><?php echo $each['p_type_name'];?></div>
                             <div class="content_price">
-                                <span class="price" >2.950.000 <span class="f13">₫</span></span>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="gray-light line-through">3.550.000 <span class="f13">₫</span></span>
+                                <span class="price" ><?php echo number_format($each['d_price']);?> ₫</span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="gray-light line-through f13"><?php echo number_format($each['price']) ?> ₫</span>
                             </div>
                         </div>
                     </a>
                 </li>
-                <li class="col-xs-6 col-sm-3 col-md-3 col-lg-3 col-gr grid li-normal">
-                    <a class="product_img_link pro_img_home gray-darker nodeco " title=" Zoom Freak 3 Low Battery " href="#" >
-                        <img src="public/<?php echo $each['main_image']?>" alt=" Zoom Freak 3 Low Battery " class="img-responsive front" >
-                        <span class="gitf hide"><img src=''></span>
-                        <div class="b_dis_home">
-                            <span class="discounts"><strong><span class="fa-solid fa-heart" aria-hidden="true"></span> Giảm 17% </strong></span>
-                        </div>
-                        <span class="group hide">Sản phẩm nổi bật</span>
-                        <div class="caption padpro">
-                            <h4 class="f13 nomargin"><strong>Zoom Freak 3 Low Battery</strong></h4>
-                            <div class="gray-light f11 line-height-normal">Nike Chính Hãng</div>
-                            <div class="content_price">
-                                <span class="price" >2.950.000 <span class="f13">₫</span></span>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="gray-light line-through">3.550.000 <span class="f13">₫</span></span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="col-xs-6 col-sm-3 col-md-3 col-lg-3 col-gr grid li-normal">
-                    <a class="product_img_link pro_img_home gray-darker nodeco " title=" Zoom Freak 3 Low Battery " href="#" >
-                        <img src="public/<?php echo $each['main_image']?>" alt=" Zoom Freak 3 Low Battery " class="img-responsive front" >
-                        <span class="gitf hide"><img src=''></span>
-                        <div class="b_dis_home">
-                            <span class="discounts"><strong><span class="fa-solid fa-heart" aria-hidden="true"></span> Giảm 17% </strong></span>
-                        </div>
-                        <span class="group hide">Sản phẩm nổi bật</span>
-                        <div class="caption padpro">
-                            <h4 class="f13 nomargin"><strong>Zoom Freak 3 Low Battery</strong></h4>
-                            <div class="gray-light f11 line-height-normal">Nike Chính Hãng</div>
-                            <div class="content_price">
-                                <span class="price" >2.950.000 <span class="f13">₫</span></span>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="gray-light line-through">3.550.000 <span class="f13">₫</span></span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
+
             <?php } ?>
         </ul>
     </div>
 </div>
 
-
+<div>
+    <a href="#"><h4>NBA</h4></a>
+    <div id="latest-product-container" class="bg-white row compare mt-5" style="margin: 0 2px">
+        <div class="owl-carousel owl-theme owl-gbr owl-gbr-hot mrg-normal">
+            <?php foreach ($data_newest_product as $each) { ?>
+                <div class="item mt-3 position-relative">
+                    <div style="position: relative;">
+                        <a class="product_img_link pro_img_home" title="<?php echo $each['name_product'] ?>"
+                           href="#">
+                            <img src="public/<?php echo $each['main_image'] ?>" alt="<?php echo $each['name_product'] ?>"
+                                 class="img-responsive image-new-product">
+                            <span class="gitf hide"><img src=''></span>
+                            <div style="position: absolute;bottom: 12px;" class="new_arrival">
+                                <i class="fa-solid fa-bolt me-1"></i>
+                                <strong>New</strong>
+                            </div>
+                            <div class="b_dis_home">
+                            <span class="discounts">
+                                <strong>
+                                    <i class="fa-solid fa-heart"></i> <?php echo $each['name_sale'];?> </strong>
+                            </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="caption description-container">
+                        <h4 class="f13 fs-6 mb-0"><a class="gray-darker nodeco" title="<?php echo $each['name_product'] ?>"
+                                                     href="#"><strong>
+                                    <?php echo $each['title_product'] ?>
+                                </strong></a></h4>
+                        <div class="gray-light f11 line-height-normal mb-2" style="color: #999999; font-size: 12px"><?php echo $each['p_type_name'];?></div>
+                        <div class="content_price">
+                            <span class="price text-danger"> <span class=""><?php echo number_format($each['d_price']);?> ₫</span></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-decoration-line-through fs-7" style="color: #999999"><?php echo number_format($each['price']) ?><span
+                                        class="f13">₫</span></span>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</div>
 
 <style>
     .discounts{
