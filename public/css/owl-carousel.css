@@ -8,7 +8,7 @@
 .owl-gbr .owl-nav .owl-prev{
     font-size: 20px !important;
     position: absolute;
-    left: -24px;
+    left: -16px;
     padding: 20px 0 0;
     margin: 0;
     border-radius: 5px 5px 5px 5px !important;
@@ -24,7 +24,7 @@
 .owl-gbr .owl-nav .owl-next{
     font-size: 20px !important;
     position: absolute;
-    right: -3px;
+    right: 8px;
     padding: 20px 0 0;
     margin: 0;
     border-radius: 5px 5px 5px 5px !important;
