@@ -6,16 +6,12 @@ switch ($route) {
         require_once("home/home.php");
         break;
     case "register":
-        if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
-
-        } else {
+        if (!isset($_SESSION['login']) && !$_SESSION['login'] === true) {
             require_once("login/register.php");
         }
         break;
     case "login":
-        if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
-
-        } else {
+        if (!isset($_SESSION['login']) && !$_SESSION['login'] === true) {
             require_once("login/login.php");
         }
         break;
