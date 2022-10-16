@@ -35,8 +35,6 @@
 
 <?php require_once("footer/footer.php") ?>
 
-
-
 <script src="public/js/build-jquery.js"></script>
 <script src="https://kit.fontawesome.com/4ea6e3ab0b.js" crossorigin="anonymous"></script>
 <script src="public/js/bootstrap.js"></script>
