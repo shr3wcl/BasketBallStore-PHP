@@ -52,7 +52,7 @@ class check extends model{
     public function checkPhoneReg($p): string
     {
         $sql = "SELECT * FROM user where phone = '{$p}'";
-        $regExPhone = '/^0[0-9]{8}$/';
+        $regExPhone = '/^0[0-9]{9}$/';
         $checkRegEx = preg_match($regExPhone, $p);
         if(!$checkRegEx){
             return "Số điện thoại chưa đúng";
