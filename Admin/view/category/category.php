@@ -1,7 +1,6 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-
     <div id="content-wrapper" class="d-flex flex-column">
 
         <div id="content">
@@ -19,15 +18,16 @@
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
                     </div>
+
                     <div class="card-body">
                         <?php
-                            $act = $_GET["act"] ?? "";
+                            $act = $_GET['act'] ?? "";
                             switch ($act){
                                 case "add":
-                                    require_once "addAccount.php";
+                                    require_once "addCategory.php";
                                     break;
                                 default:
-                                    require_once "listAccount.php";
+                                    require_once "listCategory.php";
                                     break;
                             }
                         ?>

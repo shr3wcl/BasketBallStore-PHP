@@ -12,9 +12,12 @@ switch ($route) {
         require_once "product/product.php";
         break;
     case "productType":
-        require_once "product/productype.php";
+        require_once "producttype/productype.php";
         break;
     case "category":
-        require_once "product/category.php";
+        require_once "category/category.php";
+        break;
+    default:
+        require_once "dashboard/dashboard.php";
         break;
 }
