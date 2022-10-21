@@ -30,7 +30,7 @@
                 $auth = "";
                 switch ($user['id_auth']){
                     case 1:
-                        $auth = '<li class="border"><a class="dropdown-item text-success" href="#">Trang quản lý</a></li>';
+                        $auth = '<li class="border"><a class="dropdown-item text-success" href="admin?mod=dashboard">Trang quản lý</a></li>';
                         break;
                     case 2:
                         $auth = '<li class="border"><a class="dropdown-item text-info" href="#">Trang nhân viên</a></li>';

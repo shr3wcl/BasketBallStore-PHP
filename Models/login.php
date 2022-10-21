@@ -16,16 +16,21 @@ class login extends model
         $sql = "SELECT * FROM user where username = '{$username}' AND password = '{$password}'";
         $rs = $this->conn->query($sql)->fetch_assoc();
         session_start();
-        if($rs){
+        if ($rs) {
             $_SESSION['login'] = true;
             $_SESSION['user'] = $rs;
+            if ($rs['id_auth'] === "1") {
+                $_SESSION['auth'] = true;
+            } elseif ($rs['id_auth'] === "2") {
+                $_SESSION['employee'] = true;
+            }
         }
         return $rs;
     }
 
     public function handleLogout(): void
     {
-        unset($_SESSION['login'], $_SESSION['user']);
+        unset($_SESSION['login'], $_SESSION['user'], $_SESSION["auth"]);
         header("location: ?page=home");
     }
 }
