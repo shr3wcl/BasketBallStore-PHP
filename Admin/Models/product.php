@@ -18,4 +18,9 @@ class product extends modelAdmin{
         $query = "SELECT * FROM category";
         return $this->conn->query($query);
     }
+
+    public function getPromotion(){
+        $query = "SELECT * FROM promotion";
+        return $this->conn->query($query);
+    }
 }
