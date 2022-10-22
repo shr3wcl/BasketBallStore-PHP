@@ -37,9 +37,9 @@
                 <td><?= $each["gender"] ?></td>
                 <td><?= $each["id_auth"] ?></td>
                 <td>
-                    <a href="?mod=nguoidung&act=detail&id=<?= $each['id_user'] ?>" type="button" class="btn btn-success">Xem</a>
-                    <a href="?mod=nguoidung&act=edit&id=<?= $each['id_user'] ?>" type="button" class="btn btn-warning">Sửa</a>
-                    <a href="?mod=nguoidung&act=delete&id=<?= $each['id_user'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
+                    <a href="?mod=account&act=detail&id=<?= $each['id_user'] ?>" type="button" class="btn btn-success">Xem</a>
+                    <a href="?mod=account&act=edit&id=<?= $each['id_user'] ?>" type="button" class="btn btn-warning">Sửa</a>
+                    <a href="?mod=account&act=delete&id=<?= $each['id_user'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
 
                     <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
 

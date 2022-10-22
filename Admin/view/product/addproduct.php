@@ -4,7 +4,7 @@
             <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
         </div>
     <?php } ?>
-    <form action="?mod=sanpham&act=store" method="POST" role="form" enctype="multipart/form-data">
+    <form action="?mod=product&act=store" method="POST" role="form" enctype="multipart/form-data">
         <div class="form-group">
             <label for="cars">Danh mục: </label>
             <select id="" name="id_category" class="form-control">
@@ -59,7 +59,7 @@
         </div>
         <div class="form-group">
             <label for="cars">Mã khuyến mãi </label>
-            <select id="" name="MaKM" class="form-control">
+            <select id="" name="id_promotion" class="form-control">
                 <?php foreach ($promotionList as $each) { ?>
                     <option value="<?= $each['id_promotion'] ?>"><?= $each['name_promotion'] ?></option>
                 <?php } ?>

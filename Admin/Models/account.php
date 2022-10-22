@@ -7,4 +7,19 @@ class account extends modelAdmin{
         $query = "SELECT * FROM user";
         return $this->conn->query($query);
     }
+
+    public function add($fn,$ln, $p, $g, $e, $address, $un, $pw, $idAuth): void
+    {
+        $query = "INSERT INTO user(first_name, last_name, phone, gender, email, address, username, password, id_auth)
+                    VALUES ('$fn', '$ln', '$p', '$g', '$e', '$address', '$un', '$pw', '$idAuth')";
+        $this->conn->query($query);
+        header("location: ?mod=account");
+    }
+
+    public function delete($id): void
+    {
+        $query = "DELETE FROM user WHERE id_user = $id";
+        $this->conn->query($query);
+        header("location: ?mod=account");
+    }
 }

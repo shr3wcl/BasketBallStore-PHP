@@ -1,78 +1,56 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-    <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+            <i class="fas fa-basketball-ball"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Giaybongro.com <sup>ADMIN</sup></div>
     </a>
-
-    <!-- Divider -->
     <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
         <a class="nav-link" href="?mod=dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
-
-    <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-
-    <!-- Nav Item - Utilities Collapse Menu -->
-
-    <!-- Heading -->
     <div class="sidebar-heading">
-        Addons
+        Admin
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
            aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
+            <span>Management</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Login Screens:</h6>
-                <a class="collapse-item" href="?mod=account">Quản lý tài khoản</a>
-                <a class="collapse-item" href="?mod=product">Quản lý Sản phẩm</a>
-                <a class="collapse-item" href="?mod=category">Quản lý danh mục sản phẩm</a>
-                <a class="collapse-item" href="?mod=productType">Quản lý loại sản phẩm</a>
-                <a class="collapse-item" href="forgot-password.html">Quản lý khuyến mãi</a>
-                <a class="collapse-item" href="forgot-password.html">Quản lý Banner</a>
-                <a class="collapse-item" href="forgot-password.html">Quản lý hoá đơn</a>
-<!--                <div class="collapse-divider"></div>-->
-<!--                <h6 class="collapse-header">Other Pages:</h6>-->
-<!--                <a class="collapse-item" href="404.html">404 Page</a>-->
-<!--                <a class="collapse-item" href="blank.html">Blank Page</a>-->
+                <h6 class="collapse-header">Page: </h6>
+                <a class="collapse-item" href="?mod=account">Account</a>
+                <a class="collapse-item" href="?mod=product">Product</a>
+                <a class="collapse-item" href="?mod=category">Category</a>
+                <a class="collapse-item" href="?mod=productType">Product Type</a>
+                <a class="collapse-item" href="?mod=promotion">Promotion</a>
+                <a class="collapse-item" href="?mod=banner">Banner</a>
+                <a class="collapse-item" href="?mod=bill">Bill</a>
             </div>
         </div>
     </li>
 
-    <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
     </li>
 
-    <!-- Nav Item - Tables -->
     <li class="nav-item">
         <a class="nav-link" href="tables.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
     </li>
 
-    <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
-    <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
