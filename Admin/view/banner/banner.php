@@ -11,19 +11,20 @@
                         $act = $_GET["act"] ?? "";
                         switch ($act) {
                             case "add":
-                                require_once "addAccount.php";
+                                require_once "addBanner.php";
                                 break;
                             case "detail":
                                 require_once "detail.php";
                                 break;
                             default:
-                                require_once "listAccount.php";
+                                require_once "listBanner.php";
                                 break;
                         }
                         ?>
                     </div>
                 </div>
             </div>
+
         </div>
 
     </div>

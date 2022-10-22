@@ -13,6 +13,9 @@
                             case "add":
                                 require_once "addPromotion.php";
                                 break;
+                            case "detail":
+                                require_once "detail.php";
+                                break;
                             default:
                                 require_once "listPromotion.php";
                                 break;

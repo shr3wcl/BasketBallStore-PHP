@@ -8,6 +8,9 @@ switch ($route) {
     case "account":
         require_once ("account/account.php");
         break;
+    case "banner":
+        require_once "banner/banner.php";
+        break;
     case "product":
         require_once "product/product.php";
         break;

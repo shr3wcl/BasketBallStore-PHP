@@ -28,8 +28,8 @@
             <td><?= $each["price"] . " VND" ?></td>
             <td><?= $each["quantity"] ?></td>
             <td>
-                <a href="?mod=nguoidung&act=detail&id=<?= $each['id_product'] ?>" type="button" class="btn btn-success">Xem</a>
-                <a href="?mod=nguoidung&act=edit&id=<?= $each['id_product'] ?>" type="button" class="btn btn-warning">Sửa</a>
+                <a href="?mod=product&act=detail&id=<?= $each['id_product'] ?>" type="button" class="btn btn-success">Xem</a>
+                <a href="?mod=product&act=edit&id=<?= $each['id_product'] ?>" type="button" class="btn btn-warning">Sửa</a>
                 <a href="?mod=product&act=delete&id=<?= $each['id_product'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
 
                 <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>

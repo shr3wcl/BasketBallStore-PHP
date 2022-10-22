@@ -21,6 +21,13 @@ class PromotionController{
         $this->promotionModel->add($np, $tp, $v);
     }
 
+    public function viewDetail():void
+    {
+        $id = $_GET['id'];
+        $detailStuff = $this->promotionModel->view($id);
+        require_once "view/index.php";
+    }
+
     public function handleDelete(): void
     {
         $id = $_GET['id'];

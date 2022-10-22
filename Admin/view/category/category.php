@@ -13,6 +13,9 @@
                             case "add":
                                 require_once "addCategory.php";
                                 break;
+                            case "detail":
+                                require_once "detailCategory.php";
+                                break;
                             default:
                                 require_once "listCategory.php";
                                 break;
