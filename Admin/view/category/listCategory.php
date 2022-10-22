@@ -17,14 +17,14 @@
         </tr>
         </tfoot>
         <tbody>
-        <?php foreach ($category as $each) { ?>
+        <?php foreach ($categoryList as $each) { ?>
             <tr>
                 <td><?= $each["id_category"] ?></td>
                 <td><?= $each["name_category"] ?></td>
                 <td>
-                    <a href="?mod=nguoidung&act=detail&id=<?= $each['id_category'] ?>" type="button" class="btn btn-success">Xem</a>
-                    <a href="?mod=nguoidung&act=edit&id=<?= $each['id_category'] ?>" type="button" class="btn btn-warning">Sửa</a>
-                    <a href="?mod=nguoidung&act=delete&id=<?= $each['id_category'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
+                    <a href="?mod=category&act=detail&id=<?= $each['id_category'] ?>" type="button" class="btn btn-success">Xem</a>
+                    <a href="?mod=category&act=edit&id=<?= $each['id_category'] ?>" type="button" class="btn btn-warning">Sửa</a>
+                    <a href="?mod=category&act=delete&id=<?= $each['id_category'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
 
                     <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
 

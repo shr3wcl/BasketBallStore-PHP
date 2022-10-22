@@ -17,6 +17,9 @@ switch ($route) {
     case "category":
         require_once "category/category.php";
         break;
+    case "promotion":
+        require_once "promotion/promotion.php";
+        break;
     default:
         require_once "dashboard/dashboard.php";
         break;
