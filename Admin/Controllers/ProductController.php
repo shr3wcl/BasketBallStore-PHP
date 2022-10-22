@@ -69,6 +69,13 @@ class ProductController{
         $this->productModel->addNewProduct($tp, $np, $p, $q, $idc, $idpt, $mi, $i1, $i2, $i3, $i4, $idp, $des);
     }
 
+    public function handleViewDetail():void
+    {
+        $id = $_GET['id'];
+        $detailProduct = $this->productModel->view($id);
+        require_once "view/index.php";
+    }
+
     public function handleDelete(): void
     {
         $id = $_GET["id"];

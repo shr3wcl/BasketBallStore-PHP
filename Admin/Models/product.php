@@ -37,6 +37,11 @@ class product extends modelAdmin{
         $this->conn->query($query);
     }
 
+    public function view($id){
+        $query = "SELECT * FROM product WHERE id_product = '$id'";
+        return $this->conn->query($query)->fetch_assoc();
+    }
+
     public function deleteProduct($id): void
     {
         $query = "DELETE FROM product WHERE id_product = $id";

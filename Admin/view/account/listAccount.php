@@ -34,8 +34,8 @@
                 <td><?= $each["last_name"] . " " . $each["first_name"] ?></td>
                 <td><?= $each["email"] ?></td>
                 <td><?= $each["phone"] ?></td>
-                <td><?= $each["gender"] ?></td>
-                <td><?= $each["id_auth"] ?></td>
+                <td><?= $each["gender"]==="1" ? "Nam" : "Nữ" ?></td>
+                <td><?php if($each['id_auth']==="1"){echo "Admin";}elseif ($each['id_auth']==="2"){echo "Employee";}else{echo "User";} ?></td>
                 <td>
                     <a href="?mod=account&act=detail&id=<?= $each['id_user'] ?>" type="button" class="btn btn-success">Xem</a>
                     <a href="?mod=account&act=edit&id=<?= $each['id_user'] ?>" type="button" class="btn btn-warning">Sửa</a>

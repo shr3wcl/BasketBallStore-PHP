@@ -3,21 +3,25 @@
     <div class="carousel-indicators position-absolute">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+<!--        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"-->
+<!--                aria-label="Slide 2"></button>-->
+<!--        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"-->
+<!--                aria-label="Slide 3"></button>-->
+        <?php for($i = 1; $i < sizeof($data_banner); $i++){?>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $i?>"
+                    aria-label="Slide <?= $i?>"></button>
+        <?php } ?>
     </div>
 
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <a href="#"><img src="public/imgs/Banner/sale.png" class="d-block w-100" alt=""></a>
+            <a href="#"><img src="public/<?= $data_banner[0]['url_banner'] ?>" class="d-block w-100" alt=""></a>
         </div>
         <?php
-        foreach ($data_banner as $each) {
+        for ($each = 1; $each < sizeof($data_banner); $each++) {
             ?>
             <div class="carousel-item">
-                <a href="#"><img src="public/<?php echo $each['url_banner'] ?>" class="d-block w-100" alt=""></a>
+                <a href="#"><img src="public/<?php echo $data_banner[$each]['url_banner'] ?>" class="d-block w-100" alt=""></a>
             </div>
         <?php } ?>
     </div>
@@ -146,10 +150,6 @@
                             <img src="public/<?php echo $each['main_image'] ?>" alt="<?php echo $each['name_product'] ?>"
                                  class="img-responsive image-new-product">
                             <span class="gitf hide"><img src=''></span>
-                            <div style="position: absolute;bottom: 12px;" class="new_arrival">
-                                <i class="fa-solid fa-bolt me-1"></i>
-                                <strong>New</strong>
-                            </div>
                             <div class="b_dis_home">
                             <span class="discounts">
                                 <strong>
@@ -190,10 +190,6 @@
                             <img src="public/<?php echo $each['main_image'] ?>" alt="<?php echo $each['name_product'] ?>"
                                  class="img-responsive image-new-product">
                             <span class="gitf hide"><img src=''></span>
-                            <div style="position: absolute;bottom: 12px;" class="new_arrival">
-                                <i class="fa-solid fa-bolt me-1"></i>
-                                <strong>New</strong>
-                            </div>
                             <div class="b_dis_home">
                             <span class="discounts">
                                 <strong>

@@ -32,6 +32,13 @@ class ProductTypeController{
         $this->productTypeModel->add($npt, $LogoImg, $des, $idc);
     }
 
+    public function viewDetail():void
+    {
+        $id = $_GET['id'];
+        $detailStuff = $this->productTypeModel->view($id);
+        require_once "view/index.php";
+    }
+
     public function handleDelete(): void
     {
         $id = $_GET['id'];

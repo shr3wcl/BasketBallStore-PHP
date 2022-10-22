@@ -16,6 +16,12 @@ class promotion extends modelAdmin{
         header("location: ?mod=promotion");
     }
 
+    public function view($id): bool|array|null
+    {
+        $query = "SELECT * FROM promotion WHERE id_promotion = '$id'";
+        return $this->conn->query($query)->fetch_assoc();
+    }
+
     public function delete($id): void
     {
         $query = "DELETE FROM promotion WHERE id_promotion = $id";

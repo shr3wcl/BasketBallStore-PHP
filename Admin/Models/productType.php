@@ -23,6 +23,11 @@ class productType extends modelAdmin{
         header("location: ?mod=productType");
     }
 
+    public function view($id){
+        $query = "SELECT * FROM product_type WHERE id_product_type = '$id'";
+        return $this->conn->query($query)->fetch_assoc();
+    }
+
     public function getCategory(): mysqli_result|bool
     {
         $query = "SELECT * FROM category";

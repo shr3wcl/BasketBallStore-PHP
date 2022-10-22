@@ -12,9 +12,9 @@ class home extends model{
         return $this->extracted($query);
     }
 
-    public function getBanner($start, $end): array
+    public function getBanner(): array
     {
-        $query = "SELECT * FROM banner LIMIT $start, $end";
+        $query = "SELECT * FROM banner WHERE status = 1 ORDER BY timestamp DESC";
         return $this->resultReturnArray($query);
     }
 

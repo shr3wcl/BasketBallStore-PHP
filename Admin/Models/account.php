@@ -16,6 +16,12 @@ class account extends modelAdmin{
         header("location: ?mod=account");
     }
 
+    public function view($id): mysqli_result|bool
+    {
+        $query = "SELECT * FROM user WHERE id_user = '$id'";
+        return $this->conn->query($query);
+    }
+
     public function delete($id): void
     {
         $query = "DELETE FROM user WHERE id_user = $id";

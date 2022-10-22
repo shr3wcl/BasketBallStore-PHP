@@ -19,6 +19,13 @@ class CategoryController{
         $this->categoryModel->add($nc);
     }
 
+    public function viewDetail():void
+    {
+        $id = $_GET['id'];
+        $detailStuff = $this->categoryModel->view($id)->fetch_assoc();
+        require_once "view/index.php";
+    }
+
     public function handleDelete(): void
     {
         $id = $_GET['id'];

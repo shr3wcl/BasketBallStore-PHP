@@ -13,6 +13,9 @@
                             case "add":
                                 require_once "addProductType.php";
                                 break;
+                            case "detail":
+                                require_once "detail.php";
+                                break;
                             default:
                                 require_once "listProductType.php";
                                 break;
