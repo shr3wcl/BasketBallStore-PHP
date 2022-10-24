@@ -3,7 +3,7 @@
         <label for="">Title: <?= $detailProduct['title_product'] ?></label>
     </div>
     <div class="form-group">
-        <label for="">Name Product: <?=  $detailProduct['name_product'] ?> </label>
+        <label for="">Name Product: <?= $detailProduct['name_product'] ?> </label>
     </div>
     <div class="form-group">
         <label for="">Price: <?= $detailProduct['price'] ?></label>
@@ -22,6 +22,19 @@
     </div>
     <div class="form-group">
         <label for="">Description: <?= $detailProduct['description'] ?></label>
+    </div>
+    <div class="form-group">
+        <label for="">
+            Size:
+            <ul>
+        <?php
+        $arr = explode('/', $detailProduct['size']);
+        foreach ($arr as $each) {
+            ?>
+            <li for=""><?= $each ?></li>
+        <?php } ?>
+        </label>
+        </ul>
     </div>
     <div class="form-group">
         <label for="">Image:
