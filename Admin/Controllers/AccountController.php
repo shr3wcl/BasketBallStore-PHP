@@ -12,6 +12,10 @@ class AccountController{
     public function getAll(): void
     {
         $accountList = $this->accModel->getAllAccount();
+        if(isset($_GET['id']) && $_GET['act'] === "edit"){
+            $id = $_GET['id'];
+            $detailStuff = $this->accModel->view($id)->fetch_assoc();
+        }
         require_once "view/index.php";
     }
 
@@ -40,5 +44,19 @@ class AccountController{
     {
         $id = $_GET['id'];
         $this->accModel->delete($id);
+    }
+
+    public function handleUpdate(): void
+    {
+        $id = $_GET['id'];
+        $fn = $_POST['first_name'];
+        $ln = $_POST['last_name'];
+        $p = $_POST['phone'];
+        $g = $_POST['gender'];
+        $e = $_POST['email'];
+        $address =$_POST['address'];
+        $pw = md5($_POST['password']);
+        $idAuth = $_POST['id_auth'];
+        $this->accModel->update($id, $fn, $ln, $p, $g, $e, $address, $pw, $idAuth);
     }
 }

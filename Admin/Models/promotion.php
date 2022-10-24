@@ -11,7 +11,9 @@ class promotion extends modelAdmin{
 
     public function add($np, $tp, $v): void
     {
-        $query = "INSERT INTO promotion(name_promotion, type_promotion, value) VALUES ('$np', '$tp', $v)";
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $time =  date('Y-m-d H:i:s');
+        $query = "INSERT INTO promotion(name_promotion, type_promotion, value, start_day) VALUES ('$np', '$tp', '$v', '$time')";
         $this->conn->query($query);
         header("location: ?mod=promotion");
     }
@@ -25,6 +27,15 @@ class promotion extends modelAdmin{
     public function delete($id): void
     {
         $query = "DELETE FROM promotion WHERE id_promotion = $id";
+        $this->conn->query($query);
+        header("location: ?mod=promotion");
+    }
+
+    public function update($id, $name, $tP, $tS, $value, $status): void
+    {
+        $query = "UPDATE promotion
+                    SET name_promotion = '$name', type_promotion = '$tP', type_sale = '$tS', value = '$value', status = '$status'
+                    WHERE id_promotion = '$id'";
         $this->conn->query($query);
         header("location: ?mod=promotion");
     }

@@ -20,7 +20,10 @@ if(isset($_SESSION["auth"]) && $_SESSION["auth"] ===  true){
             }
             elseif ($act==="delete"){
                 $accController->handleDelete();
-            }else{
+            }elseif ($act === "update"){
+                $accController->handleUpdate();
+            }
+            else{
                 $accController->getAll();
             }
             break;
@@ -35,8 +38,31 @@ if(isset($_SESSION["auth"]) && $_SESSION["auth"] ===  true){
             }
             elseif ($act === "delete"){
                 $bannerObj->handleDelete();
-            }else{
+            }elseif ($act === "update"){
+                $bannerObj->handleUpdate();
+            }
+            else{
                 $bannerObj->getAll();
+            }
+            break;
+        case "bill":
+            require_once "Controllers/BillController.php";
+            $billObj = new BillController();
+            $act = $_GET['act'] ?? "";
+            if($act === "store"){
+                $billObj->handleAdd();
+            }elseif ($act === "detail"){
+                $billObj->viewDetail();
+            }elseif ($act === "delete"){
+                $billObj->handleDelete();
+            }elseif ($act === "update"){
+                $billObj->handleUpdate();
+            }
+            elseif ($act === "confirm"){
+                $billObj->handleConfirm();
+            }
+            else{
+                $billObj->getAll();
             }
             break;
         case "product":
@@ -50,6 +76,9 @@ if(isset($_SESSION["auth"]) && $_SESSION["auth"] ===  true){
             }
             elseif ($act === "delete"){
                 $product_ctl->handleDelete();
+            }
+            elseif ($act === "update"){
+                $product_ctl->handleUpdate();
             }
             else{
                 $product_ctl->getAll();
@@ -66,7 +95,10 @@ if(isset($_SESSION["auth"]) && $_SESSION["auth"] ===  true){
             }
             elseif ($act === "delete"){
                 $productTypeObj->handleDelete();
-            }else{
+            }elseif ($act === "update"){
+                $productTypeObj->handleUpdate();
+            }
+            else{
                 $productTypeObj->handleGetAll();
             }
             break;
@@ -82,6 +114,9 @@ if(isset($_SESSION["auth"]) && $_SESSION["auth"] ===  true){
             elseif ($act==="delete"){
                 $categoryObj->handleDelete();
             }
+            elseif ($act === "update"){
+                $categoryObj->handleUpdate();
+            }
             else{
                 $categoryObj->handleGetAll();
             }
@@ -96,6 +131,9 @@ if(isset($_SESSION["auth"]) && $_SESSION["auth"] ===  true){
                 $promotionObj->viewDetail();
             }elseif ($act === "delete"){
                 $promotionObj->handleDelete();
+            }
+            elseif ($act === "update"){
+                $promotionObj->handleUpdate();
             }
             else{
                 $promotionObj->handleGetAll();

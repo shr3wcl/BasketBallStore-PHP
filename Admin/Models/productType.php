@@ -33,4 +33,13 @@ class productType extends modelAdmin{
         $query = "SELECT * FROM category";
         return $this->conn->query($query);
     }
+
+    public function update($id, $namePT, $logo, $des, $idC): void
+    {
+        $query = "UPDATE product_type 
+                    SET name_pt = '$namePT', logo_pt = '$logo', description = '$des', id_category = '$idC'
+                    WHERE id_product_type = '$id'";
+        $this->conn->query($query);
+        header("location: ?mod=productType");
+    }
 }

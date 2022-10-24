@@ -16,6 +16,9 @@
                             case "detail":
                                 require_once "detailCategory.php";
                                 break;
+                            case "edit":
+                                require_once "edit.php";
+                                break;
                             default:
                                 require_once "listCategory.php";
                                 break;

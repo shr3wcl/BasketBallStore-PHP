@@ -33,11 +33,12 @@ class product extends modelAdmin{
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $time =  date('Y-m-d H:i:s');
         $query = "INSERT INTO product(title_product, name_product, price, quantity, id_category, id_product_type, main_image, image1, image2, image3, image4, id_promotion, description, timestamp ) 
-                    VALUES ('$tp', '$np', $p, $q, $idc, $idpt, '$mi', '$i1', '$i2', '$i3', '$i4', $idp, '$des', '$time')";
+                    VALUES ('$tp', '$np', $p, $q, $idc, $idpt, '$mi', '$i1', '$i2', '$i3', '$i4', '$idp', '$des', '$time')";
         $this->conn->query($query);
     }
 
-    public function view($id){
+    public function view($id): bool|array|null
+    {
         $query = "SELECT * FROM product WHERE id_product = '$id'";
         return $this->conn->query($query)->fetch_assoc();
     }
@@ -45,6 +46,15 @@ class product extends modelAdmin{
     public function deleteProduct($id): void
     {
         $query = "DELETE FROM product WHERE id_product = $id";
+        $this->conn->query($query);
+        header("location: ?mod=product");
+    }
+
+    public function update($id, $mi, $i1, $i2, $i3,$i4,$tp,$np,$p,$q,$idc,$idPt,$idp,$des): void
+    {
+        $query = "UPDATE user 
+                    SET title_product = '$tp', name_product = '$np', price = '$p', quantity = '$q', id_category = '$idc', id_product_type = '$idPt', main_image = '$mi', image1 = '$', image2, image3, image4, id_promotion, description
+                    WHERE id_user = '$id'";
         $this->conn->query($query);
         header("location: ?mod=product");
     }

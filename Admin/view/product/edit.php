@@ -6,10 +6,14 @@
     <?php } ?>
     <form action="?mod=product&act=store" method="POST" role="form" enctype="multipart/form-data">
         <div class="form-group">
+            <label for="">ID</label>
+            <input type="text" class="form-control" id="" placeholder="" disabled value="<?= $detailStuff['id_product'] ?>">
+        </div>
+        <div class="form-group">
             <label for="cars">Danh mục: </label>
             <select id="" name="id_category" class="form-control">
                 <?php foreach ($categoryList as $each) { ?>
-                    <option value="<?= $each['id_category'] ?>"><?= $each['name_category'] ?></option>
+                    <option value="<?= $each['id_category'] ?>"  <?= $each['id_category'] === $detailStuff['id_category'] ? "selected":"" ?>><?= $each['name_category'] ?></option>
                 <?php } ?>
             </select>
         </div>
@@ -17,57 +21,66 @@
             <label for="cars">Loại sản phẩm: </label>
             <select id="" name="id_product_type" class="form-control">
                 <?php foreach ($productTypeList as $each) { ?>
-                    <option value="<?= $each['id_product_type'] ?>"><?= $each['name_pt'] ?></option>
+                    <option value="<?= $each['id_product_type'] ?>" <?= $each['id_product_type'] === $detailStuff['id_product_type'] ? "selected":"" ?>><?= $each['name_pt'] ?></option>
                 <?php } ?>
             </select>
         </div>
         <div class="form-group">
             <label for="">Tiêu đề sản phẩm</label>
-            <input type="text" class="form-control" id="" placeholder="" name="title_product" value="">
+            <input type="text" class="form-control" id="" placeholder="" name="title_product" value="<?= $detailStuff['title_product'] ?>">
         </div>
         <div class="form-group">
             <label for="">Tên sản phẩm</label>
-            <input type="text" class="form-control" id="" placeholder="" name="name_product">
+            <input type="text" class="form-control" id="" placeholder="" name="name_product" value="<?= $detailStuff['name_product'] ?>">
         </div>
         <div class="form-group">
             <label for="">Đơn giá</label>
-            <input type="text" class="form-control" id="" placeholder="" name="price">
+            <input type="text" class="form-control" id="" placeholder="" name="price" value="<?= $detailStuff['price'] ?>">
         </div>
         <div class="form-group">
             <label for="">Số lượng</label>
-            <input type="text" class="form-control" id="" placeholder="" name="quantity">
+            <input type="text" class="form-control" id="" placeholder="" name="quantity" value="<?= $detailStuff['quantity'] ?>">
         </div>
         <div class="form-group">
             <label for="">Hình ảnh chính </label>
+            <img style="max-width: 100px" src="../public/<?= $detailStuff['main_image'] ?>" alt="">
             <input type="file" class="form-control" id="" placeholder="" name="main_image">
         </div>
         <div class="form-group">
             <label for="">Hình ảnh 1 </label>
+            <img style="max-width: 100px" src="../public/<?= $detailStuff['image1'] ?>" alt="">
+
             <input type="file" class="form-control" id="" placeholder="" name="image1">
         </div>
         <div class="form-group">
             <label for="">Hình ảnh 2</label>
+            <img style="max-width: 100px" src="../public/<?= $detailStuff['image2'] ?>" alt="">
             <input type="file" class="form-control" id="" placeholder="" name="image2">
         </div>
         <div class="form-group">
             <label for="">Hình ảnh 3</label>
+            <img style="max-width: 100px" src="../public/<?= $detailStuff['image3'] ?>" alt="">
             <input type="file" class="form-control" id="" placeholder="" name="image3">
         </div>
         <div class="form-group">
             <label for="">Hình ảnh 4</label>
+            <img style="max-width: 100px" src="../public/<?= $detailStuff['image4'] ?>" alt="">
+
             <input type="file" class="form-control" id="" placeholder="" name="image4">
         </div>
         <div class="form-group">
             <label for="cars">Mã khuyến mãi </label>
             <select id="" name="id_promotion" class="form-control">
                 <?php foreach ($promotionList as $each) { ?>
-                    <option value="<?= $each['id_promotion'] ?>"><?= $each['name_promotion'] ?></option>
+                    <option value="<?= $each['id_promotion']?>"  <?= $each['id_promotion'] === $detailStuff['id_promotion'] ? "selected" : "" ?>>
+                        <?= $each['name_promotion'] ?>
+                    </option>
                 <?php } ?>
             </select>
         </div>
         <label for="">Mô tả</label>
         <div class="form-group">
-            <textarea class="form-control" id="summernote" placeholder="" name="MoTa"></textarea>
+            <textarea class="form-control" id="summernote" placeholder="" name="description"><?= $detailStuff['description'] ?></textarea>
         </div>
         <div class="form-group">
             <label for="">Trạng thái</label>

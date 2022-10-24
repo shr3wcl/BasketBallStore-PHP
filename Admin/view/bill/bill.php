@@ -8,30 +8,27 @@
                     </div>
                     <div class="card-body">
                         <?php
-                        $act = $_GET["act"] ?? "";
+                        $act = $_GET['act'] ?? "";
                         switch ($act) {
                             case "add":
-                                require_once "addProductType.php";
+                                require_once "add.php";
                                 break;
                             case "detail":
                                 require_once "detail.php";
                                 break;
-                            case "edit":
-                                require_once "edit.php";
-                                break;
                             default:
-                                require_once "listProductType.php";
+                                require_once "list.php";
                                 break;
                         }
                         ?>
                     </div>
                 </div>
+
             </div>
-
         </div>
-
     </div>
 </div>
+
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>

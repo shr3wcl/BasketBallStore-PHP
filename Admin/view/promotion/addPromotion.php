@@ -10,8 +10,15 @@
             <input type="text" class="form-control" id="" placeholder="" name="name_promotion">
         </div>
         <div class="form-group">
-            <label for="">Loại khuyến mãi</label>
+            <label for="">Display promotion</label>
             <input type="text" class="form-control" id="" placeholder="" name="type_promotion">
+        </div>
+        <div class="form-group">
+            <label for="cars">Type sale: </label>
+            <select id="" name="type_sale" class="form-control">
+                <option value="0">Direct reduction(-)</option>
+                <option value="1">Decrease in percentage(%)</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="">Giá trị Khuyến mãi</label>

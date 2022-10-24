@@ -10,6 +10,10 @@ class PromotionController{
     public function handleGetAll(): void
     {
         $promotionList = $this->promotionModel->getAll();
+        if(isset($_GET['id']) && $_GET['act'] === "edit"){
+            $id = $_GET['id'];
+            $detailStuff = $this->promotionModel->view($id);
+        }
         require_once "view/index.php";
     }
 
@@ -32,5 +36,16 @@ class PromotionController{
     {
         $id = $_GET['id'];
         $this->promotionModel->delete($id);
+    }
+
+    public function handleUpdate(): void
+    {
+        $id = $_GET['id'];
+        $name = $_POST['name_promotion'];
+        $tP = $_POST['type_promotion'];
+        $tS = $_POST['type_sale'];
+        $value = $_POST['value'];
+        $status = $_POST['status'];
+        $this->promotionModel->update($id, $name, $tP, $tS, $value, $status);
     }
 }
