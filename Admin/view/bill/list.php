@@ -33,8 +33,8 @@
                 <td><?= $each["name_user"] ?></td>
                 <td><?= $each["phone"] ?></td>
                 <td><?= $each["address"] ?></td>
-                <td><?= $each["total_cost"] . " VND" ?></td>
-                <td><?= $each["timestamp"] ?></td>
+                <td><?= number_format($each["total_cost"]) . " VND" ?></td>
+                <td style="max-width: 100px"><?= $each["timestamp"] ?></td>
                 <td><?= $each["status"] === "1" ? "Done" : "Unpaid" ?></td>
                 <td>
                     <a href="?mod=bill&act=detail&id=<?= $each['id_bill'] ?>" type="button" class="btn btn-primary">View</a>

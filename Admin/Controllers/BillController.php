@@ -13,6 +13,10 @@ class BillController{
     {
         $billList = $this->billModel->getAll();
         $userList = $this->billModel->getUser();
+        if(isset($_GET['id']) && $_GET['act'] === "edit"){
+            $id = $_GET['id'];
+            $detailStuff = $this->billModel->view($id)->fetch_assoc();
+        }
         require_once "view/index.php";
     }
 
@@ -46,5 +50,19 @@ class BillController{
     {
         $id = $_GET['id'];
         $this->billModel->confirm($id);
+    }
+
+    public function handleUpdate(): void
+    {
+        $id = $_GET['id'];
+        $idUser = $_POST['id_user'];
+        $nameUser = $_POST['name_user'];
+        $phone = $_POST['phone'];
+        $address = $_POST['address'];
+        $pMethod = $_POST['payment_method'];
+        $total = $_POST['total_cost'];
+        $status = $_POST['status'];
+        $note = $_POST['note'];
+        $this->billModel->update($id, $idUser, $nameUser, $phone, $address, $pMethod,$total, $status, $note);
     }
 }

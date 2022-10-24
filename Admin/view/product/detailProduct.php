@@ -1,12 +1,12 @@
 <table class="table" id="dataTable" width="100%" cellspacing="0">
     <div class="form-group">
-        <label for="">Title <?= $detailProduct['title_product'] ?></label>
+        <label for="">Title: <?= $detailProduct['title_product'] ?></label>
     </div>
     <div class="form-group">
         <label for="">Name Product: <?=  $detailProduct['name_product'] ?> </label>
     </div>
     <div class="form-group">
-        <label for="">Price <?= $detailProduct['price'] ?></label>
+        <label for="">Price: <?= $detailProduct['price'] ?></label>
     </div>
     <div class="form-group">
         <label for="">Quantity: <?= $detailProduct['quantity'] ?></label>

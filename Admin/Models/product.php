@@ -35,6 +35,7 @@ class product extends modelAdmin{
         $query = "INSERT INTO product(title_product, name_product, price, quantity, id_category, id_product_type, main_image, image1, image2, image3, image4, id_promotion, description, timestamp ) 
                     VALUES ('$tp', '$np', $p, $q, $idc, $idpt, '$mi', '$i1', '$i2', '$i3', '$i4', '$idp', '$des', '$time')";
         $this->conn->query($query);
+        header("location: ?mod=product");
     }
 
     public function view($id): bool|array|null
@@ -52,9 +53,9 @@ class product extends modelAdmin{
 
     public function update($id, $mi, $i1, $i2, $i3,$i4,$tp,$np,$p,$q,$idc,$idPt,$idp,$des): void
     {
-        $query = "UPDATE user 
-                    SET title_product = '$tp', name_product = '$np', price = '$p', quantity = '$q', id_category = '$idc', id_product_type = '$idPt', main_image = '$mi', image1 = '$', image2, image3, image4, id_promotion, description
-                    WHERE id_user = '$id'";
+        $query = "UPDATE product 
+                    SET title_product = '$tp', name_product = '$np', price = '$p', quantity = '$q', id_category = '$idc', id_product_type = '$idPt', main_image = '$mi', image1 = '$i1', image2 = '$i2', image3 = '$i3', image4 = '$i4', id_promotion = '$idp', description = '$des'
+                    WHERE id_product = '$id'";
         $this->conn->query($query);
         header("location: ?mod=product");
     }

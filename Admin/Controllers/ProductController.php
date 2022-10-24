@@ -1,5 +1,5 @@
 <?php
-require_once "./Models/product.php";
+require_once "./Models/detailProduct.php";
 class ProductController{
     public product $productModel;
 
@@ -71,6 +71,7 @@ class ProductController{
         $idPt = $_POST["id_product_type"];
         $idp = $_POST["id_promotion"];
         $des = $_POST["description"] ?? "";
+        $this->productModel->update($id, $mi, $i1, $i2, $i3,$i4,$tp,$np,$p,$q,$idc,$idPt,$idp,$des);
     }
 
     public function formatImage($nameInput): string

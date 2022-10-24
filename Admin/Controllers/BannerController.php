@@ -10,6 +10,10 @@ class BannerController{
     public function getAll(): void
     {
         $bannerList = $this->bannerModel->getAll();
+        if(isset($_GET['id']) && $_GET['act'] === "edit"){
+            $id = $_GET['id'];
+            $detailStuff = $this->bannerModel->view($id)->fetch_assoc();
+        }
         require_once "view/index.php";
     }
 
@@ -41,5 +45,27 @@ class BannerController{
     {
         $id = $_GET['id'];
         $this->bannerModel->delete($id);
+    }
+
+    public function handleUpdate(): void
+    {
+        $id = $_GET['id'];
+        $bannerImage = $this->formatImage("url_banner");
+        $this->bannerModel->update($id, $bannerImage);
+    }
+
+    public function formatImage($nameInput): string
+    {
+        $dirSave = "../public/imgs/Banner/";
+
+        $image = "";
+        $target_file = $dirSave . basename($_FILES[(string) $nameInput]["name"]);
+
+        $status_upload = move_uploaded_file($_FILES[(string) $nameInput]["tmp_name"], $target_file);
+
+        if ($status_upload) {
+            $image =  "imgs/Banner/" . basename($_FILES[(string) $nameInput]["name"]);
+        }
+        return $image;
     }
 }

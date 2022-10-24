@@ -8,8 +8,8 @@
         <div class="form-group">
             <label for="">Status</label>
             <select id="" name="status" class="form-control">
-                <option value="1">1</option>
-                <option value="0">0</option>
+                <option value="1">Active</option>
+                <option value="0">No Active</option>
             </select>
         </div>
         <div class="form-group">

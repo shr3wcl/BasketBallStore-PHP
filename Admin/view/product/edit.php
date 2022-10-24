@@ -4,7 +4,7 @@
             <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
         </div>
     <?php } ?>
-    <form action="?mod=product&act=store" method="POST" role="form" enctype="multipart/form-data">
+    <form action="?mod=product&act=update&id=<?= $_GET['id'] ?>" method="POST" role="form" enctype="multipart/form-data">
         <div class="form-group">
             <label for="">ID</label>
             <input type="text" class="form-control" id="" placeholder="" disabled value="<?= $detailStuff['id_product'] ?>">
@@ -44,29 +44,29 @@
         <div class="form-group">
             <label for="">Hình ảnh chính </label>
             <img style="max-width: 100px" src="../public/<?= $detailStuff['main_image'] ?>" alt="">
-            <input type="file" class="form-control" id="" placeholder="" name="main_image">
+            <input type="file" class="form-control" id="" placeholder="" name="main_image" value="<?= explode('/', $detailStuff['main_image'])[2] ?>">
         </div>
         <div class="form-group">
             <label for="">Hình ảnh 1 </label>
             <img style="max-width: 100px" src="../public/<?= $detailStuff['image1'] ?>" alt="">
 
-            <input type="file" class="form-control" id="" placeholder="" name="image1">
+            <input type="file" class="form-control" id="" placeholder="" name="image1" value="<?= explode('/', $detailStuff['image1'])[2] ?>">
         </div>
         <div class="form-group">
             <label for="">Hình ảnh 2</label>
             <img style="max-width: 100px" src="../public/<?= $detailStuff['image2'] ?>" alt="">
-            <input type="file" class="form-control" id="" placeholder="" name="image2">
+            <input type="file" class="form-control" id="" placeholder="" name="image2" value="<?= explode('/', $detailStuff['image2'])[2] ?>">
         </div>
         <div class="form-group">
             <label for="">Hình ảnh 3</label>
             <img style="max-width: 100px" src="../public/<?= $detailStuff['image3'] ?>" alt="">
-            <input type="file" class="form-control" id="" placeholder="" name="image3">
+            <input type="file" class="form-control" id="" placeholder="" name="image3" value="<?= explode('/', $detailStuff['image3'])[2] ?>">
         </div>
         <div class="form-group">
             <label for="">Hình ảnh 4</label>
             <img style="max-width: 100px" src="../public/<?= $detailStuff['image4'] ?>" alt="">
 
-            <input type="file" class="form-control" id="" placeholder="" name="image4">
+            <input type="file" class="form-control" id="" placeholder="" name="image4" value="<?= explode('/', $detailStuff['image4'])[2] ?>">
         </div>
         <div class="form-group">
             <label for="cars">Mã khuyến mãi </label>
