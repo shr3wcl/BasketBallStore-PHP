@@ -140,6 +140,8 @@ if(isset($_SESSION["auth"]) && $_SESSION["auth"] ===  true){
 
             }
             break;
+        default:
+            require_once "view/index.php";
     }
 } else{
     header("location: ../?page=home");

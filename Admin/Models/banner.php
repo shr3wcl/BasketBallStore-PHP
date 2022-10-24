@@ -27,4 +27,13 @@ class banner extends modelAdmin{
         $this->conn->query($query);
         header("location: ?mod=banner");
     }
+
+    public function update($id, $banner): void
+    {
+        $query = "UPDATE banner 
+                    SET url_banner = '$banner'
+                    WHERE id_banner = '$id'";
+        $this->conn->query($query);
+        header("location: ?mod=banner");
+    }
 }

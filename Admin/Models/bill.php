@@ -43,4 +43,13 @@ class bill extends modelAdmin{
         $query = "SELECT id_user, first_name, last_name, username FROM user";
         return $this->conn->query($query);
     }
+
+    public function update($id, $idUser, $nameUser, $phone, $address, $pMethod,$total, $status, $note): void
+    {
+        $query = "UPDATE bill 
+                    SET id_user = '$idUser', name_user = '$nameUser', phone = '$phone', address = '$address', payment_method = '$pMethod', total_cost = '$total', status = '$status', note = '$note'
+                    WHERE id_bill = '$id'";
+        $this->conn->query($query);
+        header("location: ?mod=bill");
+    }
 }

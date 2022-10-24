@@ -1,7 +1,7 @@
 <?php
-$route = $_GET["mod"] ?? "dashboard";
+$mod = $_GET["mod"] ?? "dashboard";
 
-switch ($route) {
+switch ($mod) {
     case "dashboard":
         require_once("dashboard/dashboard.php");
         break;
@@ -27,6 +27,6 @@ switch ($route) {
         require_once "promotion/promotion.php";
         break;
     default:
-        require_once "dashboard/dashboard.php";
+        require_once "error/error.php";
         break;
 }

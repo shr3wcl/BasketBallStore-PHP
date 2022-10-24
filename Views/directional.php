@@ -17,4 +17,7 @@ switch ($route) {
             require_once("login/login.php");
         }
         break;
+    case "detail":
+        require_once "detail/detail.php";
+        break;
 }

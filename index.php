@@ -23,4 +23,9 @@ switch ($route){
         $controller_obj = new LoginController();
         $controller_obj->handleLogout();
         break;
+    case "detail":
+        require_once "./Controllers/ProductDetailController.php";
+        $detailObj = new ProductDetailController();
+        $detailObj->viewDetail();
+        break;
 }
