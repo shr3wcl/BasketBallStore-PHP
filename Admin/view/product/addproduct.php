@@ -58,6 +58,10 @@
             <input type="file" class="form-control" id="" placeholder="" name="image4">
         </div>
         <div class="form-group">
+            <label for="">Size</label>
+            <input type="text" class="form-control" id="" placeholder="" name="size">
+        </div>
+        <div class="form-group">
             <label for="cars">Mã khuyến mãi </label>
             <select id="" name="id_promotion" class="form-control">
                 <?php foreach ($promotionList as $each) { ?>

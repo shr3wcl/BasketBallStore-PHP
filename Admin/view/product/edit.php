@@ -44,29 +44,39 @@
         <div class="form-group">
             <label for="">Hình ảnh chính </label>
             <img style="max-width: 100px" src="../public/<?= $detailStuff['main_image'] ?>" alt="">
-            <input type="file" class="form-control" id="" placeholder="" name="main_image" value="<?= explode('/', $detailStuff['main_image'])[2] ?>">
+            <input type="file" class="form-control" id="" placeholder="" name="main_image">
+            <input type="text" hidden name="old_main_image" value="<?= $detailStuff['main_image'] ?>">
         </div>
         <div class="form-group">
             <label for="">Hình ảnh 1 </label>
             <img style="max-width: 100px" src="../public/<?= $detailStuff['image1'] ?>" alt="">
-
-            <input type="file" class="form-control" id="" placeholder="" name="image1" value="<?= explode('/', $detailStuff['image1'])[2] ?>">
+            <input type="file" class="form-control" id="" placeholder="" name="image1">
+            <input type="text" hidden name="old_image1" value="<?= $detailStuff['image1'] ?>">
         </div>
         <div class="form-group">
             <label for="">Hình ảnh 2</label>
             <img style="max-width: 100px" src="../public/<?= $detailStuff['image2'] ?>" alt="">
-            <input type="file" class="form-control" id="" placeholder="" name="image2" value="<?= explode('/', $detailStuff['image2'])[2] ?>">
+            <input type="file" class="form-control" id="" placeholder="" name="image2">
+            <input type="text" hidden name="old_image2" value="<?= $detailStuff['image2'] ?>">
+
         </div>
         <div class="form-group">
             <label for="">Hình ảnh 3</label>
             <img style="max-width: 100px" src="../public/<?= $detailStuff['image3'] ?>" alt="">
-            <input type="file" class="form-control" id="" placeholder="" name="image3" value="<?= explode('/', $detailStuff['image3'])[2] ?>">
+            <input type="file" class="form-control" id="" placeholder="" name="image3" ">
+            <input type="text" hidden name="old_image3" value="<?= $detailStuff['image3'] ?>">
+
         </div>
         <div class="form-group">
             <label for="">Hình ảnh 4</label>
             <img style="max-width: 100px" src="../public/<?= $detailStuff['image4'] ?>" alt="">
+            <input type="file" class="form-control" id="" placeholder="" name="image4">
+            <input type="text" hidden name="old_image4" value="<?= $detailStuff['image4'] ?>">
 
-            <input type="file" class="form-control" id="" placeholder="" name="image4" value="<?= explode('/', $detailStuff['image4'])[2] ?>">
+        </div>
+        <div class="form-group">
+            <label for="">Size</label>
+            <input type="text" class="form-control" id="" placeholder="" name="size" value="<?= $detailStuff['size'] ?>">
         </div>
         <div class="form-group">
             <label for="cars">Mã khuyến mãi </label>
@@ -86,7 +96,7 @@
             <label for="">Trạng thái</label>
             <input type="checkbox" id="" placeholder="" value="1" name="TrangThai"><em>(Check cho phép hiện thị sản phẩm)</em>
         </div>
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Update</button>
     </form>
     <script>
         $(document).ready(function() {
