@@ -25,7 +25,7 @@
         <tr>
             <td><?= $each["id_product"] ?></td>
             <td><?= $each["name_product"] ?></td>
-            <td><?= $each["price"] . " VND" ?></td>
+            <td><?= number_format($each["price"]) . " VND" ?></td>
             <td><?= $each["quantity"] ?></td>
             <td>
                 <a href="?mod=product&act=detail&id=<?= $each['id_product'] ?>" type="button" class="btn btn-success">Xem</a>

@@ -6,7 +6,7 @@
         <label for="">Type: <?= $detailStuff['type_promotion'] ?> </label>
     </div>
     <div class="form-group">
-        <label for="">Type Sale: <?= $detailStuff['type_sale'] === "Decrease in percentage" ? "%" : "Direct reduction" ?> </label>
+        <label for="">Type Sale: <?= $detailStuff['type_sale'] === "1" ? "Decrease in percentage" : "Direct reduction" ?> </label>
     </div>
     <div class="form-group">
         <label for="">Value: <?= $detailStuff['value'] ?> </label>

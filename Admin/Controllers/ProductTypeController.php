@@ -11,6 +11,10 @@ class ProductTypeController{
     {
         $productTypeList = $this->productTypeModel->getAll();
         $categoryList = $this->productTypeModel->getCategory();
+        if(isset($_GET['id']) && $_GET['act'] === "edit"){
+            $id = $_GET['id'];
+            $detailStuff = $this->productTypeModel->view($id);
+        }
         require_once "view/index.php";
     }
 
@@ -43,5 +47,30 @@ class ProductTypeController{
     {
         $id = $_GET['id'];
         $this->productTypeModel->delete($id);
+    }
+
+    public function handleUpdate(): void
+    {
+        $id = $_GET['id'];
+        $namePT = $_POST['name_pt'];
+        $logo = $this->formatImage("logo_pt");
+        $des = $_POST['description'];
+        $idC = $_POST['id_category'];
+        $this->productTypeModel->update($id, $namePT, $logo, $des, $idC);
+    }
+
+    public function formatImage($nameInput): string
+    {
+        $dirSave = "../public/imgs/product/";
+
+        $image = "";
+        $target_file = $dirSave . basename($_FILES[(string) $nameInput]["name"]);
+
+        $status_upload = move_uploaded_file($_FILES[(string) $nameInput]["tmp_name"], $target_file);
+
+        if ($status_upload) {
+            $image =  "imgs/product/" . basename($_FILES[(string) $nameInput]["name"]);
+        }
+        return $image;
     }
 }

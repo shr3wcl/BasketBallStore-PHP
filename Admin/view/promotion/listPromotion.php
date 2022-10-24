@@ -8,6 +8,7 @@
             <th>Name Promotion</th>
             <th>Type</th>
             <th>Value</th>
+            <th>Start day</th>
             <th>#</th>
         </tr>
         </thead>
@@ -17,6 +18,7 @@
             <th>Name Promotion</th>
             <th>Type</th>
             <th>Value</th>
+            <th>Start day</th>
             <th>#</th>
         </tr>
         </tfoot>
@@ -27,6 +29,7 @@
                 <td><?= $each["name_promotion"] ?></td>
                 <td><?= $each["type_promotion"] ?></td>
                 <td><?= $each["value"] ?></td>
+                <td><?= $each["start_day"] ?></td>
                 <td>
                     <a href="?mod=promotion&act=detail&id=<?= $each['id_promotion'] ?>" type="button" class="btn btn-success">Xem</a>
                     <a href="?mod=promotion&act=edit&id=<?= $each['id_promotion'] ?>" type="button" class="btn btn-warning">Sửa</a>

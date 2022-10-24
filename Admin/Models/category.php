@@ -2,7 +2,8 @@
 
 require_once "model.php";
 
-class category extends modelAdmin{
+class category extends modelAdmin
+{
     public function getAll(): mysqli_result|bool
     {
         $query = "SELECT * FROM category";
@@ -25,6 +26,15 @@ class category extends modelAdmin{
     public function delete($id): void
     {
         $query = "DELETE FROM category WHERE id_category = $id";
+        $this->conn->query($query);
+        header("location: ?mod=category");
+    }
+
+    public function update($id, $nameC): void
+    {
+        $query = "UPDATE category 
+                    SET name_category = '$nameC'
+                    WHERE id_category = '$id'";
         $this->conn->query($query);
         header("location: ?mod=category");
     }

@@ -11,6 +11,9 @@ switch ($route) {
     case "banner":
         require_once "banner/banner.php";
         break;
+    case "bill":
+        require_once "bill/bill.php";
+        break;
     case "product":
         require_once "product/product.php";
         break;

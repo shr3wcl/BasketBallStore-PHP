@@ -10,6 +10,10 @@ class CategoryController{
     public function handleGetAll(): void
     {
         $categoryList = $this->categoryModel->getAll();
+        if(isset($_GET['id']) && $_GET['act'] === "edit"){
+            $id = $_GET['id'];
+            $detailStuff = $this->categoryModel->view($id)->fetch_assoc();
+        }
         require_once "view/index.php";
     }
 
@@ -30,5 +34,12 @@ class CategoryController{
     {
         $id = $_GET['id'];
         $this->categoryModel->delete($id);
+    }
+
+    public function handleUpdate(): void
+    {
+        $id = $_GET['id'];
+        $nameC = $_POST['name_category'];
+        $this->categoryModel->update($id, $nameC);
     }
 }

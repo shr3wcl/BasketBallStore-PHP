@@ -3,10 +3,6 @@
     <div class="carousel-indicators position-absolute">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
-<!--        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"-->
-<!--                aria-label="Slide 2"></button>-->
-<!--        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"-->
-<!--                aria-label="Slide 3"></button>-->
         <?php for($i = 1; $i < sizeof($data_banner); $i++){?>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $i?>"
                     aria-label="Slide <?= $i?>"></button>
