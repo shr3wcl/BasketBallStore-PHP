@@ -286,7 +286,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (15,1,'','ADMIN','',1,'','','admin','21232f297a57a5a743894a0e4a801fc3',1,'2022-10-03'),(23,2,'Hell','Hello','012345678',1,'minhtri192035@gmail.com','Da Nang','minhtri192035','d41d8cd98f00b204e9800998ecf8427e',1,'2022-10-18'),(24,3,'Tri','Pham','0394192310',0,'whoami3141592@gmail.com','','abcdef','e10adc3949ba59abbe56e057f20f883e',1,'2022-10-21'),(25,3,'Ha','Truong','0356351791',0,'ttthuha112@gmail.com','Trai Tim Toi','truongha','21232f297a57a5a743894a0e4a801fc3',1,'2022-10-22'),(27,1,'Bin','Bin','0394192310',1,'admin123@gmail.com','Hue','admin123','21232f297a57a5a743894a0e4a801fc3',1,'2022-10-22');
+INSERT INTO `user` VALUES (15,1,'','ADMIN','',1,'','','admin','21232f297a57a5a743894a0e4a801fc3',1,'2022-10-03'),(23,2,'Hell','Hello','012345678',1,'minhtri192035@gmail.com','Da Nang','minhtri192035','d41d8cd98f00b204e9800998ecf8427e',1,'2022-10-18'),(24,3,'Tri','Pham','0394192310',0,'whoami3141592@gmail.com','','abcdef','e10adc3949ba59abbe56e057f20f883e',1,'2022-10-21'),(27,1,'Bin','Bin','0394192310',1,'admin123@gmail.com','Hue','admin123','21232f297a57a5a743894a0e4a801fc3',1,'2022-10-22');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
