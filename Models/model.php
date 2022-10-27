@@ -8,7 +8,8 @@ class model{
         $this->conn = $conn_obj->conn;
     }
 
-    function resultReturnArray($query){
+    public function resultReturnArray($query): array
+    {
         $result = $this->conn->query($query);
 
         $data = array();

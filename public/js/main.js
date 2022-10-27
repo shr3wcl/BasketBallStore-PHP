@@ -82,4 +82,7 @@ $(".input-number").keydown(function (e) {
     }
 });
 
-
+function changeImage(data){
+    const mainImage = document.getElementById("image-detail");
+    mainImage.setAttribute("src", data);
+}
