@@ -1,30 +1,29 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a class="text-dark" href="index.php">Home</a></li>
-        <li class="breadcrumb-item"><a class="text-dark" href="#">Basketball shoes</a></li>
+        <li class="breadcrumb-item"><a class="text-dark" href="#"><?= $nameCategory['name_category'] ?></a></li>
         <li class="breadcrumb-item active" aria-current="page">Product</li>
     </ol>
 </nav>
 <div class="d-flex justify-content-between">
     <h4 class="d-flex"><?= $dataDetail['title_product'] ?></h4>
-    <p class="text-muted"><?= $dataDetail['id_product_type'] ?></p>
+    <p class="text-muted"><?= $nameProductType ?></p>
 </div>
 <div class="d-flex">
     <div class="d-flex">
         <div class="d-flex flex-column">
             <img style="max-width: 150px; margin: 4px; border: 1px solid #dddddd; cursor: pointer"
-                 src="public/<?= $dataDetail['image1'] ?>" alt="">
+                 src="public/<?= $dataDetail['image1'] ?>" onclick="changeImage(this.getAttribute('src'))" alt="">
             <img style="max-width: 150px; margin: 4px; border: 1px solid #dddddd; cursor: pointer"
-                 src="public/<?= $dataDetail['image2'] ?>" alt="">
+                 src="public/<?= $dataDetail['image2'] ?>" onclick="changeImage(this.getAttribute('src'))" alt="">
             <img style="max-width: 150px; margin: 4px; border: 1px solid #dddddd; cursor: pointer"
-                 src="public/<?= $dataDetail['image3'] ?>" alt="">
+                 src="public/<?= $dataDetail['image3'] ?>" onclick="changeImage(this.getAttribute('src'))" alt="">
             <img style="max-width: 150px; margin: 4px; border: 1px solid #dddddd; cursor: pointer"
-                 src="public/<?= $dataDetail['image4'] ?>" alt="">
+                 src="public/<?= $dataDetail['image4'] ?>" onclick="changeImage(this.getAttribute('src'))" alt="">
         </div>
         <div>
-            <img class="" style=" margin: 4px; border: 1px solid #dddddd; width: 50vw"
+            <img id="image-detail" class="" style=" margin: 4px; border: 1px solid #dddddd; width: 50vw"
                  src="public/<?= $dataDetail['image1'] ?>" alt="">
-
         </div>
     </div>
     <div style="margin-left: 20px">
@@ -44,11 +43,11 @@
             foreach ($arr as $each) {
                 ?>
                 <li class="text-center"
-                    style="background-color: #FFFFFF; border: 1px solid #dddddd; padding: 4px 8px; margin: 4px">
+                    style="width: 60px;background-color: #FFFFFF; border: 1px solid #dddddd; padding: 4px 8px; margin: 4px";>
                     <a href="#" style=""><strong><?= $each ?></strong>
                         <?php if ($dataDetail['id_category'] === "1"){ ?>
-                            <p class="text-muted m-0 fs-7"><strong><?= ((double) $each) - 33.5 ?></strong> US</p></a>
-                        <?php } ?>
+                        <p class="text-muted m-0 fs-7"><strong><?= ((double) $each) - 33.5 ?></strong> US</p></a>
+                    <?php } ?>
                 </li>
             <?php } ?>
         </ul>
@@ -110,5 +109,72 @@
 
         </div>
         <!--        -->
+    </div>
+</div>
+<hr>
+<div class="text-center">
+    <h4 class="text-center"><?= $dataDetail['name_product'] ?></h4>
+    <p class="text-center" style="color: #999999"><?= $nameProductType ?></p>
+    <div style="margin-left: 8rem; text-align: left !important;">
+        <p><strong>Description: </strong><?= $dataDetail['description'] ?></p>
+        <p><strong>Reviews: </strong><?= $dataDetail['n_reviews'] ?></p>
+        <p><strong>Stars: </strong><?= $dataDetail['n_stars'] ?></p>
+        <p><strong>Some pictures: </strong></p>
+    </div>
+    <ul style="list-style: none; display: flex; justify-content: center; flex-wrap: wrap; padding: 0">
+        <li>
+            <img class="mt-2 mb-2" style="width: 90%"
+                 src="public/<?= $dataDetail['image1'] ?>" alt="">
+            <p class="text-center">Image 1</p>
+        </li>
+        <li>
+            <img class="mt-2 mb-2"  style="width: 90%"
+                 src="public/<?= $dataDetail['image2'] ?>" alt="">
+            <p class="text-center">Image 2</p>
+        </li>
+        <li>
+            <img class="mt-2 mb-2"  style="width: 90%"
+                 src="public/<?= $dataDetail['image3'] ?>" alt="">
+            <p class="text-center">Image 3</p>
+
+        </li>
+        <li>
+            <img class="mt-2 mb-2"  style="width: 90%"
+                 src="public/<?= $dataDetail['image4'] ?>" alt="">
+            <p class="text-center">Image 4</p>
+        </li>
+    </ul>
+</div>
+
+<hr>
+
+<div class="d-flex justify-content-center flex-wrap">
+    <h4 class="text-center">Sản phẩm liên quan</h4>
+    <div class="mt-4">
+        <div class="bg-white mt-2">
+            <ul class="gridpro d-flex flex-wrap">
+                <?php foreach ($relatedProducts as $each) {?>
+                    <li class="col-xs-6 col-sm-3 col-md-3 col-lg-3 col-gr grid li-normal">
+                        <a class="product_img_link pro_img_home gray-darker nodeco " title=" Zoom Freak 3 Low Battery " href="?page=detail&id=<?= $each['id_product'] ?>" >
+                            <img src="public/<?php echo $each['main_image']?>" alt=" Zoom Freak 3 Low Battery " class="img-responsive front" >
+                            <span class="gitf hide"><img src=''></span>
+                            <div class="b_dis_home">
+                                <span class="discounts"><strong><span class="fa-solid fa-heart" aria-hidden="true"></span> <?php echo $each['name_sale'];?> </strong></span>
+                            </div>
+                            <span class="group hide">Sản phẩm nổi bật</span>
+                            <div class="caption padpro">
+                                <h4 class="f13 nomargin"><strong><?php echo $each['title_product'] ?></strong></h4>
+                                <div class="gray-light f11 line-height-normal mb-0"><?php echo $each['p_type_name'];?></div>
+                                <div class="content_price">
+                                    <span class="price" ><?php echo number_format($each['d_price']);?> ₫</span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="gray-light line-through f13"><?php echo number_format($each['price']) ?> ₫</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                <?php } ?>
+            </ul>
+        </div>
     </div>
 </div>
