@@ -3,6 +3,11 @@ session_start();
 $route = $_GET['page'] ?? "home";
 
 switch ($route){
+    case "cart":
+        require_once "./Controllers/CartController.php";
+        $cartObj = new CartController();
+        $cartObj->getCart();
+        break;
     case "home":
         require_once ("./Controllers/HomeController.php");
         $controller_obj = new HomeController();
@@ -27,5 +32,23 @@ switch ($route){
         require_once "./Controllers/ProductDetailController.php";
         $detailObj = new ProductDetailController();
         $detailObj->viewDetail();
+        break;
+    case "product":
+        require_once "./Controllers/EachProductTypeController.php";
+        $productTypeObj = new EachProductTypeController();
+        $type = $_GET['type'] ?? "";
+        $id = $_GET['id'] ?? "";
+        if($type){
+            $productTypeObj->getCategory();
+        }
+        else if($id){
+            $productTypeObj->getProductType();
+        }
+        else{
+            require_once "Views/index.php";
+        }
+        break;
+    default:
+        require_once "Views/index.php";
         break;
 }

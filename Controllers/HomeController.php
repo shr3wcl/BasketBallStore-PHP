@@ -17,6 +17,7 @@ class HomeController
         $data_newest_shirts = $this->home_model->getLastProductType(0, 8, 6);
         $data_outstanding_product = $this->home_model->getOutstandingProduct(0, 15, 1);
         $data_out_standing_pants = $this->home_model->getOutstandingProduct(0, 7, 2);
+        $listProductTypeShoes = $this->home_model->getProductTypes(1);
         require_once("Views/index.php");
     }
 }

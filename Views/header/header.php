@@ -25,10 +25,10 @@
                 $user = $_SESSION["user"] ?? "";
                 $d_name = "";
                 if ($user) {
-                    $d_name =  $user["first_name"] . " " . $user["last_name"];
+                    $d_name = $user["first_name"] . " " . $user["last_name"];
                 }
                 $auth = "";
-                switch ($user['id_auth']){
+                switch ($user['id_auth']) {
                     case 1:
                         $auth = '<li class="border"><a class="dropdown-item text-success" href="admin?mod=dashboard">Trang quản lý</a></li>';
                         break;
@@ -40,11 +40,11 @@
                         <span class="dropdown p-8 me-5 d-flex align-items-center">
                             <i class="fa-solid fa-user me-2"></i>
                             <span class="nav-link dropdown-toggle position-relative" role="button" aria-expanded="false">
-                              '.  $d_name .'
+                              ' . $d_name . '
                             </span>
                             <ul class="dropdown-menu dropdown-content p-0 position-absolute" style="right: 0;top: 15px">
                                 <li class="border"><a class="dropdown-item" href="#">Account</a></li>
-                                '. $auth . '
+                                ' . $auth . '
                                 <li class="border"><a class="dropdown-item text-danger" href="?page=logout">Logout</a></li>
                             </ul>
                         </span>
@@ -66,22 +66,19 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item position-relative d-flex align-items-center">
                         <span class="dropdown p-8">
-                            <a class="nav-link dropdown-toggle p-0" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle p-0" href="?page=product&type=1" role="button" data-bs-toggle="dropdown"
                                aria-expanded="false">
                             Basketball Shoes
                         </a>
                             <ul class="dropdown-menu dropdown-content p-0 position-absolute">
-                            <li class="border"><a class="dropdown-item" href="#">Nikes</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">Adidas</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">ANTA</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">Peak</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">Lining</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">Other</a></li>
-
+                            <li class="border"><a class="dropdown-item" href="?page=product&id=1">Nikes</a></li>
+                            <li class="border"><a class="dropdown-item" href="?page=product&id=3">Adidas</a></li>
+                            <li class="border"><a class="dropdown-item" href="?page=product&id=2">ANTA</a></li>
+                            <li class="border"><a class="dropdown-item" href="?page=product&id=4">Peak</a></li>
+                            <li class="border"><a class="dropdown-item" href="?page=product&id=">Lining</a></li>
+                            <li class="border"><a class="dropdown-item" href="?page=product&type=1">Other</a></li>
                         </ul>
                         </span>
-
-
                     </li>
                     <li class="nav-item position-relative">
                         <span class="dropdown">
@@ -90,13 +87,8 @@
                             Clothes
                         </a>
                         <ul class="dropdown-menu dropdown-content p-0 position-absolute">
-                            <li class="border"></i><a class="dropdown-item" href="#">Jersey NBA</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">Pants</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">T-shirt</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">Training shirt</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">Combat clother</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">Hoodies</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">Uniform</a></li>
+                            <li class="border"><a class="dropdown-item" href="?page=product&id=5">Pants</a></li>
+                            <li class="border"><a class="dropdown-item" href="?page=product&id=6">Shirts</a></li>
                         </ul>
                         </span>
                     </li>
@@ -123,9 +115,9 @@
                         <i class="fa-solid fa-magnifying-glass position-absolute mx-lg-3"
                            style="right: 8px !important;  "></i>
                     </div>
-                    <button class="btn btn-outline-success px-3 pb-1 border-0" type="submit"><i
+                    <a href="?page=cart" class="btn btn-outline-success px-3 pb-1 border-0" type="submit"><i
                                 class="fa-sharp fa-solid fa-cart-shopping"></i>
-                        <p class="m-0">Cart</p></button>
+                        <p class="m-0">Cart</p></a>
                 </form>
 
             </div>
