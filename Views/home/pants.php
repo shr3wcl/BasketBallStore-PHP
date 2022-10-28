@@ -1,6 +1,6 @@
 <div class="mt-4">
     <div class="d-flex justify-content-between flex-wrap">
-        <a href="#!" class=""><h4>PANTS</h4></a>
+        <a href="?page=product&id=5" class=""><h4>PANTS</h4></a>
     </div>
     <div id="latest-product-container" class="bg-white row compare mt-2" style="margin: 0 2px">
         <div class="owl-carousel owl-theme owl-gbr owl-gbr-hot mrg-normal">

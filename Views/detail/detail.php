@@ -1,13 +1,13 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a class="text-dark" href="index.php">Home</a></li>
-        <li class="breadcrumb-item"><a class="text-dark" href="#"><?= $nameCategory['name_category'] ?></a></li>
+        <li class="breadcrumb-item"><a class="text-dark" href="?page=product&type=<?= $category['id_category'] ?>"><?= $category['name_category'] ?></a></li>
         <li class="breadcrumb-item active" aria-current="page">Product</li>
     </ol>
 </nav>
 <div class="d-flex justify-content-between">
     <h4 class="d-flex"><?= $dataDetail['title_product'] ?></h4>
-    <p class="text-muted"><?= $nameProductType ?></p>
+    <p class="text-muted"><?= $productType ?></p>
 </div>
 <div class="d-flex">
     <div class="d-flex">

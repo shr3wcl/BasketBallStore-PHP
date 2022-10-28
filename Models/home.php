@@ -44,6 +44,12 @@ class home extends model{
         return $this->extracted($query);
     }
 
+    public function getProductTypes($idCategory): mysqli_result|bool
+    {
+        $query = "SELECT id_product_type, name_pt FROM product_type WHERE id_category = $idCategory";
+        return $this->conn->query($query);
+    }
+
     /**
      * @param  string  $query
      * @return array

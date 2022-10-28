@@ -2,13 +2,9 @@
     <div class="d-flex justify-content-between flex-wrap">
         <a href="#!" class=""><h4>SẢN PHẨM NỔI BẬT</h4></a>
         <ul class="d-flex" style="flex-wrap: nowrap">
-            <li class="me-3"><a href="#">Giày Anta</a></li>
-            <li class="me-3"><a href="#">Giày Adidas</a></li>
-            <li class="me-3"><a href="#">Giày Nike</a></li>
-            <li class="me-3"><a href="#">Giày Peak</a></li>
-            <li class="me-3"><a href="#">Giày Lining</a></li>
-            <li class="me-3"><a href="#">Giày trẻ em</a></li>
-            <li class="me-3"><a href="#">Xem thêm</a></li>
+            <?php foreach ($listProductTypeShoes as $each){ ?>
+                <li class="me-3"><a href="?page=product&id=<?= $each["id_product_type"] ?>"><?= $each['name_pt'] ?></a></li>
+            <?php } ?>
         </ul>
     </div>
     <div class="bg-white mt-2">
