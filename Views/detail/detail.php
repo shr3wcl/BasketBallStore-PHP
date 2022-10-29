@@ -1,7 +1,10 @@
+<?php $_SESSION['product'] = $dataDetail ?>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a class="text-dark" href="index.php">Home</a></li>
-        <li class="breadcrumb-item"><a class="text-dark" href="?page=product&type=<?= $category['id_category'] ?>"><?= $category['name_category'] ?></a></li>
+        <li class="breadcrumb-item"><a class="text-dark"
+                                       href="?page=product&type=<?= $category['id_category'] ?>"><?= $category['name_category'] ?></a>
+        </li>
         <li class="breadcrumb-item active" aria-current="page">Product</li>
     </ol>
 </nav>
@@ -42,15 +45,16 @@
             <?php $arr = explode("/", $dataDetail['size']);
             foreach ($arr as $each) {
                 ?>
-                <li class="text-center"
-                    style="width: 60px;background-color: #FFFFFF; border: 1px solid #dddddd; padding: 4px 8px; margin: 4px";>
-                    <a href="#" style=""><strong><?= $each ?></strong>
+                <li class="text-center size-button" onclick="selectSize(this)"
+                    style="width: 60px;background-color: #FFFFFF; border: 1px solid #dddddd; padding: 4px 8px; margin: 4px; cursor: pointer">
+                    <a style=""><strong><?= $each ?></strong>
                         <?php if ($dataDetail['id_category'] === "1"){ ?>
                         <p class="text-muted m-0 fs-7"><strong><?= ((double) $each) - 33.5 ?></strong> US</p></a>
                     <?php } ?>
                 </li>
             <?php } ?>
         </ul>
+        <input type="text" hidden id="size-selected"/>
 
         <div id="tab" class="d-flex w-100" data-toggle="buttons">
             <a href="#buy2" id="type_buy2" class="btn btn-primary" style="width: 100%;" data-toggle="tab">
@@ -89,16 +93,17 @@
                             </span>
                     <input type="text" style="margin: 4px 0;width: 40px; max-width: 40px;" name="quant[1]"
                            class="form-control input-number text-center" value="1" min="1"
-                           max="10">
+                           max="100" id="quantity-cart">
                     <span class="input-group-append" style="margin: 4px 0">
                                 <button type="button" class="btn btn-outline-secondary btn-number" data-type="plus"
-                                        data-field="quant[1]">
+                                        data-field="quant[1]"
+                                        onclick="console.log(document.querySelector('#quantity-cart').value)">
                                     <span class="fa fa-plus"></span>
                                 </button>
                             </span>
                 </div>
             </div>
-            <button type="submit" name="submitbuy2" id="submitbuy2" value="submitbuy2"
+            <button type="submit" name="submit-buy" id="submit-buy" value="submit-buy"
                     class="btn btn-primary d-inline-block" style="position: relative;top: -2px;">
                 <i class="fa fa-shopping-cart white f12" aria-hidden="true"></i>
                 <strong>
@@ -106,15 +111,16 @@
                     </span> Add
                 </strong>
             </button>
-
+            <p  class="text-danger fw-semibold" id="alert-cart"></p>
         </div>
+
         <!--        -->
     </div>
 </div>
 <hr>
 <div class="text-center">
-    <h4 class="text-center"><?= $dataDetail['name_product'] ?></h4>
-    <p class="text-center" style="color: #999999"><?= $nameProductType ?></p>
+     <h4 class="text-center"><?= $dataDetail['name_product'] ?></h4>
+    <p class="text-center" style="color: #999999"><?= $productType ?></p>
     <div style="margin-left: 8rem; text-align: left !important;">
         <p><strong>Description: </strong><?= $dataDetail['description'] ?></p>
         <p><strong>Reviews: </strong><?= $dataDetail['n_reviews'] ?></p>
@@ -128,18 +134,18 @@
             <p class="text-center">Image 1</p>
         </li>
         <li>
-            <img class="mt-2 mb-2"  style="width: 90%"
+            <img class="mt-2 mb-2" style="width: 90%"
                  src="public/<?= $dataDetail['image2'] ?>" alt="">
             <p class="text-center">Image 2</p>
         </li>
         <li>
-            <img class="mt-2 mb-2"  style="width: 90%"
+            <img class="mt-2 mb-2" style="width: 90%"
                  src="public/<?= $dataDetail['image3'] ?>" alt="">
             <p class="text-center">Image 3</p>
 
         </li>
         <li>
-            <img class="mt-2 mb-2"  style="width: 90%"
+            <img class="mt-2 mb-2" style="width: 90%"
                  src="public/<?= $dataDetail['image4'] ?>" alt="">
             <p class="text-center">Image 4</p>
         </li>
@@ -153,21 +159,25 @@
     <div class="mt-4">
         <div class="bg-white mt-2">
             <ul class="gridpro d-flex flex-wrap">
-                <?php foreach ($relatedProducts as $each) {?>
+                <?php foreach ($relatedProducts as $each) { ?>
                     <li class="col-xs-6 col-sm-3 col-md-3 col-lg-3 col-gr grid li-normal">
-                        <a class="product_img_link pro_img_home gray-darker nodeco " title=" Zoom Freak 3 Low Battery " href="?page=detail&id=<?= $each['id_product'] ?>" >
-                            <img src="public/<?php echo $each['main_image']?>" alt=" Zoom Freak 3 Low Battery " class="img-responsive front" >
+                        <a class="product_img_link pro_img_home gray-darker nodeco " title=" Zoom Freak 3 Low Battery "
+                           href="?page=detail&id=<?= $each['id_product'] ?>">
+                            <img src="public/<?php echo $each['main_image'] ?>" alt=" Zoom Freak 3 Low Battery "
+                                 class="img-responsive front">
                             <span class="gitf hide"><img src=''></span>
                             <div class="b_dis_home">
-                                <span class="discounts"><strong><span class="fa-solid fa-heart" aria-hidden="true"></span> <?php echo $each['name_sale'];?> </strong></span>
+                                <span class="discounts"><strong><span class="fa-solid fa-heart"
+                                                                      aria-hidden="true"></span> <?php echo $each['name_sale']; ?> </strong></span>
                             </div>
                             <span class="group hide">Sản phẩm nổi bật</span>
                             <div class="caption padpro">
                                 <h4 class="f13 nomargin"><strong><?php echo $each['title_product'] ?></strong></h4>
-                                <div class="gray-light f11 line-height-normal mb-0"><?php echo $each['p_type_name'];?></div>
+                                <div class="gray-light f11 line-height-normal mb-0"><?php echo $each['p_type_name']; ?></div>
                                 <div class="content_price">
-                                    <span class="price" ><?php echo number_format($each['d_price']);?> ₫</span>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="gray-light line-through f13"><?php echo number_format($each['price']) ?> ₫</span>
+                                    <span class="price"><?php echo number_format($each['d_price']); ?> ₫</span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="gray-light line-through f13"><?php echo number_format($each['price']) ?> ₫</span>
                                 </div>
                             </div>
                         </a>
