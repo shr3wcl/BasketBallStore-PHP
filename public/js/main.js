@@ -86,3 +86,12 @@ function changeImage(data){
     const mainImage = document.getElementById("image-detail");
     mainImage.setAttribute("src", data);
 }
+
+function selectSize(data){
+    const listSizeBtn = document.querySelectorAll(".size-button");
+    const sizeSelected = document.querySelector("#size-selected");
+    listSizeBtn.forEach(e=>e.classList.remove("select-button-size"));
+    data.classList.toggle("select-button-size");
+    console.log(data.children[0].children[0].textContent);
+    sizeSelected.setAttribute('value', data.children[0].children[0].textContent);
+}

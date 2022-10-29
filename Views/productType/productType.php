@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a class="text-dark" href="index.php">Home</a></li>
-        <li class="breadcrumb-item active"><?= $category['name_category']  ?></li>
+        <li class="breadcrumb-item active"><?= $category['name_category'] ?? $categoryName['name_category']  ?></li>
     </ol>
 </nav>
 <div class="">

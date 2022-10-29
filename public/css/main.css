@@ -144,3 +144,11 @@
     clip: rect(0,900px,0,0);
     animation: noise-anim 2s infinite linear alternate-reverse;
 }
+
+.select-button-size{
+    background: #000000 !important;
+}
+
+.select-button-size *{
+    color: #f0f0f0 !important;
+}

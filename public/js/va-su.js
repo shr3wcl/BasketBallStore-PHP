@@ -83,3 +83,18 @@ $(document).ready(function () {
         );
     });
 });
+
+$(document).ready(function (){
+    $("#submit-buy").click(function (event){
+        $.post(
+            "Middlewares/addCart.php",{
+                size: $("#size-selected").val(),
+                quantity: $("#quantity-cart").val(),
+            },
+            function (data){
+                $('#alert-cart').html(data);
+                // setTimeout(()=>$('#alert-cart').html(""), 10000);
+            }
+        )
+    })
+})
