@@ -90,10 +90,32 @@ $(document).ready(function (){
             "Middlewares/addCart.php",{
                 size: $("#size-selected").val(),
                 quantity: $("#quantity-cart").val(),
+                id: $("#id-product").val()
             },
             function (data){
-                $('#alert-cart').html(data);
-                // setTimeout(()=>$('#alert-cart').html(""), 10000);
+                if(!data){
+                    $('#alert-cart').html("Vui lòng chọn size");
+                    setTimeout(()=>$('#alert-cart').html(""), 5000);
+                }
+                else{
+                    alert("Đã thêm vào giỏ hàng");
+                }
+            }
+        )
+    })
+})
+
+$(document).ready(function (){
+    $(".button-delete-item").click(function (event){
+        $.post(
+            "Middlewares/deleteCartSession.php", {
+                id: $(this).val()
+            },
+            function (data){
+                if(data){
+                    alert("Xoá thành công");
+                    window.location = "?page=cart";
+                }
             }
         )
     })

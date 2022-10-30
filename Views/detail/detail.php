@@ -1,4 +1,6 @@
 <?php $_SESSION['product'] = $dataDetail ?>
+<input type="text" hidden id="size-selected"/>
+<input type="text" hidden id="id-product" value="<?= $_GET['id'] ?>">
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a class="text-dark" href="index.php">Home</a></li>
@@ -49,12 +51,13 @@
                     style="width: 60px;background-color: #FFFFFF; border: 1px solid #dddddd; padding: 4px 8px; margin: 4px; cursor: pointer">
                     <a style=""><strong><?= $each ?></strong>
                         <?php if ($dataDetail['id_category'] === "1"){ ?>
-                        <p class="text-muted m-0 fs-7"><strong><?= ((double) $each) - 33.5 ?></strong> US</p></a>
+                        <p class="text-muted m-0 fs-7"><strong><?= ((double) $each) - 33.5 ?></strong> US</p>
                     <?php } ?>
+                    </a>
                 </li>
             <?php } ?>
         </ul>
-        <input type="text" hidden id="size-selected"/>
+
 
         <div id="tab" class="d-flex w-100" data-toggle="buttons">
             <a href="#buy2" id="type_buy2" class="btn btn-primary" style="width: 100%;" data-toggle="tab">
