@@ -43,7 +43,7 @@
                               ' . $d_name . '
                             </span>
                             <ul class="dropdown-menu dropdown-content p-0 position-absolute" style="right: 0;top: 15px">
-                                <li class="border"><a class="dropdown-item" href="#">Account</a></li>
+                                <li class="border"><a class="dropdown-item" href="?page=profile">Tài khoản</a></li>
                                 ' . $auth . '
                                 <li class="border"><a class="dropdown-item text-danger" href="?page=logout">Logout</a></li>
                             </ul>

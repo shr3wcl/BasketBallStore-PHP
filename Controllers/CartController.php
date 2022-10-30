@@ -12,11 +12,19 @@ class CartController
         require_once "Views/index.php";
     }
 
+    public function addCart(){
+        $this->cartModel->addCart();
+    }
+
+    public function clearCart(){
+        $this->cartModel->clearCart();
+    }
+
     public function checkAdd($id, $quantity, $size){
         $this->cartModel->addCartNotLogin($id, $quantity, $size);
     }
 
     public function deleteItemSession($id){
-        return $this->cartModel->deleteItemSession($id);
+        $this->cartModel->deleteItemSession($id);
     }
 }

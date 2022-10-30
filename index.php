@@ -6,7 +6,18 @@ switch ($route){
     case "cart":
         require_once "./Controllers/CartController.php";
         $cartObj = new CartController();
-        $cartObj->getCart();
+        $act = $_GET['act'] ?? "";
+        switch ($act){
+            case "clear":
+                $cartObj->clearCart();
+                break;
+            case "pay":
+                $cartObj->addCart();
+                break;
+            default:
+                $cartObj->getCart();
+                break;
+        }
         break;
     case "home":
         require_once ("./Controllers/HomeController.php");
@@ -47,6 +58,11 @@ switch ($route){
         else{
             require_once "Views/index.php";
         }
+        break;
+    case "profile":
+        require_once "./Controllers/ProfileController.php";
+        $profileObj = new ProfileController();
+        $profileObj->view();
         break;
     default:
         require_once "Views/index.php";

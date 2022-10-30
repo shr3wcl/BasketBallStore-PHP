@@ -1,12 +1,13 @@
 <?php
-    $totalProducts = 0;
-    foreach ($listProducts as $each){
-        $totalProducts += $each['d_price'];
-    }
-    $total = $totalProducts + 30000;
+//    $totalProducts = 0;
+//    foreach ($listProducts as $each){
+//        $totalProducts += $each['d_price'];
+//    }
+//    $total = $totalProducts + 30000;
+//    $_SESSION['totalCart'] = $total;
 ?>
 <div>
-    <a class="text-danger fw-semibold " href="?page=cart&act=deleteAll">Xoá giỏ hàng</a>
+    <a class="text-danger fw-semibold" id="clear-cart" href="?page=cart&act=deleteAll">Xoá giỏ hàng</a>
     <ul class="list-group list-group-light">
         <li class="list-group-item d-flex justify-content-between align-items-center mt-4 mb-4">
 
@@ -14,7 +15,7 @@
                 <div class="ms-3 w-100">
                     <div class="d-flex align-items-center justify-content-between">
                         <p class="fw-bold m-0">Total product: </p>
-                        <p class="fw-bold m-0 float-end"><?= number_format($totalProducts) ?> đ</p>
+                        <p class="fw-bold m-0 float-end"><?= number_format($_SESSION['totalCart']-30000) ?> đ</p>
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <p class="fw-bold ">Ship cost: </p>
@@ -23,8 +24,27 @@
                     <hr class="m-1">
                     <div class="d-flex align-items-center justify-content-between">
                         <p class="fw-bold">Total: </p>
-                        <p class="fw-bold text-danger float-end"><?= number_format($total) ?> đ</p>
+                        <p class="fw-bold text-danger float-end"><?= number_format($_SESSION['totalCart']) ?> đ</p>
                     </div>
+                    <?php if(isset($_SESSION['user'])){ ?>
+                        <?php if($_SESSION['user']['address']){ ?>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="fw-bold">Address:</p>
+                                <p class="fw-bold float-end"><?= $_SESSION['user']['address'] ?></p>
+                            </div>
+                            <a href="?page=cart&act=pay" class="btn btn-primary float-end" onclick="alert('Thanh toán thành công')">Thanh toán</a>
+                        <?php }else{ ?>
+                            <div class="float-end">
+                                <p class="text-danger">Bạn cần cập nhập địa chỉ để tiến hành thanh toán</p>
+                                <a href="?page=account" class="float-end">Cập nhập ở đây</a>
+                            </div>
+                        <?php } ?>
+                    <?php }else{ ?>
+                        <div class="float-end d-flex align-content-center justify-content-center">
+                            <p class="text-danger fw-bold m-0 m-2">Bạn cần đăng nhập để tiến hành thanh toán</p>
+                            <a href="?page=login&act=pay" class="btn btn-primary ">Đăng nhập</a>
+                        </div>
+                    <?php } ?>
 
                 </div>
             </div>
@@ -91,6 +111,3 @@
 
     </ul>
 </div>
-<?php if (isset($_GET['act']) && $_GET['act'] === "deleteAll") {
-    $_SESSION['carts'] = [];
-} ?>
