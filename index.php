@@ -1,7 +1,6 @@
 <?php
 session_start();
 $route = $_GET['page'] ?? "home";
-//$_SESSION['carts'] = [];
 
 switch ($route){
     case "cart":

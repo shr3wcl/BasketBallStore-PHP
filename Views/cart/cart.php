@@ -1,6 +1,7 @@
 <?php
-$data = $_SESSION['carts'];
-if (isset($_SESSION['carts']) && $_SESSION['carts']) { ?>
+
+$listProducts = $_SESSION['carts'] ?? [];
+if ($listProducts) { ?>
     <?php require_once "product.php" ?>
 <?php } else { ?>
     <?php require_once "empty.php" ?>
