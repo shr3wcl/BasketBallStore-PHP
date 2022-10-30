@@ -13,6 +13,12 @@ class cart extends model{
         $data = array_merge($data[0], ["quantity"=>$quantity, "size"=>$size]);
         session_start();
         $_SESSION['carts'][] = $data;
+        $totalProducts = 0;
+        foreach ($_SESSION['carts'] as $each){
+            $totalProducts += $each['d_price'];
+        }
+        $total = $totalProducts + 30000;
+        $_SESSION['totalCart'] = $total;
     }
 
     public function deleteItemSession($id){
@@ -22,6 +28,26 @@ class cart extends model{
                 unset($_SESSION['carts'][$i]);
             }
         }
+    }
+
+    public function clearCart(){
+        $_SESSION['carts'] = [];
+        header("location: ?page=cart");
+    }
+
+    public function addCart(){
+        $user = $_SESSION['user'];
+        $name = $user['first_name']." ". $user['last_name'];
+        $idUser = $user['id_user'];
+        $phone = $user['phone'];
+        $address = $user['address'];
+        $total = $_SESSION['totalCart'];
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $time =  date('Y-m-d H:i:s');
+        $query = "INSERT INTO bill(id_user, name_user, phone, address, payment_method, total_cost, timestamp, note)
+                VALUES ('$idUser', '$name', '$phone', '$address', 0, '$total', '$time', '')";
+        $this->conn->query($query);
+        $this->clearCart();
     }
 
     public function extracted(string $query): array

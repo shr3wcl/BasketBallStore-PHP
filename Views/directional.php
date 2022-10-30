@@ -31,6 +31,9 @@ switch ($route) {
             require_once "error/error.php";
         }
         break;
+    case "profile":
+        require_once "profile/profile.php";
+        break;
     default:
         require_once "error/error.php";
         break;
