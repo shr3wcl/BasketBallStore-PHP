@@ -62,7 +62,12 @@ switch ($route){
     case "profile":
         require_once "./Controllers/ProfileController.php";
         $profileObj = new ProfileController();
-        $profileObj->view();
+        if(isset($_SESSION['user']) && $_SESSION['user']) {
+            $profileObj->view();
+        }
+        else{
+            header("location: ?page=login");
+        }
         break;
     default:
         require_once "Views/index.php";

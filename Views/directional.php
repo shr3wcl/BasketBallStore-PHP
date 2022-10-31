@@ -32,7 +32,9 @@ switch ($route) {
         }
         break;
     case "profile":
-        require_once "profile/profile.php";
+        if(isset($_SESSION['user']) && $_SESSION['user']){
+            require_once "profile/profile.php";
+        }
         break;
     default:
         require_once "error/error.php";
