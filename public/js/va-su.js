@@ -126,6 +126,43 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $("#button-change-password").click(function (event) {
+        event.preventDefault();
+        console.log("1");
+        $.post(
+            "Middlewares/changePassword.php", {
+                oldPassword: $("#old-password").val(),
+                newPassword: $("#new-password").val(),
+                confirmPassword: $("#confirm-password").val()
+            },
+            function (data) {
+                // let check = true;
+                // if(typeof data !== "String"){
+                //     const msg = JSON.parse(data);
+                //     for (const each in msg) {
+                //         if (msg[each]) {
+                //             check = false;
+                //         }
+                //     }
+                // }
+                // if (!check) {
+                //     $("#register-container .msg-check-fn").html(msg?.msgFn);
+                //     $("#register-container .msg-check-ln").html(msg?.msgLn);
+                //     $("#register-container .msg-check-gender").html(msg?.msgGender);
+                //     $("#register-container .msg-check-email").html(msg?.msgEmail);
+                //     $("#register-container .msg-check-phone").html(msg?.msgPhone);
+                //     $("#register-container .msg-check-address").html(msg?.msgAddress);
+                // } else {
+                // }
+                alert("Thay đổi mật khẩu thành công");
+                window.location = "?page=home";
+
+            }
+        );
+    });
+});
+
 $(document).ready(function (){
     $("#submit-buy").click(function (event){
         $.post(
