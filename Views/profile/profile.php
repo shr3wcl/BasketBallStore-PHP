@@ -71,8 +71,8 @@
                                 </div>
                                 <div class="form-outline mb-1">
                                     <h6 class="form-label mb-0" for="reg-phone">Địa chỉ <span
-                                                class="msg-check-phone text-danger fs-7"></span></h6>
-                                    <input type="tel" name="address" id="reg-phone"
+                                                class="msg-check-address text-danger fs-7"></span></h6>
+                                    <input type="tel" name="address" id="reg-address"
                                            class="form-control form-control-sm mb-2" required value="<?= $dataUser['address'] ?>"
                                            />
                                 </div>

@@ -84,6 +84,48 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $("#button-update-info").click(function (event) {
+        event.preventDefault();
+        // const password = prompt("Nhập mật khẩu để xác nhận");
+        console.log($("#reg-firstname").val());
+        $.post(
+            "Middlewares/changeInfo.php", {
+                firstname: $("#reg-firstname").val(),
+                lastname: $("#reg-lastname").val(),
+                gender: $('input[name="gender"]:checked').val(),
+                email: $("#reg-email").val(),
+                phone: $("#reg-phone").val(),
+                address: $("#reg-address").val(),
+                // password: password,
+            },
+            function (data) {
+                // let check = true;
+                // if(typeof data !== "String"){
+                //     const msg = JSON.parse(data);
+                //     for (const each in msg) {
+                //         if (msg[each]) {
+                //             check = false;
+                //         }
+                //     }
+                // }
+                // if (!check) {
+                //     $("#register-container .msg-check-fn").html(msg?.msgFn);
+                //     $("#register-container .msg-check-ln").html(msg?.msgLn);
+                //     $("#register-container .msg-check-gender").html(msg?.msgGender);
+                //     $("#register-container .msg-check-email").html(msg?.msgEmail);
+                //     $("#register-container .msg-check-phone").html(msg?.msgPhone);
+                //     $("#register-container .msg-check-address").html(msg?.msgAddress);
+                // } else {
+                // }
+                alert("Cập nhập thông tin thành công");
+                window.location = "?page=profile";
+
+            }
+        );
+    });
+});
+
 $(document).ready(function (){
     $("#submit-buy").click(function (event){
         $.post(
