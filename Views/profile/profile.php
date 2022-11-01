@@ -107,9 +107,9 @@
                                 </div>
                                 <div class="d-flex justify-content-end pt-3">
 
-                                <a href="#" type="submit" class="btn btn-primary btn-sm ms-2">
+                                <button href="#" type="submit" id="button-change-password" class="btn btn-primary btn-sm ms-2">
                                     Thay đổi mật khẩu
-                                </a>
+                                </button>
                                 </div>
                             </form>
                         </div>
