@@ -1,10 +1,10 @@
 <header class="fixed-top">
-    <nav class="navbar navbar-expand-sm fs-7 bg-light">
+    <nav class="navbar navbar-expand-sm fs-7 bg-light" id="">
         <div class="container-fluid w-100 d-flex justify-content-start mx-1">
             <div class="fw-light">
-                <a href="#" class="text-decoration-none text-muted me-2"><i class="fa-solid fa-location-dot me-1"></i>Address:
+                <a href="#" class="text-decoration-none text-muted me-2" style="font-size: 12px"><i class="fa-solid fa-location-dot me-1"></i>Address:
                     470 Tran Dai Nghia</a>
-                <a href="#" class="text-decoration-none text-muted"><i class="fa-solid fa-phone me-1"></i>Phone:
+                <a href="#" class="text-decoration-none text-muted" style="font-size: 12px"><i class="fa-solid fa-phone me-1"></i>Phone:
                     0123456789</a>
             </div>
         </div>
@@ -13,11 +13,11 @@
             $login = isset($_SESSION['login']);
             if (!$login) {
                 echo '
-                    <a href="?page=login" class="text-decoration-none me-3">
+                    <a href="?page=login" class="text-decoration-none me-3" style="font-size: 12px">
                         <span>Login</span>
                         <i class="fa-solid fa-user"></i>
                     </a>
-                    <a href="?page=register" class="text-decoration-none">
+                    <a href="?page=register" class="text-decoration-none" style="font-size: 12px">
                         <span>Register</span>
                         <i class="fa-solid fa-pen"></i>
                     </a>';
@@ -37,9 +37,9 @@
                         break;
                 }
                 echo '
-                        <span class="dropdown p-8 me-5 d-flex align-items-center">
+                        <span class="dropdown p-8 me-5 d-flex align-items-center" style="font-size: 12px">
                             <i class="fa-solid fa-user me-2"></i>
-                            <span class="nav-link dropdown-toggle position-relative" role="button" aria-expanded="false">
+                            <span class="nav-link dropdown-toggle position-relative" role="button" aria-expanded="false" style="font-size: 12px">
                               ' . $d_name . '
                             </span>
                             <ul class="dropdown-menu dropdown-content p-0 position-absolute" style="right: 0;top: 15px">
@@ -68,12 +68,12 @@
                         <span class="dropdown p-8">
                             <a class="nav-link dropdown-toggle p-0" href="?page=product&type=1" role="button" data-bs-toggle="dropdown"
                                aria-expanded="false">
-                            Basketball Shoes
+                            Giày bóng rổ
                         </a>
                             <ul class="dropdown-menu dropdown-content p-0 position-absolute">
                             <li class="border"><a class="dropdown-item" href="?page=product&id=1">Nikes</a></li>
                             <li class="border"><a class="dropdown-item" href="?page=product&id=3">Adidas</a></li>
-                            <li class="border"><a class="dropdown-item" href="?page=product&id=2">ANTA</a></li>
+                            <li class="border"><a class="dropdown-item" href="?page=product&id=2">Anta</a></li>
                             <li class="border"><a class="dropdown-item" href="?page=product&id=4">Peak</a></li>
                             <li class="border"><a class="dropdown-item" href="?page=product&id=">Lining</a></li>
                             <li class="border"><a class="dropdown-item" href="?page=product&type=1">Other</a></li>
@@ -84,11 +84,11 @@
                         <span class="dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                aria-expanded="false">
-                            Clothes
+                            Áo quần bóng rổ
                         </a>
                         <ul class="dropdown-menu dropdown-content p-0 position-absolute">
-                            <li class="border"><a class="dropdown-item" href="?page=product&id=5">Pants</a></li>
-                            <li class="border"><a class="dropdown-item" href="?page=product&id=6">Shirts</a></li>
+                            <li class="border"><a class="dropdown-item" href="?page=product&id=5">Quần bóng rổ</a></li>
+                            <li class="border"><a class="dropdown-item" href="?page=product&id=6">Áo bóng rổ</a></li>
                         </ul>
                         </span>
                     </li>
@@ -96,13 +96,14 @@
                         <span class="dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                aria-expanded="false">
-                            Accessories
+                            Phụ kiện
                         </a>
                         <ul class="dropdown-menu dropdown-content p-0 position-absolute">
-                            <li class="border"><a class="dropdown-item" href="#">Basketball ball</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">Backpack, briefcase, bag</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">Socks</a></li>
-                            <li class="border"><a class="dropdown-item" href="#">Bandages</a></li>
+                            <li class="border"><a class="dropdown-item" href="?page=product&id=11">Bóng rổ</a></li>
+                            <li class="border"><a class="dropdown-item" href="?page=product&id=12">Balo</a></li>
+                            <li class="border"><a class="dropdown-item" href="?page=product&id=10">Tất</a></li>
+<!--                            <li class="border"><a class="dropdown-item" href="#">Bandages</a></li>-->
+
 
                         </ul>
                         </span>

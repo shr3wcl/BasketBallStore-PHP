@@ -4,7 +4,7 @@
         ?>
         <div class="col">
             <div class="card border-0">
-                <a href="#"><img src="public/<?php echo $each['url_image'] ?>" class="card-img-top"
+                <a href=""><img src="public/<?php echo $each['url_image'] ?>" class="card-img-top"
                                  alt="Hollywood Sign on The Hill"/></a>
                 <div class="card-body text-center">
                     <a href="#"><h5 class="card-title"><?php echo $each['title'] ?></h5></a>
