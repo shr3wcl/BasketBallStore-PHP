@@ -41,11 +41,15 @@
             Remaining: <strong><?= number_format($dataDetail['price']) ?></strong> <strong>₫</strong>
         </p>
         <hr>
-        <h4>Size:</h4>
         <!--        -->
+        <?php $arr = explode("/", $dataDetail['size']);?>
+        <?= $arr[0] ? "<h4>Size:</h4>" : ""?>
         <ul style="display: flex; list-style: none; flex-wrap: wrap;" class="p-0">
-            <?php $arr = explode("/", $dataDetail['size']);
-            foreach ($arr as $each) {
+            <?php
+            if($arr[0]){
+                ?>
+
+            <?php foreach ($arr as $each) {
                 ?>
                 <li class="text-center size-button" onclick="selectSize(this)"
                     style="width: 60px;background-color: #FFFFFF; border: 1px solid #dddddd; padding: 4px 8px; margin: 4px; cursor: pointer">
@@ -55,7 +59,7 @@
                     <?php } ?>
                     </a>
                 </li>
-            <?php } ?>
+            <?php }} ?>
         </ul>
 
 

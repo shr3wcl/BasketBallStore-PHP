@@ -1,6 +1,6 @@
 <div class="mt-4">
     <div class="d-flex justify-content-between flex-wrap">
-        <a href="#!" class=""><h4>SẢN PHẨM NỔI BẬT</h4></a>
+        <a href="?page=product&type=1" class=""><h4>SẢN PHẨM NỔI BẬT</h4></a>
         <ul class="d-flex" style="flex-wrap: nowrap">
             <?php foreach ($listProductTypeShoes as $each){ ?>
                 <li class="me-3"><a href="?page=product&id=<?= $each["id_product_type"] ?>"><?= $each['name_pt'] ?></a></li>

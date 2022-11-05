@@ -100,6 +100,7 @@ $(document).ready(function () {
                 // password: password,
             },
             function (data) {
+                console.log(data);
                 // let check = true;
                 // if(typeof data !== "String"){
                 //     const msg = JSON.parse(data);
@@ -129,7 +130,6 @@ $(document).ready(function () {
 $(document).ready(function () {
     $("#button-change-password").click(function (event) {
         event.preventDefault();
-        console.log("1");
         $.post(
             "Middlewares/changePassword.php", {
                 oldPassword: $("#old-password").val(),

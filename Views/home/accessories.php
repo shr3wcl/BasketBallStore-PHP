@@ -1,10 +1,15 @@
 <div class="mt-4">
     <div class="d-flex justify-content-between flex-wrap">
-        <a href="?page=product&id=6" class=""><h4>Áo bóng rổ</h4></a>
+        <a href="?page=product&type=3" class=""><h4>Phụ kiện</h4></a>
+        <ul class="d-flex" style="flex-wrap: nowrap">
+            <?php foreach ($listProductTypeAccessories as $each){ ?>
+                <li class="me-3"><a href="?page=product&id=<?= $each["id_product_type"] ?>"><?= $each['name_pt'] ?></a></li>
+            <?php } ?>
+        </ul>
     </div>
     <div id="latest-product-container" class="bg-white row compare mt-2" style="margin: 0 2px">
         <div class="owl-carousel owl-theme owl-gbr owl-gbr-hot mrg-normal">
-            <?php foreach ($data_newest_shirts as $each) { ?>
+            <?php foreach ($data_newest_accessories as $each) { ?>
                 <div class="item mt-3 position-relative">
                     <div style="position: relative;">
                         <a class="product_img_link pro_img_home" title="<?php echo $each['name_product'] ?>"
