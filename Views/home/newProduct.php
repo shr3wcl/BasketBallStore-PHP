@@ -21,10 +21,10 @@
                     </a>
                 </div>
                 <div class="caption description-container">
-                    <h4 class="f13 fs-6 mb-0"><a class="gray-darker nodeco" title="<?php echo $each['name_product'] ?>"
-                                                 href="?page=detail&id=<?= $each['id_product'] ?>"><strong>
+                    <a class="gray-darker nodeco fw-semibold" title="<?php echo $each['name_product'] ?>"
+                                                 href="?page=detail&id=<?= $each['id_product'] ?>">
                                 <?php echo $each['title_product'] ?>
-                            </strong></a></h4>
+                            </a>
                     <div class="gray-light f11 line-height-normal mb-2" style="color: #999999; font-size: 12px"><?php echo $each['p_type_name'];?></div>
                     <div class="content_price">
                         <span class="price text-danger"> <span class=""><?php echo number_format($each['d_price']);?> ₫</span></span>

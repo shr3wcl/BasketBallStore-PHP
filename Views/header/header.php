@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-sm fs-7 bg-light" id="">
         <div class="container-fluid w-100 d-flex justify-content-start mx-1">
             <div class="fw-light">
-                <a href="#" class="text-decoration-none text-muted me-2" style="font-size: 12px"><i class="fa-solid fa-location-dot me-1"></i>Address:
+                <a href="https://www.google.com/maps/place/Vietnam+-+Korea+University+of+Information+and+Communication+Technology./@15.9752982,108.250161,17z/data=!3m1!4b1!4m6!3m5!1s0x3142108997dc971f:0x1295cb3d313469c9!8m2!3d15.9752931!4d108.252355!16s%2Fg%2F1yjg80dyy" class="text-decoration-none text-muted me-2" style="font-size: 12px" target="_blank"><i class="fa-solid fa-location-dot me-1" ></i>Address:
                     470 Tran Dai Nghia</a>
                 <a href="#" class="text-decoration-none text-muted" style="font-size: 12px"><i class="fa-solid fa-phone me-1"></i>Phone:
                     0123456789</a>
@@ -30,7 +30,7 @@
                 $auth = "";
                 switch ($user['id_auth']) {
                     case 1:
-                        $auth = '<li class="border"><a class="dropdown-item text-success" href="admin?mod=dashboard">Trang quản lý</a></li>';
+                        $auth = '<li class="border"><a class="dropdown-item text-success" href="admin?mod=dashboard" target="_blank">Trang quản lý</a></li>';
                         break;
                     case 2:
                         $auth = '<li class="border"><a class="dropdown-item text-info" href="#">Trang nhân viên</a></li>';
@@ -45,7 +45,7 @@
                             <ul class="dropdown-menu dropdown-content p-0 position-absolute" style="right: 0;top: 15px">
                                 <li class="border"><a class="dropdown-item" href="?page=profile">Tài khoản</a></li>
                                 ' . $auth . '
-                                <li class="border"><a class="dropdown-item text-danger" href="?page=logout">Logout</a></li>
+                                <li class="border"><a class="dropdown-item text-danger" href="?page=logout">Đăng xuất</a></li>
                             </ul>
                         </span>
                 ';
@@ -109,14 +109,14 @@
                         </span>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
+                <form action="?page=search" method="post" class="d-flex" role="search" >
                     <div class="position-relative me-3 d-flex align-items-center w-100">
-                        <input class="form-control position-relative pe-5 w-100" type="text" placeholder="Search..."
-                               aria-label="Search">
-                        <i class="fa-solid fa-magnifying-glass position-absolute mx-lg-3"
-                           style="right: 8px !important;  "></i>
+                        <input class="form-control position-relative pe-5 w-100" type="text" placeholder="Tìm kiếm..."
+                               aria-label="Search" name="keyword">
+                        <a type="submit" class="button fa-solid fa-magnifying-glass position-absolute mx-lg-3 gray-darker"
+                           style="right: 8px !important;  "></a>
                     </div>
-                    <a href="?page=cart" class="btn btn-outline-success px-3 pb-1 border-0" type="submit"><i
+                    <a href="?page=cart" class="btn btn-outline-success px-3 pb-1 border-0"><i
                                 class="fa-sharp fa-solid fa-cart-shopping"></i>
                         <p class="m-0">Cart</p></a>
                 </form>

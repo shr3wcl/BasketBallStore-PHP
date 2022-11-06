@@ -1,6 +1,6 @@
 <div class="mt-4">
     <div class="d-flex justify-content-between flex-wrap">
-        <a href="?page=product&type=1" class=""><h4>SẢN PHẨM NỔI BẬT</h4></a>
+        <a href="?page=product&type=1" class="gray-darker fw-bold fs-4">NỔI BẬT</a>
         <ul class="d-flex" style="flex-wrap: nowrap">
             <?php foreach ($listProductTypeShoes as $each){ ?>
                 <li class="me-3"><a href="?page=product&id=<?= $each["id_product_type"] ?>"><?= $each['name_pt'] ?></a></li>
@@ -19,7 +19,10 @@
                         </div>
                         <span class="group hide">Sản phẩm nổi bật</span>
                         <div class="caption padpro">
-                            <h4 class="f13 nomargin"><strong><?php echo $each['title_product'] ?></strong></h4>
+                            <a class="gray-darker nodeco fw-semibold" href="?page=detail&id=<?= $each['id_product'] ?>">
+                                <?php echo $each['title_product'] ?>
+                            </a>
+
                             <div class="gray-light f11 line-height-normal mb-0"><?php echo $each['p_type_name'];?></div>
                             <div class="content_price">
                                 <span class="price" ><?php echo number_format($each['d_price']);?> ₫</span>

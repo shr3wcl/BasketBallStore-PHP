@@ -24,4 +24,10 @@ class EachProductTypeController{
         $categoryName = $this->eachProductType->getNameCategory($idCategory);
         require_once "Views/index.php";
     }
+
+    public function searchProduct(){
+        $keyword = $_POST['keyword'];
+        $dataSearch = $this->eachProductType->searchProduct($keyword);
+        require_once "Views/index.php";
+    }
 }

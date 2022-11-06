@@ -1,6 +1,6 @@
 <div class="mt-4">
     <div class="d-flex justify-content-between flex-wrap">
-        <a href="?page=product&id=5" class=""><h4>Quần bóng rổ</h4></a>
+        <a href="?page=product&id=5" class="gray-darker fw-bold fs-4">QUẦN BÓNG RỔ</a>
     </div>
     <div id="latest-product-container" class="bg-white row compare mt-2" style="margin: 0 2px">
         <div class="owl-carousel owl-theme owl-gbr owl-gbr-hot mrg-normal">
@@ -21,10 +21,9 @@
                         </a>
                     </div>
                     <div class="caption description-container">
-                        <h4 class="f13 fs-6 mb-0"><a class="gray-darker nodeco" title="<?php echo $each['name_product'] ?>"
-                                                     href="?page=detail&id=<?= $each['id_product'] ?>"><strong>
-                                    <?php echo $each['title_product'] ?>
-                                </strong></a></h4>
+                        <a class="gray-darker nodeco fw-semibold" title="<?php echo $each['name_product'] ?>"
+                                                     href="?page=detail&id=<?= $each['id_product'] ?>">
+                                    <?php echo $each['title_product'] ?></a>
                         <div class="gray-light f11 line-height-normal mb-2" style="color: #999999; font-size: 12px"><?php echo $each['p_type_name'];?></div>
                         <div class="content_price">
                             <span class="price text-danger"> <span class=""><?php echo number_format($each['d_price']);?> ₫</span></span>

@@ -49,6 +49,7 @@ switch ($route){
         $productTypeObj = new EachProductTypeController();
         $type = $_GET['type'] ?? "";
         $id = $_GET['id'] ?? "";
+        $search = $_GET['keyword'] ?? "";
         if($type){
             $productTypeObj->getCategory();
         }
@@ -68,6 +69,11 @@ switch ($route){
         else{
             header("location: ?page=login");
         }
+        break;
+    case "search":
+        require_once "./Controllers/EachProductTypeController.php";
+        $productTypeObj = new EachProductTypeController();
+        $productTypeObj->searchProduct();
         break;
     default:
         require_once "Views/index.php";
