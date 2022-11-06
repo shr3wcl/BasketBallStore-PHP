@@ -14,7 +14,7 @@
             <a href="#" class="me-4 text-reset">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a href="https://github.com/Bin-08-01" class="me-4 text-reset">
+            <a href="https://github.com/Bin-08-01" class="me-4 text-reset" target="_blank">
                 <i class="fab fa-github"></i>
             </a>
         </div>
@@ -37,16 +37,16 @@
                         Products
                     </h6>
                     <p>
-                        <a href="#!" class="text-reset">Shoes</a>
+                        <a href="?page=product&type=1" class="text-reset">Shoes</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Clother</a>
+                        <a href="?page=product&type=2" class="text-reset">Clother</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Ball</a>
+                        <a href="?page=product&id=11" class="text-reset">Ball</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Accessories</a>
+                        <a href="?page=product&type=3" class="text-reset">Accessories</a>
                     </p>
                 </div>
 

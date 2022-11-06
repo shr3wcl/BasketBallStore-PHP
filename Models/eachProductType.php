@@ -41,6 +41,15 @@ class eachProductType extends model{
         return $this->conn->query($query)->fetch_assoc();
     }
 
+    public function searchProduct($keyword){
+        $query = "SELECT *, (SELECT value from promotion where id_promotion = product.id_promotion) as d_price,
+       (SELECT type_sale from promotion WHERE id_promotion = product.id_promotion) as type_p,
+       (SELECT type_promotion from promotion WHERE id_promotion = product.id_promotion) as name_sale,
+       (SELECT name_pt from product_type WHERE id_product_type = product.id_product_type) as p_type_name
+       FROM product WHERE name_product LIKE '%$keyword%' OR title_product LIKE '%$keyword%' ORDER BY status DESC , n_stars DESC LIMIT 0, 15";
+        return $this->extracted($query);
+    }
+
     public function extracted(string $query): array
     {
         $data = $this->conn->query($query);

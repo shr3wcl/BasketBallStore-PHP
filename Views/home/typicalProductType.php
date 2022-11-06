@@ -4,14 +4,17 @@
         ?>
         <div class="col">
             <div class="card border-0">
-                <a href=""><img src="public/<?php echo $each['url_image'] ?>" class="card-img-top"
-                                 alt="Hollywood Sign on The Hill"/></a>
+                <a href="?page=product&id=<?= $each ?>"><img src="public/<?php echo $each['url_image'] ?>" class="card-img-top"
+                                 alt="Hollywood Sign on The Hill"/>
                 <div class="card-body text-center">
-                    <a href="#"><h5 class="card-title"><?php echo $each['title'] ?></h5></a>
+                    <a href="#" class="fs-5 fw-bold gray-darker nodeco">
+                        <?php echo $each['title'] ?>
+                    </a>
                     <p class="card-text" style="min-height: 120px !important;">
                         <?php echo $each['description'] ?>
                     </p>
                 </div>
+                </a>
             </div>
         </div>
     <?php } ?>

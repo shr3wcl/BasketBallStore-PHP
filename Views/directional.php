@@ -36,6 +36,11 @@ switch ($route) {
             require_once "profile/profile.php";
         }
         break;
+    case "search":
+        if(isset($dataSearch)){
+            require_once "search/search.php";
+        }
+        break;
     default:
         require_once "error/error.php";
         break;
