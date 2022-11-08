@@ -6,7 +6,7 @@ class check extends model{
     public function checkEmpty($value): string
     {
         if(empty($value) && $value !== '0'){
-            return "Require";
+            return "Yêu cầu";
         }
         return "";
     }
@@ -15,7 +15,7 @@ class check extends model{
     public function checkUsernameReg($un): string
     {
         if(strlen($un)<6){
-            return "Must have at least 6 characters";
+            return "Có ít nhất 6 kí tự";
         }
         $sql = "SELECT * FROM user where username = '{$un}'";
         if(mysqli_num_rows(mysqli_query($this->conn, $sql))){
@@ -27,7 +27,7 @@ class check extends model{
     public function checkPassword($pw, $tpw): string
     {
         if(strlen($pw)<6){
-            return "Must have at least 6 characters";
+            return "Mật khẩu có ít nhất 6 kí tự";
         }
         if($pw!=$tpw){
             return "Mật khẩu không trùng khớp";

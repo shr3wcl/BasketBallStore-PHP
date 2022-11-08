@@ -46,10 +46,10 @@
             <label for="">Email</label>
             <input type="Email" class="form-control" id="" placeholder="" name="email" value="<?= $detailStuff['email'] ?>">
         </div>
-        <div class="form-group">
-            <label for="">Mật Khẩu</label>
-            <input type="Password" class="form-control" id="" placeholder="" name="password">
-        </div>
+<!--        <div class="form-group">-->
+<!--            <label for="">Mật Khẩu</label>-->
+<!--            <input type="Password" class="form-control" id="" placeholder="" name="password">-->
+<!--        </div>-->
         <div class="form-group">
             <label for="">Phân quyền</label>
             <select id="" name="id_auth" class="form-control">
