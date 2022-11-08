@@ -18,7 +18,6 @@ class ProfileController{
 
     public function handleChangeInfo($fn, $ln, $g, $e, $p, $address)
     {
-        session_start();
         $idUser = $_SESSION['user']['id_user'];
         $result = array();
         $result["msgFn"] = $this->check_model->checkEmpty($fn);
@@ -40,7 +39,7 @@ class ProfileController{
         $result = array();
         $result["msgOldPw"] = $this->check_model->checkEmpty($oldPw);
         $result["msgNewPw"] = $this->check_model->checkEmpty($newPw);
-        $result["msgConfirmPw"] = $this->check_model->checkEmpty($confirmPw);
+//        $result["msgConfirmPw"] = $this->check_model->checkEmpty($confirmPw);
         $result["msgCheckConfirm"] = $this->check_model->checkPassword($newPw, $confirmPw);
         $result["msgCheckOld"] = (md5($oldPw) === $_SESSION['user']['password']) ? "" : "Sai mật khẩu";
         $checkRegex = implode('', $result);

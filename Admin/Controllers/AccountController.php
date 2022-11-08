@@ -55,8 +55,8 @@ class AccountController{
         $g = $_POST['gender'];
         $e = $_POST['email'];
         $address =$_POST['address'];
-        $pw = md5($_POST['password']);
+//        $pw = md5($_POST['password']);
         $idAuth = $_POST['id_auth'];
-        $this->accModel->update($id, $fn, $ln, $p, $g, $e, $address, $pw, $idAuth);
+        $this->accModel->update($id, $fn, $ln, $p, $g, $e, $address, $idAuth);
     }
 }

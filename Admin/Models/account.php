@@ -29,18 +29,18 @@ class account extends modelAdmin{
         header("location: ?mod=account");
     }
 
-    public function update($id,$fn,$ln, $p, $g, $e, $address, $pw, $idAuth): void
+    public function update($id,$fn,$ln, $p, $g, $e, $address, $idAuth): void
     {
-        if($pw){
-            $query = "UPDATE user 
-                    SET first_name = '$fn', last_name = '$ln', phone = '$p', gender = '$g', email = '$e', address = '$address', password = '$pw', id_auth='$idAuth'
-                    WHERE id_user = '$id'";
-        }
-        else{
+//        if($pw){
+//            $query = "UPDATE user
+//                    SET first_name = '$fn', last_name = '$ln', phone = '$p', gender = '$g', email = '$e', address = '$address', password = '$pw', id_auth='$idAuth'
+//                    WHERE id_user = '$id'";
+//        }
+//        else{
             $query = "UPDATE user 
                     SET first_name = '$fn', last_name = '$ln', phone = '$p', gender = '$g', email = '$e', address = '$address', id_auth='$idAuth'
                     WHERE id_user = '$id'";
-        }
+//        }
         $this->conn->query($query);
         header("location: ?mod=account");
     }

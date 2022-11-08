@@ -88,7 +88,6 @@ $(document).ready(function () {
     $("#button-update-info").click(function (event) {
         event.preventDefault();
         // const password = prompt("Nhập mật khẩu để xác nhận");
-        console.log($("#reg-firstname").val());
         $.post(
             "Middlewares/changeInfo.php", {
                 firstname: $("#reg-firstname").val(),
@@ -97,31 +96,30 @@ $(document).ready(function () {
                 email: $("#reg-email").val(),
                 phone: $("#reg-phone").val(),
                 address: $("#reg-address").val(),
-                // password: password,
             },
             function (data) {
                 console.log(data);
-                // let check = true;
-                // if(typeof data !== "String"){
-                //     const msg = JSON.parse(data);
-                //     for (const each in msg) {
-                //         if (msg[each]) {
-                //             check = false;
-                //         }
-                //     }
-                // }
-                // if (!check) {
-                //     $("#register-container .msg-check-fn").html(msg?.msgFn);
-                //     $("#register-container .msg-check-ln").html(msg?.msgLn);
-                //     $("#register-container .msg-check-gender").html(msg?.msgGender);
-                //     $("#register-container .msg-check-email").html(msg?.msgEmail);
-                //     $("#register-container .msg-check-phone").html(msg?.msgPhone);
-                //     $("#register-container .msg-check-address").html(msg?.msgAddress);
-                // } else {
-                // }
-                alert("Cập nhập thông tin thành công");
-                window.location = "?page=profile";
-
+                let check = true;
+                let msg;
+                if(typeof data !== "String"){
+                    msg = JSON.parse(data);
+                    for (const each in msg) {
+                        if (msg[each]) {
+                            check = false;
+                        }
+                    }
+                }
+                if (!check) {
+                    $("#register-container .msg-check-fn").html(msg?.msgFn);
+                    $("#register-container .msg-check-ln").html(msg?.msgLn);
+                    $("#register-container .msg-check-gender").html(msg?.msgGender);
+                    $("#register-container .msg-check-email").html(msg?.msgEmail);
+                    $("#register-container .msg-check-phone").html(msg?.msgPhone);
+                    $("#register-container .msg-check-address").html(msg?.msgAddress);
+                } else {
+                    alert("Cập nhập thông tin thành công");
+                    window.location = "?page=profile";
+                }
             }
         );
     });
@@ -137,26 +135,30 @@ $(document).ready(function () {
                 confirmPassword: $("#confirm-password").val()
             },
             function (data) {
-                // let check = true;
-                // if(typeof data !== "String"){
-                //     const msg = JSON.parse(data);
-                //     for (const each in msg) {
-                //         if (msg[each]) {
-                //             check = false;
-                //         }
-                //     }
-                // }
-                // if (!check) {
-                //     $("#register-container .msg-check-fn").html(msg?.msgFn);
-                //     $("#register-container .msg-check-ln").html(msg?.msgLn);
-                //     $("#register-container .msg-check-gender").html(msg?.msgGender);
-                //     $("#register-container .msg-check-email").html(msg?.msgEmail);
-                //     $("#register-container .msg-check-phone").html(msg?.msgPhone);
-                //     $("#register-container .msg-check-address").html(msg?.msgAddress);
-                // } else {
-                // }
-                alert("Thay đổi mật khẩu thành công");
-                window.location = "?page=home";
+                let check = true;
+                let msg;
+                console.log(data);
+                if(typeof data !== "String"){
+                    msg = JSON.parse(data);
+                    for (const each in msg) {
+                        if (msg[each] && each !== "msgCheckOld") {
+                            check = false;
+                            console.log(each);
+                        }
+                    }
+                }
+                if (!check) {
+                    $("#register-container .msg-check-old-password").html(msg?.msgOldPw);
+                    $("#register-container .msg-check-pass").html(msg?.msgCheckConfirm);
+                    // $("#register-container .msg-check-retype-pass").html(msg?.msgCheckConfirm);
+                }else if(check && msg?.msgCheckOld){
+                    alert("Sai mật khẩu");
+                }
+                else {
+                    alert("Thay đổi mật khẩu thành công, vui lòng đăng nhập lại");
+                    window.location = "?page=logout";
+                }
+
 
             }
         );
