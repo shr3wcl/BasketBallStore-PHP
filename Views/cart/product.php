@@ -7,7 +7,7 @@
 //    $_SESSION['totalCart'] = $total;
 ?>
 <div>
-    <a class="text-danger fw-semibold" id="clear-cart" href="?page=cart&act=deleteAll">Xoá giỏ hàng</a>
+    <a class="text-danger fw-semibold" id="clear-cart" href="?page=cart&act=clear">Xoá giỏ hàng</a>
     <ul class="list-group list-group-light">
         <li class="list-group-item d-flex justify-content-between align-items-center mt-4 mb-4">
 
@@ -15,7 +15,7 @@
                 <div class="ms-3 w-100">
                     <div class="d-flex align-items-center justify-content-between">
                         <p class="fw-bold m-0">Total product: </p>
-                        <p class="fw-bold m-0 float-end"><?= number_format($_SESSION['totalCart']-30000) ?> đ</p>
+                        <p class="fw-bold m-0 float-end" id="total-cost-product"><?= number_format($_SESSION['totalCart']-30000) ?> đ</p>
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <p class="fw-bold ">Ship cost: </p>
@@ -24,7 +24,7 @@
                     <hr class="m-1">
                     <div class="d-flex align-items-center justify-content-between">
                         <p class="fw-bold">Total: </p>
-                        <p class="fw-bold text-danger float-end"><?= number_format($_SESSION['totalCart']) ?> đ</p>
+                        <p class="fw-bold text-danger float-end" id="total-cost"><?= number_format($_SESSION['totalCart']) ?> đ</p>
                     </div>
                     <?php if(isset($_SESSION['user'])){ ?>
                         <?php if($_SESSION['user']['address']){ ?>
@@ -63,7 +63,9 @@
                         <a href="?page=detail&id=<?= $each['id_product'] ?>">
                             <p class="fw-bold mb-1"><?= $each['title_product'] ?></p>
                         </a>
-                        <p class="text-muted mb-0"><strong>Size: </strong><?= $each['size'] ?></p>
+                        <?php if($each['size']){ ?>
+                            <p class="text-muted mb-0"><strong>Size: </strong><?= $each["size"] ?></p>
+                        <?php } ?>
                         <!--                        <p class="text-muted mb-0"><strong>Quantity: </strong>-->
                         <? //= $each['quantity'] ?><!--</p>-->
                         <div class="text-muted mb-0">
@@ -75,20 +77,19 @@
                                         Quantity:
                                     </button>
                                     <span class="input-group-prepend" style="margin: 4px 0">
-                                <button type="button" class="btn btn-outline-secondary btn-number"
-                                        data-type="minus" data-field="quant[1]">
+                                <button type="button" id="minus-<?= $each['id_product'].'-'.$each['size'] ?>" class="btn btn-outline-secondary btn-number btn-update-cart"
+                                        data-type="minus" data-field="<?= 'quant_'. $each['id_product'].$each['size'] .'[1]' ?>">
                                     <span class="fa fa-minus"></span>
                                 </button>
                             </span>
-                                    <input type="text" style="margin: 4px 0;width: 40px; max-width: 40px;"
-                                           name="quant[1]"
+                                    <input type="text" disabled style="margin: 4px 0;width: 44px;padding: 0; max-width: 40px;"
+                                           name="<?= 'quant_'. $each['id_product'].$each['size'] .'[1]' ?>"
                                            class="form-control input-number text-center"
                                            value="<?= $each['quantity'] ?>" min="1"
                                            max="100" id="quantity-cart-<?= $each['id_product'] ?>">
                                     <span class="input-group-append" style="margin: 4px 0">
-                                <button type="button" class="btn btn-outline-secondary btn-number" data-type="plus"
-                                        data-field="quant[1]"
-                                        onclick="console.log(document.querySelector('#quantity-cart').value)">
+                                <button type="button" id="plus-<?= $each['id_product'].'-'.$each['size']  ?>" class="btn btn-outline-secondary btn-number btn-update-cart" data-type="plus"
+                                        data-field="<?= 'quant_'. $each['id_product'].$each['size'] .'[1]' ?>">
                                     <span class="fa fa-plus"></span>
                                 </button>
                             </span>

@@ -6,10 +6,15 @@ $cartObj = new CartController();
 $size = $_POST['size'] ?? "";
 $quantity = $_POST['quantity'] ?? "";
 $id = $_POST['id'] ?? "";
+$typeSize = $_POST['typeSize'] ?? "";
 
-if($size && $quantity){
+if($typeSize && $size && $quantity){
     $cartObj->checkAdd($id, $quantity, $size);
     echo true;
-}else{
+}elseif (!$typeSize && $quantity){
+    $cartObj->checkAdd($id, $quantity, $size);
+    echo true;
+}
+else{
     echo false;
 }

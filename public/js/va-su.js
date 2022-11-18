@@ -15,7 +15,7 @@ $(document).ready(function () {
 })
 
 $(document).ready(() => {
-    $("#form-login").on("submit", (e)=>{
+    $("#form-login").on("submit", (e) => {
         e.preventDefault();
         $.post(
             "Middlewares/login.php",
@@ -37,8 +37,7 @@ $(document).ready(() => {
                     $("#login-container .msg-check-username").html(msg?.msgUsername);
                     $("#login-container .msg-check-password").html(msg?.msgPassword);
                     $("#login-container .msg-check-login").html(msg?.msgLogin);
-                }
-                else{
+                } else {
                     console.log(1);
                     window.location = "?page=home";
                 }
@@ -101,7 +100,7 @@ $(document).ready(function () {
                 console.log(data);
                 let check = true;
                 let msg;
-                if(typeof data !== "String"){
+                if (typeof data !== "String") {
                     msg = JSON.parse(data);
                     for (const each in msg) {
                         if (msg[each]) {
@@ -138,7 +137,7 @@ $(document).ready(function () {
                 let check = true;
                 let msg;
                 console.log(data);
-                if(typeof data !== "String"){
+                if (typeof data !== "String") {
                     msg = JSON.parse(data);
                     for (const each in msg) {
                         if (msg[each] && each !== "msgCheckOld") {
@@ -151,10 +150,9 @@ $(document).ready(function () {
                     $("#register-container .msg-check-old-password").html(msg?.msgOldPw);
                     $("#register-container .msg-check-pass").html(msg?.msgCheckConfirm);
                     // $("#register-container .msg-check-retype-pass").html(msg?.msgCheckConfirm);
-                }else if(check && msg?.msgCheckOld){
+                } else if (check && msg?.msgCheckOld) {
                     alert("Sai mật khẩu");
-                }
-                else {
+                } else {
                     alert("Thay đổi mật khẩu thành công, vui lòng đăng nhập lại");
                     window.location = "?page=logout";
                 }
@@ -165,20 +163,21 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function (){
-    $("#submit-buy").click(function (event){
+$(document).ready(function () {
+    $("#submit-buy").click(function (event) {
+        console.log($("#type-product").val());
         $.post(
-            "Middlewares/addCart.php",{
+            "Middlewares/addCart.php", {
                 size: $("#size-selected").val(),
                 quantity: $("#quantity-cart").val(),
+                typeSize: $("#type-product").val(),
                 id: $("#id-product").val()
             },
-            function (data){
-                if(!data){
+            function (data) {
+                if (!data) {
                     $('#alert-cart').html("Vui lòng chọn size");
-                    setTimeout(()=>$('#alert-cart').html(""), 5000);
-                }
-                else{
+                    setTimeout(() => $('#alert-cart').html(""), 5000);
+                } else {
                     alert("Đã thêm vào giỏ hàng");
                 }
             }
@@ -186,17 +185,36 @@ $(document).ready(function (){
     })
 })
 
-$(document).ready(function (){
-    $(".button-delete-item").click(function (event){
+$(document).ready(function () {
+    $(".button-delete-item").click(function (event) {
         $.post(
             "Middlewares/deleteCartSession.php", {
                 id: $(this).val()
             },
-            function (data){
-                if(data){
+            function (data) {
+                if (data) {
                     alert("Xoá thành công");
                     window.location = "?page=cart";
                 }
+            }
+        )
+    })
+})
+
+$(document).ready(function () {
+    $(".btn-update-cart").click(function (e) {
+        const id = $(this).attr('id').split('-')[1];
+        const size = $(this).attr('id').split('-')[2];
+        const type = $(this).attr('id').split('-')[0];
+        $.post(
+            "Middlewares/updateCart.php", {
+                id: id,
+                size: size,
+                type: type
+            },
+            function (data) {
+                $(`#total-cost-product`).html(Intl.NumberFormat().format(data-30000) + " đ");
+                $("#total-cost").html(Intl.NumberFormat().format(data) + " đ");
             }
         )
     })
