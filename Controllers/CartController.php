@@ -27,4 +27,8 @@ class CartController
     public function deleteItemSession($id){
         $this->cartModel->deleteItemSession($id);
     }
+
+    public function updateCart($id, $type, $size){
+        return $this->cartModel->updateCart($id, $type, $size);
+    }
 }

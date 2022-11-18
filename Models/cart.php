@@ -9,13 +9,30 @@ class cart extends model{
        (SELECT type_promotion from promotion WHERE id_promotion = product.id_promotion) as name_sale,
        (SELECT name_pt from product_type WHERE id_product_type = product.id_product_type) as p_type_name
        FROM product WHERE id_product = $id";
-        $data = $this->extracted($query);
-        $data = array_merge($data[0], ["quantity"=>$quantity, "size"=>$size]);
         session_start();
-        $_SESSION['carts'][] = $data;
+        $data = $this->extracted($query);
+        $check = false;
+        if(isset($_SESSION['carts'])){
+            for($i = 0; $i<= sizeof($_SESSION['carts']); $i++){
+                if($_SESSION['carts'][$i]['id_product']===$id && $_SESSION['carts'][$i]['size'] === $size){
+                    $_SESSION['carts'][$i]['quantity'] += $quantity;
+                    $check = true;
+                    break;
+                }
+            }
+        }
+        if($check===false){
+            $data = array_merge($data[0], ["quantity"=>$quantity, "size"=>$size]);
+            $_SESSION['carts'][] = $data;
+        }
+        $this->costCart();
+    }
+
+    private function costCart(): void
+    {
         $totalProducts = 0;
         foreach ($_SESSION['carts'] as $each){
-            $totalProducts += $each['d_price'];
+            $totalProducts += $each['d_price'] * $each['quantity'];
         }
         $total = $totalProducts + 30000;
         $_SESSION['totalCart'] = $total;
@@ -48,6 +65,21 @@ class cart extends model{
                 VALUES ('$idUser', '$name', '$phone', '$address', 0, '$total', '$time', '')";
         $this->conn->query($query);
         $this->clearCart();
+    }
+
+    public function updateCart($id, $type, $size){
+        session_start();
+        for($i = 0; $i<= sizeof($_SESSION['carts']); $i++){
+            if($_SESSION['carts'][$i]['id_product']===$id && $_SESSION['carts'][$i]['size'] === $size){
+                if($type==='minus' && $_SESSION['carts'][$i]['quantity'] !== 1){
+                    $_SESSION['carts'][$i]['quantity']-=1;
+                }elseif ($type==='plus'){
+                    $_SESSION['carts'][$i]['quantity']+=1;
+                }
+                $this->costCart();
+                return $_SESSION['totalCart'];
+            }
+        }
     }
 
     public function extracted(string $query): array
