@@ -1,6 +1,7 @@
 <?php $_SESSION['product'] = $dataDetail ?>
 <input type="text" hidden id="size-selected"/>
 <input type="text" hidden id="id-product" value="<?= $_GET['id'] ?>">
+<input type="text" hidden id="type-product" value="<?= $dataDetail['size'] ?>">
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a class="text-dark" href="index.php">Home</a></li>
@@ -52,10 +53,10 @@
             <?php foreach ($arr as $each) {
                 ?>
                 <li class="text-center size-button" onclick="selectSize(this)"
-                    style="width: 60px;background-color: #FFFFFF; border: 1px solid #dddddd; padding: 4px 8px; margin: 4px; cursor: pointer">
-                    <a style=""><strong><?= $each ?></strong>
+                    style="width: 60px;background-color: #FFFFFF; border: 1px solid #dddddd; padding: 4px 8px; margin: 4px; cursor: pointer; height: 60px">
+                    <a style="font-size: 14px; text-align: center"><strong><?= $each ?></strong>
                         <?php if ($dataDetail['id_category'] === "1"){ ?>
-                        <p class="text-muted m-0 fs-7"><strong><?= ((double) $each) - 33.5 ?></strong> US</p>
+                        <p class="text-muted m-0 fs-7" ><strong><?= ((double) $each) - 33.5 ?></strong> <span style="font-size: 8px;">US</span></p>
                     <?php } ?>
                     </a>
                 </li>
