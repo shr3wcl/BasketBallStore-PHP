@@ -14,11 +14,11 @@
             if (!$login) {
                 echo '
                     <a href="?page=login" class="text-decoration-none me-3" style="font-size: 12px">
-                        <span>Login</span>
+                        <span>Đăng nhập</span>
                         <i class="fa-solid fa-user"></i>
                     </a>
                     <a href="?page=register" class="text-decoration-none" style="font-size: 12px">
-                        <span>Register</span>
+                        <span>Đăng kí</span>
                         <i class="fa-solid fa-pen"></i>
                     </a>';
             } else {
