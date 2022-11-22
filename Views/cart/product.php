@@ -14,16 +14,16 @@
             <div class="d-flex align-items-center" style="width: 100% !important;">
                 <div class="ms-3 w-100">
                     <div class="d-flex align-items-center justify-content-between">
-                        <p class="fw-bold m-0">Total product: </p>
+                        <p class="fw-bold m-0">Tổng giá sản phẩm: </p>
                         <p class="fw-bold m-0 float-end" id="total-cost-product"><?= number_format($_SESSION['totalCart']-30000) ?> đ</p>
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
-                        <p class="fw-bold ">Ship cost: </p>
+                        <p class="fw-bold ">Phí vận chuyển: </p>
                         <p class="fw-bold float-end"><?= number_format(30000) ?> đ</p>
                     </div>
                     <hr class="m-1">
                     <div class="d-flex align-items-center justify-content-between">
-                        <p class="fw-bold">Total: </p>
+                        <p class="fw-bold">Tổng tiền: </p>
                         <p class="fw-bold text-danger float-end" id="total-cost"><?= number_format($_SESSION['totalCart']) ?> đ</p>
                     </div>
                     <?php if(isset($_SESSION['user'])){ ?>
