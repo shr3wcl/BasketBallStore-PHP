@@ -3,7 +3,7 @@
 require_once "model.php";
 
 class cart extends model{
-    public function addCartNotLogin($id, $quantity, $size){
+    public function addCartNotLogin($id, $quantity, $size, $restQuantity){
         $query = "SELECT *, (SELECT value from promotion where id_promotion = product.id_promotion) as d_price,
        (SELECT type_sale from promotion WHERE id_promotion = product.id_promotion) as type_p,
        (SELECT type_promotion from promotion WHERE id_promotion = product.id_promotion) as name_sale,
@@ -22,7 +22,7 @@ class cart extends model{
             }
         }
         if($check===false){
-            $data = array_merge($data[0], ["quantity"=>$quantity, "size"=>$size]);
+            $data = array_merge($data[0], ["quantity"=>$quantity, "size"=>$size, "restQuantity"=>$restQuantity]);
             $_SESSION['carts'][] = $data;
         }
         $this->costCart();

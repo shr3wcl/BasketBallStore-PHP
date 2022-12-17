@@ -87,6 +87,9 @@
             </a>
         </div>
         <hr>
+        <div>
+            <p>Số sản phẩm còn lại: <span id="quantity-product"><?= $dataDetail['quantity'] ?></span></p>
+        </div>
         <div class="container">
             <div class="d-inline-block mx-auto">
 
@@ -102,7 +105,7 @@
                         </button>
                     </span>
                     <input type="text" style="margin: 4px 0;width: 40px; max-width: 40px;" name="quant[1]"
-                        class="form-control input-number text-center" value="1" min="1" max="100" id="quantity-cart">
+                        class="form-control input-number text-center" value="1" min="1" max=<?= $dataDetail['quantity']?> id="quantity-cart">
                     <span class="input-group-append" style="margin: 4px 0">
                         <button type="button" class="btn btn-outline-secondary btn-number" data-type="plus"
                             data-field="quant[1]" onclick="console.log(document.querySelector('#quantity-cart').value)">

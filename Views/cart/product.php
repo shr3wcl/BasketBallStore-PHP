@@ -66,8 +66,6 @@
                         <?php if($each['size']){ ?>
                             <p class="text-muted mb-0"><strong>Size: </strong><?= $each["size"] ?></p>
                         <?php } ?>
-                        <!--                        <p class="text-muted mb-0"><strong>Quantity: </strong>-->
-                        <? //= $each['quantity'] ?><!--</p>-->
                         <div class="text-muted mb-0">
                             <div class="d-inline-block mx-auto">
                                 <div class="input-group">
@@ -86,7 +84,7 @@
                                            name="<?= 'quant_'. $each['id_product'].$each['size'] .'[1]' ?>"
                                            class="form-control input-number text-center"
                                            value="<?= $each['quantity'] ?>" min="1"
-                                           max="100" id="quantity-cart-<?= $each['id_product'] ?>">
+                                           max=<?= $each['restQuantity']?> id="quantity-cart-<?= $each['id_product'] ?>">
                                     <span class="input-group-append" style="margin: 4px 0">
                                 <button type="button" id="plus-<?= $each['id_product'].'-'.$each['size']  ?>" class="btn btn-outline-secondary btn-number btn-update-cart" data-type="plus"
                                         data-field="<?= 'quant_'. $each['id_product'].$each['size'] .'[1]' ?>">
