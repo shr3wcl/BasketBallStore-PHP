@@ -41,6 +41,11 @@ switch ($route) {
             require_once "search/search.php";
         }
         break;
+    case "bill":
+        if(isset($_SESSION['user']) && $_SESSION['user']){
+            require_once "bill/bill.php";
+        }
+        break;
     default:
         require_once "error/error.php";
         break;

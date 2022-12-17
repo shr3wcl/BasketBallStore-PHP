@@ -165,13 +165,13 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $("#submit-buy").click(function (event) {
-        console.log($("#type-product").val());
         $.post(
             "Middlewares/addCart.php", {
                 size: $("#size-selected").val(),
                 quantity: $("#quantity-cart").val(),
                 typeSize: $("#type-product").val(),
-                id: $("#id-product").val()
+                id: $("#id-product").val(),
+                restQuantity: $("#quantity-product").text()
             },
             function (data) {
                 if (!data) {
