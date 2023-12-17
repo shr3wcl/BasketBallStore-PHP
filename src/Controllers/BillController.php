@@ -1,12 +1,12 @@
 <?php
-require_once "./Models/bill.php";
+require_once __DIR__ . "/../Models/bill.php";
 
 class BillController{
-    public bill $billModel;
+    public Bill $billModel;
 
     public function __construct()
     {
-        $this->billModel = new bill();
+        $this->billModel = new Bill();
     }
 
     public function getAll($id): void

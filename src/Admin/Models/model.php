@@ -4,7 +4,7 @@ require_once ("connect.php");
 class modelAdmin{
     public mysqli $conn;
     public function __construct(){
-        $conn_obj = new connect();
+        $conn_obj = new Connect();
         $this->conn = $conn_obj->conn;
     }
 

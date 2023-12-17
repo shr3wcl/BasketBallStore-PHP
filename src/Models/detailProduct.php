@@ -2,7 +2,7 @@
 
 require_once "model.php";
 
-class detailProduct extends model{
+class DetailProduct extends model{
     public function getData($id): bool|array|null
     {
         $query = "SELECT * FROM product WHERE id_product = '$id'";

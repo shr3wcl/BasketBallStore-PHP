@@ -2,7 +2,7 @@
 
 require_once "model.php";
 
-class cart extends model{
+class Cart extends model{
     public function addCartNotLogin($id, $quantity, $size, $restQuantity){
         $query = "SELECT *, (SELECT value from promotion where id_promotion = product.id_promotion) as d_price,
        (SELECT type_sale from promotion WHERE id_promotion = product.id_promotion) as type_p,

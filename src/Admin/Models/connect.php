@@ -1,15 +1,15 @@
 <?php
 
-class connection
+class Connect
 {
     public mysqli $conn;
 
     public function __construct()
     {
-        $servername = 'localhost';
-        $username = 'root';
-        $password = '';
-        $db_name = 'basketball_store';
+        $servername = getenv('MYSQL_HOSTNAME');
+        $username = getenv('MYSQL_USER');
+        $password = getenv('MYSQL_PASSWORD');
+        $db_name = getenv('MYSQL_DATABASE');
 
         $this->conn = new mysqli($servername, $username, $password, $db_name);
         $this->conn->set_charset('utf8');

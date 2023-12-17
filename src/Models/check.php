@@ -1,7 +1,7 @@
 <?php
 require_once ('model.php');
 
-class check extends model{
+class Check extends model{
 
     public function checkEmpty($value): string
     {

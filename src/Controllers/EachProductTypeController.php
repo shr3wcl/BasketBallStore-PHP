@@ -3,9 +3,9 @@
 require_once "Models/eachProductType.php";
 
 class EachProductTypeController{
-    private eachProductType $eachProductType;
+    private EachProductType $eachProductType;
     public function __construct(){
-        $this->eachProductType = new eachProductType();
+        $this->eachProductType = new EachProductType();
     }
 
     public function getProductType(){

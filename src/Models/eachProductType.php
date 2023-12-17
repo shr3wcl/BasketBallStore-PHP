@@ -2,7 +2,7 @@
 
 require_once "model.php";
 
-class eachProductType extends model{
+class EachProductType extends model{
     public function getProductType($idPT): array
     {
         $query = "SELECT *, (SELECT value FROM promotion WHERE id_promotion = product.id_promotion) AS d_price,

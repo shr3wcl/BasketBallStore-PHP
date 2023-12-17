@@ -3,7 +3,7 @@
 require_once "model.php";
 require_once "login.php";
 
-class profile extends model
+class Profile extends model
 {
     public function handleChange($idUser, $fn, $ln, $g, $e, $p, $address): void
     {
