@@ -1,7 +1,7 @@
 <?php
 require_once("model.php");
 
-class login extends model
+class Login extends model
 {
 
     public function handleRegister($fn, $ln, $g, $us, $pw, $e, $p): void

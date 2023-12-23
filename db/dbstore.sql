@@ -19,6 +19,10 @@
 -- Table structure for table `authorization`
 --
 
+create database IF NOT EXISTS basketball_store;
+
+use basketball_store;
+
 DROP TABLE IF EXISTS `authorization`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -301,11 +305,12 @@ CREATE TABLE `user` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 1,
-  `time_stamp` date NOT NULL DEFAULT current_timestamp(),
+  `time_stamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
   PRIMARY KEY (`id_user`),
   KEY `id_auth with authorization` (`id_auth`),
   CONSTRAINT `id_auth with authorization` FOREIGN KEY (`id_auth`) REFERENCES `authorization` (`id_auth`)
 ) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

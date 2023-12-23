@@ -1,6 +1,6 @@
 <?php
 require_once ('model.php');
-class home extends model{
+class Home extends model{
 
     public function getLatestProducts($s, $e, $idProduct): array
     {

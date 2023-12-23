@@ -2,7 +2,7 @@
 
 require_once "model.php";
 
-class bill extends model{
+class Bill extends model{
     public function getAll($idUser): mysqli_result|bool
     {
         $query = "SELECT * FROM bill WHERE id_user = '$idUser'";

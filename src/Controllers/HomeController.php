@@ -2,10 +2,10 @@
 require_once __DIR__ . "/../Models/home.php";
 class HomeController
 {
-    public home $home_model;
+    public Home $home_model;
     public function __construct()
     {
-        $this->home_model = new home();
+        $this->home_model = new Home();
     }
 
     public function list(): void

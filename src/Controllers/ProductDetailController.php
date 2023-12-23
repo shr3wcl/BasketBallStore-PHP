@@ -2,10 +2,10 @@
 require_once __DIR__ . "/../Models/detailProduct.php";
 class ProductDetailController
 {
-    public detailProduct $detailProductModel;
+    public DetailProduct $detailProductModel;
     public function __construct()
     {
-        $this->detailProductModel = new detailProduct();
+        $this->detailProductModel = new DetailProduct();
     }
 
     public function viewDetail(): void

@@ -3,12 +3,12 @@ require_once __DIR__."/../Models/profile.php";
 require_once __DIR__. "/../Models/check.php";
 class ProfileController{
 
-    private profile $profileModel;
-    private check $check_model;
+    private Profile $profileModel;
+    private Check $check_model;
 
     public function __construct(){
-        $this->profileModel = new profile();
-        $this->check_model = new check();
+        $this->profileModel = new Profile();
+        $this->check_model = new Check();
     }
 
     public function view(): void

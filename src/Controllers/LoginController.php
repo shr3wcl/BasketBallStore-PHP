@@ -4,13 +4,13 @@ require_once __DIR__ . "/../Models/check.php";
 
 class LoginController
 {
-    private login $login_model;
-    private check $check_model;
+    private Login $login_model;
+    private Check $check_model;
 
     public function __construct()
     {
-        $this->login_model = new login();
-        $this->check_model = new check();
+        $this->login_model = new Login();
+        $this->check_model = new Check();
     }
 
     public function register(): void

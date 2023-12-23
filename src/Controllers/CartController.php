@@ -2,10 +2,10 @@
 require_once __DIR__ . "/../Models/cart.php";
 class CartController
 {
-    public cart $cartModel;
+    public Cart $cartModel;
     public function __construct()
     {
-        $this->cartModel = new cart();
+        $this->cartModel = new Cart();
     }
 
     public function getCart(){
